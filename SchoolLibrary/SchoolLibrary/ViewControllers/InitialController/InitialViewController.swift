@@ -8,10 +8,12 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
+        if UserData.userID == nil {
+            self.performSegue(withIdentifier: "toLoginSegue", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "toAppSegue", sender: nil)
+        }
     }
-    
 }
