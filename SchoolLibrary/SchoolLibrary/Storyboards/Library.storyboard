@@ -28,7 +28,7 @@
         <!--Library-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LibraryViewController" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="LibraryViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LibraryViewController" id="Y6W-OH-hqX" customClass="LibraryViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +141,7 @@
         <!--Category View Controller-->
         <scene sceneID="GiH-je-Vy7">
             <objects>
-                <viewController storyboardIdentifier="CategoryViewController" id="rWf-V6-APV" customClass="CategoryViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryViewController" hidesBottomBarWhenPushed="YES" id="rWf-V6-APV" customClass="CategoryViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Jd-VQ-UBj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
