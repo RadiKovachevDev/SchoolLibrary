@@ -36,6 +36,7 @@
 		19D723AA293BF4CE00F2E542 /* BookDetailsImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D723A9293BF4CE00F2E542 /* BookDetailsImageTableViewCell.swift */; };
 		19D723AC293BF68C00F2E542 /* BookDetailsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D723AB293BF68C00F2E542 /* BookDetailsDescriptionTableViewCell.swift */; };
 		19D723AE293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D723AD293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift */; };
+		19D723B02940D61500F2E542 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D723AF2940D61500F2E542 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		19D723A9293BF4CE00F2E542 /* BookDetailsImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsImageTableViewCell.swift; sourceTree = "<group>"; };
 		19D723AB293BF68C00F2E542 /* BookDetailsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		19D723AD293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsProvidedByTableViewCell.swift; sourceTree = "<group>"; };
+		19D723AF2940D61500F2E542 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 				19B0FAB829325ECC00729905 /* Assets.xcassets */,
 				19B0FAB129325EC900729905 /* SceneDelegate.swift */,
 				19B0FAAF29325EC900729905 /* AppDelegate.swift */,
+				19D723AF2940D61500F2E542 /* Colors.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				19B0FAF42938F7EF00729905 /* Taken.storyboard in Resources */,
 				19B0FAB929325ECC00729905 /* Assets.xcassets in Resources */,
 				19B0FAF22938F7D900729905 /* Provided.storyboard in Resources */,
+				19D723B02940D61500F2E542 /* Colors.xcassets in Resources */,
 				19B0FAB729325EC900729905 /* Main.storyboard in Resources */,
 				19B0FAF02938F70D00729905 /* Library.storyboard in Resources */,
 			);
