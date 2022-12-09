@@ -285,9 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				19B0FAB829325ECC00729905 /* Assets.xcassets */,
+				19D723AF2940D61500F2E542 /* Colors.xcassets */,
 				19B0FAB129325EC900729905 /* SceneDelegate.swift */,
 				19B0FAAF29325EC900729905 /* AppDelegate.swift */,
-				19D723AF2940D61500F2E542 /* Colors.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
