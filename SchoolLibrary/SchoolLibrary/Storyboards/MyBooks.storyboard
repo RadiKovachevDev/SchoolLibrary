@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BTi-UP-JXl">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-840" y="-2"/>
         </scene>
-        <!--Provided-->
+        <!--MyBooks-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="ProvidedViewController" id="Y6W-OH-hqX" customClass="ProvidedViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,8 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provided Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-sr-L1E">
-                                <rect key="frame" x="137" y="415.66666666666669" width="119" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-sr-L1E">
+                                <rect key="frame" x="159.33333333333334" y="415.66666666666669" width="74.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +47,7 @@
                             <constraint firstItem="6ee-sr-L1E" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="shh-st-Pao"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Provided" image="square.and.arrow.up.on.square" catalog="system" id="EMi-os-VVf"/>
+                    <tabBarItem key="tabBarItem" title="MyBooks" image="book.closed" catalog="system" id="EMi-os-VVf"/>
                     <navigationItem key="navigationItem" id="BXw-Gr-Zqa"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -56,7 +57,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up.on.square" catalog="system" width="119" height="128"/>
+        <image name="book.closed" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

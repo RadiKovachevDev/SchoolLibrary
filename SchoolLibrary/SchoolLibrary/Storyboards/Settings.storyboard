@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jbl-nC-R21">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -42,8 +43,8 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ndj-Kf-3h1" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="O9e-ZQ-kMn"/>
-                            <constraint firstItem="Ndj-Kf-3h1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jny-t4-cEd"/>
+                            <constraint firstItem="Ndj-Kf-3h1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="cVF-SC-TCv"/>
+                            <constraint firstItem="Ndj-Kf-3h1" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="gO5-AQ-t3d"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="line.horizontal.3.circle" catalog="system" id="BdB-IB-j8m"/>
