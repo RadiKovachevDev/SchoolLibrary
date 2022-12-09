@@ -16,10 +16,6 @@ extension UIStoryboard {
         return UIStoryboard.init(name: "Library", bundle: nil)
     }
     
-    static var taken: UIStoryboard {
-        return UIStoryboard.init(name: "Taken", bundle: nil)
-    }
-    
     static var provided: UIStoryboard {
         return UIStoryboard.init(name: "Provided", bundle: nil)
     }
