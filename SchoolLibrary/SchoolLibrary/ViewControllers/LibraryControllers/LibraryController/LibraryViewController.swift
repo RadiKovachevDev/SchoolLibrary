@@ -10,10 +10,13 @@ import UIKit
 class LibraryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
-    var categories = ["Всички", "Mатематика", "Биология", "Физика", "Английски", "Френски", "Програмиране", "Музика", "Романи", "Фантастика"]
+    
+    var categories = [Category]()
+    var currentCategory: Category = .all
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.categories = FakeDB.categories
     }
 }
 
@@ -24,13 +27,17 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let categoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell {
-            categoryCollectionViewCell.categoryName.text = self.categories[indexPath.row]
+            categoryCollectionViewCell.categoryName.text = self.categories[indexPath.row].rawValue
             return categoryCollectionViewCell
             
         }
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.currentCategory = categories[indexPath.row]
+        print(currentCategory.rawValue)
+    }
 }
 extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
