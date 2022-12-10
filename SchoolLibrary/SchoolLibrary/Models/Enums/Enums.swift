@@ -19,3 +19,8 @@ enum Category: String {
     case novels = "Novels"
     case fantasy = "Fantasy"
 }
+
+enum MyBooksScreenType {
+    case taken
+    case provided
+}
