@@ -8,13 +8,14 @@
 import Foundation
 
 struct Book {
+    var id: String
     var name: String
     var author: String
     var shortDiscription: String
     var longDiscription: String
     var publisher: String
     var image: String
-    var caregory: String
+    var category: String
     var providedByUserID: String
     var takenOfUserID: String
     var isAvalible: Bool
