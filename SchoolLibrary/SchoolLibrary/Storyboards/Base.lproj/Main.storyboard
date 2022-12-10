@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDZ-O9-1HE">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,7 +109,7 @@
         <!--Navigation Controller-->
         <scene sceneID="kdD-Xk-R1G">
             <objects>
-                <navigationController id="cni-jN-3dK" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="cni-jN-3dK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b38-Bf-xRo">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -129,18 +130,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NID-2z-3N6">
-                                <rect key="frame" x="16" y="367" width="361" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3a-6r-85n">
-                                <rect key="frame" x="16" y="409" width="361" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="16" y="327" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="DKU-RU-rGn"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaBlack"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdU-hb-dYN">
-                                <rect key="frame" x="16" y="650" width="361" height="48"/>
+                                <rect key="frame" x="200.66666666666663" y="375" width="176.33333333333337" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1cL-IA-X58"/>
                                 </constraints>
@@ -165,25 +166,43 @@
                                     <action selector="loginButtonTapped:" destination="WYP-xL-kP2" eventType="touchUpInside" id="cbP-Yi-6yc"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defoult_category_image" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-Np-Wdd">
+                                <rect key="frame" x="136.66666666666666" y="119" width="119.99999999999997" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="6aj-wq-5Mt"/>
+                                    <constraint firstAttribute="height" constant="120" id="r4X-h8-nSh"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NID-2z-3N6">
+                                <rect key="frame" x="16" y="271" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="VeA-3S-IZO"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaBlack"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b2B-63-d6L"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="slWhite"/>
                         <constraints>
-                            <constraint firstItem="ZdU-hb-dYN" firstAttribute="leading" secondItem="b2B-63-d6L" secondAttribute="leading" constant="16" id="2ZP-yy-OAE"/>
                             <constraint firstItem="AYB-vG-EhG" firstAttribute="leading" secondItem="b2B-63-d6L" secondAttribute="leading" constant="16" id="3PZ-6E-Nd7"/>
                             <constraint firstItem="b2B-63-d6L" firstAttribute="trailing" secondItem="AYB-vG-EhG" secondAttribute="trailing" constant="16" id="6oU-WC-KFz"/>
                             <constraint firstItem="b2B-63-d6L" firstAttribute="trailing" secondItem="NID-2z-3N6" secondAttribute="trailing" constant="16" id="BKR-kK-wnr"/>
+                            <constraint firstItem="NID-2z-3N6" firstAttribute="top" secondItem="FG1-Np-Wdd" secondAttribute="bottom" constant="32" id="CMN-VZ-Psa"/>
+                            <constraint firstItem="b2B-63-d6L" firstAttribute="trailing" secondItem="ZdU-hb-dYN" secondAttribute="trailing" constant="16" id="Jj6-Mu-n6j"/>
                             <constraint firstItem="b2B-63-d6L" firstAttribute="trailing" secondItem="z3a-6r-85n" secondAttribute="trailing" constant="16" id="ODo-Nd-wWS"/>
-                            <constraint firstItem="z3a-6r-85n" firstAttribute="top" secondItem="NID-2z-3N6" secondAttribute="bottom" constant="8" id="Tou-gR-eA3"/>
                             <constraint firstItem="NID-2z-3N6" firstAttribute="leading" secondItem="b2B-63-d6L" secondAttribute="leading" constant="16" id="YZI-ds-r7S"/>
                             <constraint firstItem="b2B-63-d6L" firstAttribute="bottom" secondItem="AYB-vG-EhG" secondAttribute="bottom" constant="56" id="blp-z8-xHJ"/>
+                            <constraint firstItem="FG1-Np-Wdd" firstAttribute="centerX" secondItem="8Lr-DU-GF1" secondAttribute="centerX" id="eV2-Dw-Cyb"/>
                             <constraint firstItem="z3a-6r-85n" firstAttribute="leading" secondItem="b2B-63-d6L" secondAttribute="leading" constant="16" id="ehX-cW-wMW"/>
-                            <constraint firstItem="AYB-vG-EhG" firstAttribute="top" secondItem="ZdU-hb-dYN" secondAttribute="bottom" constant="16" id="lpn-7n-kPg"/>
-                            <constraint firstItem="z3a-6r-85n" firstAttribute="centerY" secondItem="8Lr-DU-GF1" secondAttribute="centerY" id="q82-di-Pkg"/>
-                            <constraint firstItem="b2B-63-d6L" firstAttribute="trailing" secondItem="ZdU-hb-dYN" secondAttribute="trailing" constant="16" id="x4I-6b-W0Q"/>
+                            <constraint firstItem="FG1-Np-Wdd" firstAttribute="top" secondItem="b2B-63-d6L" secondAttribute="top" constant="16" id="gwq-V9-LGg"/>
+                            <constraint firstItem="ZdU-hb-dYN" firstAttribute="top" secondItem="z3a-6r-85n" secondAttribute="bottom" id="ogh-2T-3vH"/>
+                            <constraint firstItem="z3a-6r-85n" firstAttribute="top" secondItem="NID-2z-3N6" secondAttribute="bottom" constant="8" id="zlL-Sd-njA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="5Dx-4h-A3A">
+                    <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="5Dx-4h-A3A">
                         <barButtonItem key="backBarButtonItem" title=" " id="8BZ-wp-0Vv"/>
                     </navigationItem>
                     <connections>
@@ -250,9 +269,19 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UyW-7i-mk6"/>
+        <segue reference="wSj-ep-Pcr"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="defoult_category_image" width="405" height="430"/>
+        <namedColor name="slKindaBlack">
+            <color red="0.11372549019607843" green="0.12549019607843137" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="slKindaWhite">
+            <color red="0.90196078431372551" green="0.91764705882352937" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="slWhite">
+            <color red="0.96470588235294119" green="0.97254901960784312" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
