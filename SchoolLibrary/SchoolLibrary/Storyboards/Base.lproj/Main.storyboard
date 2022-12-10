@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDZ-O9-1HE">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="54M-24-qOX"/>
                                 </constraints>
-                                <color key="textColor" name="slKindaWhite"/>
+                                <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
@@ -39,7 +39,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Ahu-0K-05J"/>
                                 </constraints>
-                                <color key="textColor" name="slKindaWhite"/>
+                                <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
@@ -54,7 +54,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ul6-IQ-xea"/>
                                 </constraints>
-                                <color key="textColor" name="slKindaWhite"/>
+                                <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                                 <userDefinedRuntimeAttributes>
@@ -65,13 +65,13 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-zf-pYr">
                                 <rect key="frame" x="16" y="714" width="361" height="48"/>
-                                <color key="backgroundColor" name="slOrangeLightest"/>
+                                <color key="backgroundColor" name="slOrangeLight"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Dew-3H-wdi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Create account">
-                                    <color key="baseForegroundColor" name="slBlueDark"/>
+                                    <color key="baseForegroundColor" name="slBlack"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -88,7 +88,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="7te-H4-ID5"/>
                                 </constraints>
-                                <color key="textColor" name="slKindaWhite"/>
+                                <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
@@ -206,13 +206,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYB-vG-EhG">
                                 <rect key="frame" x="16" y="714" width="361" height="48"/>
-                                <color key="backgroundColor" name="slOrangeLightest"/>
+                                <color key="backgroundColor" name="slOrangeLight"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="rJu-GR-3px"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <color key="baseForegroundColor" name="slBlueDark"/>
+                                    <color key="baseForegroundColor" name="slBlack"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -256,6 +256,7 @@
                             <constraint firstItem="b2B-63-d6L" firstAttribute="trailing" secondItem="ZdU-hb-dYN" secondAttribute="trailing" constant="16" id="Jj6-Mu-n6j"/>
                             <constraint firstItem="b2B-63-d6L" firstAttribute="trailing" secondItem="z3a-6r-85n" secondAttribute="trailing" constant="16" id="ODo-Nd-wWS"/>
                             <constraint firstItem="NID-2z-3N6" firstAttribute="leading" secondItem="b2B-63-d6L" secondAttribute="leading" constant="16" id="YZI-ds-r7S"/>
+                            <constraint firstItem="ZdU-hb-dYN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b2B-63-d6L" secondAttribute="leading" symbolic="YES" id="aPI-Kx-bPS"/>
                             <constraint firstItem="b2B-63-d6L" firstAttribute="bottom" secondItem="AYB-vG-EhG" secondAttribute="bottom" constant="56" id="blp-z8-xHJ"/>
                             <constraint firstItem="FG1-Np-Wdd" firstAttribute="centerX" secondItem="8Lr-DU-GF1" secondAttribute="centerX" id="eV2-Dw-Cyb"/>
                             <constraint firstItem="z3a-6r-85n" firstAttribute="leading" secondItem="b2B-63-d6L" secondAttribute="leading" constant="16" id="ehX-cW-wMW"/>
@@ -331,10 +332,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UyW-7i-mk6"/>
+        <segue reference="wSj-ep-Pcr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="defoult_category_image" width="405" height="430"/>
+        <namedColor name="slBlack">
+            <color red="0.054901960784313725" green="0.062745098039215685" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="slBlueDark">
             <color red="0.14901960784313725" green="0.26666666666666666" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -344,8 +348,8 @@
         <namedColor name="slKindaWhite">
             <color red="0.90196078431372551" green="0.91764705882352937" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="slOrangeLightest">
-            <color red="0.94901960784313721" green="0.80784313725490198" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="slOrangeLight">
+            <color red="0.89803921568627454" green="0.72156862745098038" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="slWhite">
             <color red="0.96470588235294119" green="0.97254901960784312" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
