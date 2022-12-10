@@ -14,8 +14,8 @@ class BookDetailsProvidedByTableViewCell: UITableViewCell {
     @IBOutlet weak var sendMailButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
     
-    
-    
+    var phoneNumber: String?
+    var mail: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,15 +26,17 @@ class BookDetailsProvidedByTableViewCell: UITableViewCell {
     }
     
     @IBAction func sendMailButtonTapped(_ sender: UIButton) {
-        if let url = URL(string: "mailto:radi.kovachev.dev@gmail.com") {
+        if let mail = self.mail,
+           let url = URL(string:  "mailto:\(mail)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+        }
     }
     
     @IBAction func callButtonTapped(_ sender: UIButton) {
-        if let url = URL(string: "tel://+359896005797") {
+        if let phoneNumber = self.phoneNumber,
+           let url = URL(string: "tel://\(phoneNumber)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+        }
     }
     
 }
