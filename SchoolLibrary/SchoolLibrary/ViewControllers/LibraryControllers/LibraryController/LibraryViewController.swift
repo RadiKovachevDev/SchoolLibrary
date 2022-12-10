@@ -9,32 +9,43 @@ import UIKit
 
 class LibraryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
-    var categories = ["Mатематика", "Биология", "Физика", "Английски", "Френски", "Програмиране", "Музика", "Романи", "Фантастика"]
+    @IBOutlet weak var collectionView: UICollectionView!
+    var categories = ["Всички", "Mатематика", "Биология", "Физика", "Английски", "Френски", "Програмиране", "Музика", "Романи", "Фантастика"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
-extension LibraryViewController: UITableViewDataSource, UITableViewDelegate {
+extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.categories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let categoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell {
+            categoryCollectionViewCell.categoryName.text = self.categories[indexPath.row]
+            return categoryCollectionViewCell
+            
+        }
+        return UICollectionViewCell()
+    }
+    
+}
+extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        categories.count
+        5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let categoryCell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell{
-            categoryCell.categoryNameLabel.text = categories[indexPath.row]
-            categoryCell.booksInCategoryLabel.text = "Books in category: \(indexPath.row + 1)"
-            return categoryCell
+        if let bookCell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell {
+            return bookCell
         }
         return UITableViewCell()
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let categoryViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "CategoryViewController") as? CategoryViewController {
-            categoryViewController.categoryName = categories[indexPath.row]
-            self.navigationController?.pushViewController(categoryViewController, animated: true)
+        if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
+            self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
         }
     }
 }
