@@ -112,14 +112,14 @@
                                 <color key="backgroundColor" name="slWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookTableViewCell" id="BWI-oY-nfJ" customClass="BookTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="186.66667175292969"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="182.66667175292969"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BWI-oY-nfJ" id="8Mk-x3-nNa">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="186.66667175292969"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="182.66667175292969"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpm-Ar-jH2">
-                                                    <rect key="frame" x="16" y="0.0" width="361" height="167.66666666666666"/>
+                                                    <rect key="frame" x="16" y="0.0" width="361" height="163.66666666666666"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defoult_category_image" translatesAutoresizingMaskIntoConstraints="NO" id="CaB-uQ-hWh">
                                                             <rect key="frame" x="16" y="16" width="96" height="96"/>
@@ -134,38 +134,29 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XIz-NW-jiI">
-                                                            <rect key="frame" x="120" y="16" width="225" height="135.66666666666666"/>
+                                                            <rect key="frame" x="120" y="16" width="225" height="131.66666666666666"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCw-Oc-VPR">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="22"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="22" id="F2w-2q-lD2"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="21.666666666666668"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                     <color key="textColor" name="slKindaBlack"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW9-fj-OxX">
-                                                                    <rect key="frame" x="0.0" y="26" width="225" height="16"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="16" id="Zev-Ko-gzI"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="0.0" y="25.666666666666661" width="225" height="14.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                     <color key="textColor" name="slGrey"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YH7-hF-BXu">
-                                                                    <rect key="frame" x="0.0" y="46.000000000000007" width="225" height="71.666666666666686"/>
+                                                                    <rect key="frame" x="0.0" y="44.000000000000007" width="225" height="71.666666666666686"/>
                                                                     <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" name="slKindaBlack"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-5z-aW9">
-                                                                    <rect key="frame" x="0.0" y="121.66666666666666" width="225" height="14"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="14" id="aen-Pj-CnU"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="0.0" y="119.66666666666666" width="225" height="12"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                                     <color key="textColor" name="slGrey"/>
                                                                     <nil key="highlightedColor"/>
@@ -231,6 +222,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="ZJb-kK-zRH" id="Odm-4m-o4Q"/>
+                        <outlet property="tableView" destination="18L-Ft-O4J" id="ASO-Ai-dE3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

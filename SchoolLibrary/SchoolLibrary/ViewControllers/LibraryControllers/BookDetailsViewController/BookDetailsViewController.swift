@@ -9,6 +9,8 @@ import UIKit
 
 class BookDetailsViewController: UIViewController {
 
+    var book: Book?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,6 +22,11 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let currentBook = self.book,
+              let providedUser = FakeDB.users.first(where: {$0.uid == currentBook.providedByUserID}) else {
+            return UITableViewCell()
+        }
+        
         switch indexPath.row {
         case 0:
             if let imageCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsImageTableViewCell", for: indexPath) as? BookDetailsImageTableViewCell {
@@ -27,19 +34,22 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             }
         case 5:
             if let providedByCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsProvidedByTableViewCell", for: indexPath) as? BookDetailsProvidedByTableViewCell {
+                providedByCell.phoneNumber = providedUser.phoneNumber
+                providedByCell.mail = providedUser.email
+                providedByCell.userNameLabel.text = "\(providedUser.firstName) \(providedUser.lastName)"
                 return providedByCell
             }
         default:
             if let descriptionCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsDescriptionTableViewCell", for: indexPath) as? BookDetailsDescriptionTableViewCell {
                 switch indexPath.row {
                 case 1:
-                    descriptionCell.descriptionLabel.text = "Book name"
+                    descriptionCell.descriptionLabel.text = currentBook.name
                 case 2:
-                    descriptionCell.descriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                    descriptionCell.descriptionLabel.text = currentBook.longDiscription
                 case 3:
-                    descriptionCell.descriptionLabel.text = "Author"
+                    descriptionCell.descriptionLabel.text = currentBook.author
                 case 4:
-                    descriptionCell.descriptionLabel.text = "Publisher"
+                    descriptionCell.descriptionLabel.text = currentBook.publisher
                 default:
                     break
                 }
