@@ -15,6 +15,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScreen()
+    }
+    
+    func setupScreen() {
+        self.view.addDismissKeyboardGestureRecognizer()
+        self.emailTextField.setLeftPaddingPoints(16.0)
+        self.passwordTextField.setLeftPaddingPoints(16.0)
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {

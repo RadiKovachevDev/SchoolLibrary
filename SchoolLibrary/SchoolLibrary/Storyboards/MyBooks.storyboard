@@ -57,19 +57,19 @@
                                     <action selector="changeSegmentState:" destination="Y6W-OH-hqX" eventType="valueChanged" id="ctm-Ur-YRQ"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-W9-wyU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-W9-wyU">
                                 <rect key="frame" x="16" y="151" width="361" height="562"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookTableViewCell" id="xbO-fi-CLj" customClass="BookTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="187"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookTableViewCell" id="xbO-fi-CLj" customClass="BookTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="186.66667175292969"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xbO-fi-CLj" id="J53-Vz-1FH">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="187"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="186.66667175292969"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaR-gk-GpX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="168"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="167.66666666666666"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defoult_category_image" translatesAutoresizingMaskIntoConstraints="NO" id="zYf-Hr-t99">
                                                             <rect key="frame" x="16" y="16" width="96" height="96"/>
@@ -84,7 +84,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="if1-d3-JQf">
-                                                            <rect key="frame" x="120" y="16" width="225" height="136"/>
+                                                            <rect key="frame" x="120" y="16" width="225" height="135.66666666666666"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdi-Zk-Mul">
                                                                     <rect key="frame" x="0.0" y="0.0" width="225" height="22"/>
@@ -105,14 +105,14 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upi-0d-fyX">
-                                                                    <rect key="frame" x="0.0" y="46" width="225" height="72"/>
+                                                                    <rect key="frame" x="0.0" y="46.000000000000007" width="225" height="71.666666666666686"/>
                                                                     <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVM-5q-KAG">
-                                                                    <rect key="frame" x="0.0" y="122" width="225" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="121.66666666666666" width="225" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="14" id="Yd1-W8-hfM"/>
                                                                     </constraints>

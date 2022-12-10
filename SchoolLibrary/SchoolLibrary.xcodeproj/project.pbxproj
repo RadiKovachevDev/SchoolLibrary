@@ -10,6 +10,7 @@
 		198393202938FE6100040C6C /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983931F2938FE6100040C6C /* LibraryViewController.swift */; };
 		198393262938FF5700040C6C /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198393252938FF5700040C6C /* MyBooksViewController.swift */; };
 		198393292939000C00040C6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198393282939000C00040C6C /* SettingsViewController.swift */; };
+		19ABC77629448DF000BAC39F /* UITextFieald.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC77529448DF000BAC39F /* UITextFieald.swift */; };
 		19B0FAB029325EC900729905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FAAF29325EC900729905 /* AppDelegate.swift */; };
 		19B0FAB229325EC900729905 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FAB129325EC900729905 /* SceneDelegate.swift */; };
 		19B0FAB729325EC900729905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FAB529325EC900729905 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		1983931F2938FE6100040C6C /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		198393252938FF5700040C6C /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		198393282939000C00040C6C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		19ABC77529448DF000BAC39F /* UITextFieald.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieald.swift; sourceTree = "<group>"; };
 		19B0FAAC29325EC900729905 /* SchoolLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B0FAAF29325EC900729905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B0FAB129325EC900729905 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				19B0FAED2938F43D00729905 /* UIStoryboard.swift */,
 				19D7239E293BE59300F2E542 /* UIView.swift */,
+				19ABC77529448DF000BAC39F /* UITextFieald.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19ABC77629448DF000BAC39F /* UITextFieald.swift in Sources */,
 				19D723AA293BF4CE00F2E542 /* BookDetailsImageTableViewCell.swift in Sources */,
 				19D7239F293BE59300F2E542 /* UIView.swift in Sources */,
 				19B0FAEE2938F43D00729905 /* UIStoryboard.swift in Sources */,
