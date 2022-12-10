@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDZ-O9-1HE">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -19,42 +19,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09k-bI-sFL">
-                                <rect key="frame" x="16" y="177" width="361" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="16" y="191" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="54M-24-qOX"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-BC-tO6">
-                                <rect key="frame" x="16" y="219" width="361" height="34"/>
+                                <rect key="frame" x="16" y="247" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Ahu-0K-05J"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HL3-Ld-dzz">
-                                <rect key="frame" x="16" y="261" width="361" height="34"/>
+                                <rect key="frame" x="16" y="303" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ul6-IQ-xea"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-zf-pYr">
                                 <rect key="frame" x="16" y="714" width="361" height="48"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <color key="backgroundColor" name="slOrangeLightest"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Dew-3H-wdi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Create account">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" name="slBlueDark"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="W8H-9O-sSP" eventType="touchUpInside" id="gNx-6S-tVJ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIj-ag-rxi">
-                                <rect key="frame" x="16" y="135" width="361" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="16" y="135" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="7te-H4-ID5"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PoG-bk-9wc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="slWhite"/>
                         <constraints>
                             <constraint firstItem="09k-bI-sFL" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="60a-FR-Rs2"/>
                             <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="9aq-BC-tO6" secondAttribute="trailing" constant="16" id="Abv-L3-s24"/>
@@ -146,7 +171,9 @@
                                     <constraint firstAttribute="height" constant="48" id="1cL-IA-X58"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create new account"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Create new account">
+                                    <color key="baseForegroundColor" name="slBlueDark"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="WYP-xL-kP2" eventType="touchUpInside" id="CRE-pf-amX"/>
                                     <segue destination="W8H-9O-sSP" kind="show" id="8UR-BI-zzc"/>
@@ -154,14 +181,19 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYB-vG-EhG">
                                 <rect key="frame" x="16" y="714" width="361" height="48"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <color key="backgroundColor" name="slOrangeLightest"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="rJu-GR-3px"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" name="slBlueDark"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="WYP-xL-kP2" eventType="touchUpInside" id="cbP-Yi-6yc"/>
                                 </connections>
@@ -269,22 +301,25 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wSj-ep-Pcr"/>
+        <segue reference="UyW-7i-mk6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="defoult_category_image" width="405" height="430"/>
+        <namedColor name="slBlueDark">
+            <color red="0.14901960784313725" green="0.26666666666666666" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="slKindaBlack">
             <color red="0.11372549019607843" green="0.12549019607843137" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="slKindaWhite">
             <color red="0.90196078431372551" green="0.91764705882352937" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="slOrangeLightest">
+            <color red="0.94901960784313721" green="0.80784313725490198" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="slWhite">
             <color red="0.96470588235294119" green="0.97254901960784312" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
