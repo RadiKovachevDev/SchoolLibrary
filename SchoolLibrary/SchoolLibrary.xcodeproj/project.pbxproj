@@ -17,6 +17,9 @@
 		19ABC7812944D72F00BAC39F /* FakeDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC7802944D72F00BAC39F /* FakeDB.swift */; };
 		19ABC7852944DC8C00BAC39F /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC7842944DC8C00BAC39F /* BookTableViewCell.swift */; };
 		19ABC7882944E84C00BAC39F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC7872944E84C00BAC39F /* User.swift */; };
+		19ABC78A294628EE00BAC39F /* SettingsInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC789294628EE00BAC39F /* SettingsInfoTableViewCell.swift */; };
+		19ABC78C2946346B00BAC39F /* DeleteAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC78B2946346B00BAC39F /* DeleteAccountTableViewCell.swift */; };
+		19ABC78E2946358100BAC39F /* SettingAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC78D2946358100BAC39F /* SettingAppTableViewCell.swift */; };
 		19B0FAB029325EC900729905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FAAF29325EC900729905 /* AppDelegate.swift */; };
 		19B0FAB229325EC900729905 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FAB129325EC900729905 /* SceneDelegate.swift */; };
 		19B0FAB729325EC900729905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FAB529325EC900729905 /* Main.storyboard */; };
@@ -70,6 +73,9 @@
 		19ABC7802944D72F00BAC39F /* FakeDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDB.swift; sourceTree = "<group>"; };
 		19ABC7842944DC8C00BAC39F /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		19ABC7872944E84C00BAC39F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		19ABC789294628EE00BAC39F /* SettingsInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoTableViewCell.swift; sourceTree = "<group>"; };
+		19ABC78B2946346B00BAC39F /* DeleteAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountTableViewCell.swift; sourceTree = "<group>"; };
+		19ABC78D2946358100BAC39F /* SettingAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppTableViewCell.swift; sourceTree = "<group>"; };
 		19B0FAAC29325EC900729905 /* SchoolLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B0FAAF29325EC900729905 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B0FAB129325EC900729905 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				198393282939000C00040C6C /* SettingsViewController.swift */,
+				19ABC789294628EE00BAC39F /* SettingsInfoTableViewCell.swift */,
+				19ABC78B2946346B00BAC39F /* DeleteAccountTableViewCell.swift */,
+				19ABC78D2946358100BAC39F /* SettingAppTableViewCell.swift */,
 			);
 			path = SettingsController;
 			sourceTree = "<group>";
@@ -518,8 +527,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19ABC78C2946346B00BAC39F /* DeleteAccountTableViewCell.swift in Sources */,
 				19ABC77629448DF000BAC39F /* UITextFieald.swift in Sources */,
 				19D723AA293BF4CE00F2E542 /* BookDetailsImageTableViewCell.swift in Sources */,
+				19ABC78A294628EE00BAC39F /* SettingsInfoTableViewCell.swift in Sources */,
+				19ABC78E2946358100BAC39F /* SettingAppTableViewCell.swift in Sources */,
 				19ABC77F2944D5A300BAC39F /* Enums.swift in Sources */,
 				19ABC77C2944D1CD00BAC39F /* Book.swift in Sources */,
 				19D7239F293BE59300F2E542 /* UIView.swift in Sources */,
@@ -720,16 +732,17 @@
 				DEVELOPMENT_TEAM = P6Y2W9RQ54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SchoolLibrary/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.radi.kovachev.SchoolLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -748,17 +761,18 @@
 				DEVELOPMENT_TEAM = P6Y2W9RQ54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SchoolLibrary/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.radi.kovachev.SchoolLibrary;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kovachev.SchoolLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
