@@ -176,7 +176,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3a-6r-85n">
-                                <rect key="frame" x="16" y="327" width="361" height="48"/>
+                                <rect key="frame" x="16" y="335" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="DKU-RU-rGn"/>
@@ -191,7 +191,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdU-hb-dYN">
-                                <rect key="frame" x="200.66666666666663" y="375" width="176.33333333333337" height="48"/>
+                                <rect key="frame" x="200.66666666666663" y="383" width="176.33333333333337" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1cL-IA-X58"/>
                                 </constraints>
@@ -223,15 +223,15 @@
                                     <action selector="loginButtonTapped:" destination="WYP-xL-kP2" eventType="touchUpInside" id="cbP-Yi-6yc"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defoult_category_image" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-Np-Wdd">
-                                <rect key="frame" x="136.66666666666666" y="119" width="119.99999999999997" height="120"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-Np-Wdd">
+                                <rect key="frame" x="132.66666666666666" y="119" width="127.99999999999997" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="6aj-wq-5Mt"/>
-                                    <constraint firstAttribute="height" constant="120" id="r4X-h8-nSh"/>
+                                    <constraint firstAttribute="width" constant="128" id="6aj-wq-5Mt"/>
+                                    <constraint firstAttribute="height" constant="128" id="r4X-h8-nSh"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NID-2z-3N6">
-                                <rect key="frame" x="16" y="271" width="361" height="48"/>
+                                <rect key="frame" x="16" y="279" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="VeA-3S-IZO"/>
@@ -335,7 +335,7 @@
         <segue reference="wSj-ep-Pcr"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="defoult_category_image" width="405" height="430"/>
+        <image name="Logo" width="1024" height="1024"/>
         <namedColor name="slBlack">
             <color red="0.054901960784313725" green="0.062745098039215685" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
