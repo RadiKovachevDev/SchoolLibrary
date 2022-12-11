@@ -278,7 +278,6 @@
 		19B0FAAE29325EC900729905 /* SchoolLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				19B0FABD29325ECC00729905 /* Info.plist */,
 				19B0FAE52938F14700729905 /* App */,
 				19B0FAE42938F12B00729905 /* Extensions */,
 				19ABC78F29464E0500BAC39F /* Managers */,
@@ -357,6 +356,7 @@
 		19B0FAE52938F14700729905 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				19B0FABD29325ECC00729905 /* Info.plist */,
 				19B0FAB829325ECC00729905 /* Assets.xcassets */,
 				19D723AF2940D61500F2E542 /* Colors.xcassets */,
 				19B0FAB129325EC900729905 /* SceneDelegate.swift */,
@@ -732,7 +732,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P6Y2W9RQ54;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SchoolLibrary/Info.plist;
+				INFOPLIST_FILE = SchoolLibrary/App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -761,7 +761,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P6Y2W9RQ54;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SchoolLibrary/Info.plist;
+				INFOPLIST_FILE = SchoolLibrary/App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
