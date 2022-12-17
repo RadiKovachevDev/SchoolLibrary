@@ -239,7 +239,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="G84-Ym-2uK">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="slWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookDetailsImageTableViewCell" id="TRO-mN-qpR" customClass="BookDetailsImageTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="254"/>
@@ -262,6 +262,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="Qii-qw-3mA" secondAttribute="bottom" constant="16" id="urR-Vg-kU0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="slWhite"/>
                                         <connections>
                                             <outlet property="bookImageView" destination="Qii-qw-3mA" id="xSa-eh-9m0"/>
                                         </connections>
@@ -287,15 +288,16 @@
                                                 <constraint firstAttribute="trailing" secondItem="O4L-PM-y8a" secondAttribute="trailing" constant="16" id="aR5-pi-bWi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="slWhite"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="O4L-PM-y8a" id="amJ-vI-vey"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookDetailsProvidedByTableViewCell" id="c9d-Fb-PAO" customClass="BookDetailsProvidedByTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="322.33333396911621" width="393" height="210"/>
+                                        <rect key="frame" x="0.0" y="322.33333396911621" width="393" height="285"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c9d-Fb-PAO" id="MMZ-Dx-ta4">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="285"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provided by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guI-YG-Tmx">
@@ -316,56 +318,91 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw2-4a-41P">
-                                                    <rect key="frame" x="16" y="82" width="361" height="48"/>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="48" id="egq-7g-98f"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="Send mail">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="sendMailButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="4is-hQ-Qyg"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-G4-f7Q">
-                                                    <rect key="frame" x="16" y="146" width="361" height="48"/>
-                                                    <color key="backgroundColor" systemColor="linkColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="48" id="aXP-7Q-1G0"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Call">
-                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="callButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="4MP-ld-3k7"/>
-                                                    </connections>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="P2R-8N-8fJ">
+                                                    <rect key="frame" x="20" y="82" width="353" height="176"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw2-4a-41P" userLabel="Send Mail Button">
+                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="48"/>
+                                                            <color key="backgroundColor" name="slGreenBase"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="egq-7g-98f"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="Send mail">
+                                                                <color key="titleColor" name="slKindaWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="sendMailButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="xJ9-Bi-X68"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-G4-f7Q" userLabel="Call Button">
+                                                            <rect key="frame" x="0.0" y="64" width="353" height="48"/>
+                                                            <color key="backgroundColor" systemColor="linkColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="aXP-7Q-1G0"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="Call">
+                                                                <color key="titleColor" name="slKindaWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="CallButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="r0m-bt-HQG"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-cp-vet" userLabel="Generate QR Code Button">
+                                                            <rect key="frame" x="0.0" y="128" width="353" height="48"/>
+                                                            <color key="backgroundColor" name="slGreenBase"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="uDk-Q2-7ZD"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="Generate QR code">
+                                                                <color key="titleColor" name="slKindaWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="generateQRCodeButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="qRC-HM-iVV"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tzK-Cb-9Ij" firstAttribute="top" secondItem="guI-YG-Tmx" secondAttribute="bottom" constant="4" id="55y-a5-on3"/>
-                                                <constraint firstAttribute="trailing" secondItem="vw2-4a-41P" secondAttribute="trailing" constant="16" id="CLf-zK-WnY"/>
-                                                <constraint firstAttribute="bottom" secondItem="fw2-G4-f7Q" secondAttribute="bottom" constant="16" id="IW4-gM-EeP"/>
+                                                <constraint firstItem="P2R-8N-8fJ" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leadingMargin" id="E1Y-wb-Xtr"/>
                                                 <constraint firstItem="tzK-Cb-9Ij" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leading" constant="16" id="Ii7-Mx-prK"/>
-                                                <constraint firstItem="vw2-4a-41P" firstAttribute="top" secondItem="tzK-Cb-9Ij" secondAttribute="bottom" constant="16" id="Iif-Y5-kGz"/>
                                                 <constraint firstItem="guI-YG-Tmx" firstAttribute="top" secondItem="MMZ-Dx-ta4" secondAttribute="top" constant="16" id="Kn5-G4-Pfq"/>
-                                                <constraint firstItem="fw2-G4-f7Q" firstAttribute="top" secondItem="vw2-4a-41P" secondAttribute="bottom" constant="16" id="N4v-nV-Cwv"/>
-                                                <constraint firstItem="vw2-4a-41P" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leading" constant="16" id="PBT-OC-b1Q"/>
-                                                <constraint firstAttribute="trailing" secondItem="fw2-G4-f7Q" secondAttribute="trailing" constant="16" id="cfM-gu-N9O"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="P2R-8N-8fJ" secondAttribute="bottom" constant="16" id="M55-SK-Svs"/>
+                                                <constraint firstItem="P2R-8N-8fJ" firstAttribute="top" secondItem="tzK-Cb-9Ij" secondAttribute="bottom" constant="16" id="Yp7-xv-Mga"/>
                                                 <constraint firstAttribute="trailing" secondItem="tzK-Cb-9Ij" secondAttribute="trailing" constant="16" id="nmt-pY-ehF"/>
                                                 <constraint firstItem="guI-YG-Tmx" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leading" constant="16" id="p1C-CR-NqV"/>
                                                 <constraint firstAttribute="trailing" secondItem="guI-YG-Tmx" secondAttribute="trailing" constant="16" id="qn3-Rs-ak3"/>
-                                                <constraint firstItem="fw2-G4-f7Q" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leading" constant="16" id="sQF-CP-0TE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="P2R-8N-8fJ" secondAttribute="trailing" id="uVB-7G-IZP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="slWhite"/>
                                         <connections>
-                                            <outlet property="callButton" destination="fw2-G4-f7Q" id="DcT-e0-euN"/>
+                                            <outlet property="generateQRCode" destination="RDF-cp-vet" id="6Pi-xH-PRK"/>
+                                            <outlet property="primaryButton" destination="fw2-G4-f7Q" id="DcT-e0-euN"/>
                                             <outlet property="providedByLabel" destination="guI-YG-Tmx" id="UhW-f5-mK1"/>
-                                            <outlet property="sendMailButton" destination="vw2-4a-41P" id="C2a-og-VFI"/>
+                                            <outlet property="secondaryButton" destination="vw2-4a-41P" id="C2a-og-VFI"/>
                                             <outlet property="userNameLabel" destination="tzK-Cb-9Ij" id="DwB-UM-HCJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -377,7 +414,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LcU-mQ-PYF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="slWhite"/>
                         <constraints>
                             <constraint firstItem="G84-Ym-2uK" firstAttribute="top" secondItem="LcU-mQ-PYF" secondAttribute="top" id="1jf-Fr-l2Q"/>
                             <constraint firstItem="G84-Ym-2uK" firstAttribute="leading" secondItem="LcU-mQ-PYF" secondAttribute="leading" id="70e-Fi-0W9"/>
@@ -388,12 +425,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v98-nj-t4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="-2"/>
+            <point key="canvasLocation" x="838.93129770992368" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
         <image name="defoult_category_image" width="405" height="430"/>
+        <namedColor name="slGreenBase">
+            <color red="0.0" green="0.65490196078431373" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="slGrey">
             <color red="0.43529411764705883" green="0.45490196078431372" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -411,12 +451,6 @@
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

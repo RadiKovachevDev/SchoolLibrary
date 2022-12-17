@@ -8,14 +8,16 @@
 import UIKit
 
 class BookDetailsProvidedByTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var providedByLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var sendMailButton: UIButton!
-    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var secondaryButton: UIButton!
+    @IBOutlet weak var primaryButton: UIButton!
+    @IBOutlet weak var generateQRCode: UIButton!
     
     var phoneNumber: String?
     var mail: String?
+    var screenType: BookScreenType = .standartScreen
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,11 +34,21 @@ class BookDetailsProvidedByTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func callButtonTapped(_ sender: UIButton) {
-        if let phoneNumber = self.phoneNumber,
-           let url = URL(string: "tel://\(phoneNumber)") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        @IBAction func CallButtonTapped(_ sender: UIButton) {
+            if let mail = self.mail,
+               let url = URL(string:  "mailto:\(mail)") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    
+    @IBAction func generateQRCodeButtonTapped(_ sender: UIButton) {
+        switch screenType.self {
+        case .fromProvided:
+            print("Generate QR code for provided")
+        case .fromTaken:
+            print("Generate QR code for taken")
+        default:
+            break
         }
     }
-    
 }
