@@ -52,6 +52,27 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                     providedByCell.generateQRCode.isHidden = false
                 }
                 
+                providedByCell.generateQRClicked = {[weak self] in
+                    switch self?.screenType {
+                    case .fromProvided:
+                        if let qrUIImage = QRGenerator.generateQRCode(from: "Generate QR code for provided"),
+                           let qrViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController {
+                            qrViewController.operationDescription = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                            qrViewController.generatedQRUIImage = qrUIImage
+                            self?.present(qrViewController, animated: true, completion: nil)
+                        }
+                    case .fromTaken:
+                        if let qrUIImage = QRGenerator.generateQRCode(from: "Generate QR code for taken"),
+                           let qrViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController {
+                            qrViewController.operationDescription = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                            qrViewController.generatedQRUIImage = qrUIImage
+                            self?.present(qrViewController, animated: true, completion: nil)
+                        }
+                    default:
+                        break
+                    }
+                }
+                
                 return providedByCell
             }
         default:

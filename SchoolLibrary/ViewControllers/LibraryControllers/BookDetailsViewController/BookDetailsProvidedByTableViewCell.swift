@@ -15,6 +15,8 @@ class BookDetailsProvidedByTableViewCell: UITableViewCell {
     @IBOutlet weak var primaryButton: UIButton!
     @IBOutlet weak var generateQRCode: UIButton!
     
+    var generateQRClicked: Event?
+    
     var phoneNumber: String?
     var mail: String?
     var screenType: BookScreenType = .standartScreen
@@ -42,13 +44,6 @@ class BookDetailsProvidedByTableViewCell: UITableViewCell {
         }
     
     @IBAction func generateQRCodeButtonTapped(_ sender: UIButton) {
-        switch screenType.self {
-        case .fromProvided:
-            print("Generate QR code for provided")
-        case .fromTaken:
-            print("Generate QR code for taken")
-        default:
-            break
-        }
+        generateQRClicked?()
     }
 }

@@ -7,6 +7,9 @@
 
 import UIKit
 
+typealias Event = () -> Void
+typealias StringEvent = (String) -> Void
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
