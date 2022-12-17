@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import JGProgressHUD
 
 class MyBooksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +23,7 @@ class MyBooksViewController: UIViewController {
     }
     
     func setupScreen() {
+        self.actionButton.setTitle("Scan book QR", for: .normal)
         switch screenType {
         case .taken:
             myBooks = FakeDB.books.filter({$0.takenOfUserID == "idkng"})
@@ -34,10 +37,9 @@ class MyBooksViewController: UIViewController {
         switch myBooksSegment.selectedSegmentIndex {
         case 1:
             self.screenType = .provided
-            self.actionButton.setTitle("Add new book to provide", for: .normal)
         default:
             self.screenType = .taken
-            self.actionButton.setTitle("Scan book QR", for: .normal)
+            
         }
         setupScreen()
     }
@@ -45,10 +47,57 @@ class MyBooksViewController: UIViewController {
     @IBAction func actionButtonTaped(_ sender: UIButton) {
         switch screenType {
         case .taken:
-            print("Scaned QR code")
+            openQRScanner()
         case .provided:
-            print("Added new book")
+            openQRScanner()
         }
+    }
+    
+    func openQRScanner(){
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+                    
+                case .notDetermined:
+                    AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                        DispatchQueue.main.async {
+                            if response {
+                                if let qRScannerViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRScannerViewController") as? QRScannerViewController{
+                                    qRScannerViewController.returnQRCode = { [weak self] qrCode in
+                                        self?.showMessage(message: qrCode, delay: 3.0, onDismiss: nil)
+                                    }
+                                    self.present(qRScannerViewController, animated: true)
+                                }
+                                
+                            } else {
+                                var actions: [(String, UIAlertAction.Style)] = []
+                                actions.append(("Ok", .cancel))
+                                Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → SchoolLibrary app → Camera toggle", actions: actions, completion: {index in
+                                    switch index {
+                                    default:
+                                        break
+                                    }
+                                })
+                            }
+                        }
+                    }
+                case .restricted, .denied:
+                    var actions: [(String, UIAlertAction.Style)] = []
+                    actions.append(("Ok", .cancel))
+                    Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → ChangeX app → Camera toggle", actions: actions, completion: {index in
+                        switch index {
+                        default:
+                            break
+                        }
+                    })
+                case .authorized:
+                    if let qRScannerViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRScannerViewController") as? QRScannerViewController{
+                        qRScannerViewController.returnQRCode = { [weak self] qrCode in
+                            self?.showMessage(message: qrCode, delay: 3.0, onDismiss: nil)
+                        }
+                        self.present(qRScannerViewController, animated: true)
+                    }
+                @unknown default:
+                    print("default")
+                }
     }
 }
 
