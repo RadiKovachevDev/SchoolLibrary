@@ -10,7 +10,7 @@ import UIKit
 class BookDetailsViewController: UIViewController {
 
     var book: Book?
-    
+    var screenType: BookScreenType = .standartScreen
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,9 +34,24 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             }
         case 5:
             if let providedByCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsProvidedByTableViewCell", for: indexPath) as? BookDetailsProvidedByTableViewCell {
+                providedByCell.userNameLabel.text = "\(providedUser.firstName) \(providedUser.lastName)"
+                providedByCell.screenType = screenType
+                providedByCell.primaryButton.setTitle("Call", for: .normal)
+                providedByCell.secondaryButton.setTitle("Send mail", for: .normal)
                 providedByCell.phoneNumber = providedUser.phoneNumber
                 providedByCell.mail = providedUser.email
-                providedByCell.userNameLabel.text = "\(providedUser.firstName) \(providedUser.lastName)"
+                providedByCell.generateQRCode.isHidden = true
+                switch self.screenType {
+                case .standartScreen:
+                    providedByCell.generateQRCode.isHidden = true
+                case .fromProvided:
+                    providedByCell.generateQRCode.setTitle("QR provided book", for: .normal)
+                    providedByCell.generateQRCode.isHidden = false
+                case .fromTaken:
+                    providedByCell.generateQRCode.setTitle("QR return book", for: .normal)
+                    providedByCell.generateQRCode.isHidden = false
+                }
+                
                 return providedByCell
             }
         default:

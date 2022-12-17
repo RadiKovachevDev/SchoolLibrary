@@ -24,3 +24,9 @@ enum MyBooksScreenType {
     case taken
     case provided
 }
+
+enum BookScreenType {
+    case standartScreen
+    case fromProvided
+    case fromTaken
+}

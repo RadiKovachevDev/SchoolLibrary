@@ -72,6 +72,7 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
+            bookDetailsViewController.screenType = .standartScreen
             bookDetailsViewController.book = self.filteredBooks[indexPath.row]
             self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
         }

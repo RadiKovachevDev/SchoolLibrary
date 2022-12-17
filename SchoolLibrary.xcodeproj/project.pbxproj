@@ -284,7 +284,6 @@
 				19B0FAE22938F11400729905 /* Models */,
 				19ABC79029464E1400BAC39F /* Views */,
 				19B0FAE12938F0FF00729905 /* ViewControllers */,
-				19B0FADF2938EF3400729905 /* Storyboards */,
 			);
 			path = SchoolLibrary;
 			sourceTree = "<group>";
@@ -369,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				19B0FAE72938F1E700729905 /* InitialViewController.swift */,
+				19B0FADF2938EF3400729905 /* Storyboards */,
 			);
 			path = InitialController;
 			sourceTree = "<group>";
