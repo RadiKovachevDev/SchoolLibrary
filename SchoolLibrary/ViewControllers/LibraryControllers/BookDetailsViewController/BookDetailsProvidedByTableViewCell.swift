@@ -36,12 +36,13 @@ class BookDetailsProvidedByTableViewCell: UITableViewCell {
         }
     }
     
-        @IBAction func CallButtonTapped(_ sender: UIButton) {
-            if let mail = self.mail,
-               let url = URL(string:  "mailto:\(mail)") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+    @IBAction func CallButtonTapped(_ sender: UIButton) {
+        if let phoneNumber = self.phoneNumber,
+           let url = URL(string: "tel://\(phoneNumber)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            
         }
+    }
     
     @IBAction func generateQRCodeButtonTapped(_ sender: UIButton) {
         generateQRClicked?()
