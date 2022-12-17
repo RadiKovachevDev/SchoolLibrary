@@ -198,8 +198,74 @@
             </objects>
             <point key="canvasLocation" x="54" y="-2"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="qe3-FK-esK">
+            <objects>
+                <viewController storyboardIdentifier="QRViewController" id="MK3-ay-BuJ" customClass="QRViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dCa-51-8U3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="YlL-AL-MfC">
+                                <rect key="frame" x="136.66666666666666" y="105" width="119.99999999999997" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Cl1-f4-rga"/>
+                                    <constraint firstAttribute="height" constant="120" id="eE0-Qx-4in"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vcu-wx-hh8">
+                                <rect key="frame" x="76.666666666666686" y="276.33333333333331" width="240" height="239.99999999999994"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="F40-rw-Zhe"/>
+                                    <constraint firstAttribute="height" constant="240" id="G0t-3O-MS2"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaR-KP-Ip5">
+                                <rect key="frame" x="164.66666666666666" y="85" width="64" height="4"/>
+                                <color key="backgroundColor" name="slKindaBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="8HQ-YJ-vSw"/>
+                                    <constraint firstAttribute="width" constant="64" id="hI7-YV-q8Z"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52f-o0-oD5">
+                                <rect key="frame" x="16" y="241" width="361" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="slKindaBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F71-gH-MHT"/>
+                        <color key="backgroundColor" name="slWhite"/>
+                        <constraints>
+                            <constraint firstItem="vcu-wx-hh8" firstAttribute="centerX" secondItem="dCa-51-8U3" secondAttribute="centerX" id="4De-OR-6QW"/>
+                            <constraint firstItem="F71-gH-MHT" firstAttribute="trailing" secondItem="52f-o0-oD5" secondAttribute="trailing" constant="16" id="KQP-CC-yo8"/>
+                            <constraint firstItem="52f-o0-oD5" firstAttribute="leading" secondItem="F71-gH-MHT" secondAttribute="leading" constant="16" id="Kf1-cc-Bmg"/>
+                            <constraint firstItem="LaR-KP-Ip5" firstAttribute="centerX" secondItem="dCa-51-8U3" secondAttribute="centerX" id="ZQf-nM-TMz"/>
+                            <constraint firstItem="vcu-wx-hh8" firstAttribute="top" secondItem="52f-o0-oD5" secondAttribute="bottom" constant="16" id="fOp-bd-8Er"/>
+                            <constraint firstItem="52f-o0-oD5" firstAttribute="top" secondItem="YlL-AL-MfC" secondAttribute="bottom" constant="16" id="i8x-p3-rln"/>
+                            <constraint firstItem="YlL-AL-MfC" firstAttribute="centerX" secondItem="dCa-51-8U3" secondAttribute="centerX" id="n8e-er-rFk"/>
+                            <constraint firstItem="LaR-KP-Ip5" firstAttribute="top" secondItem="F71-gH-MHT" secondAttribute="top" constant="26" id="p8T-2A-X1O"/>
+                            <constraint firstItem="YlL-AL-MfC" firstAttribute="top" secondItem="LaR-KP-Ip5" secondAttribute="bottom" constant="16" id="vqS-hg-Hli"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="52f-o0-oD5" id="L91-AT-VYv"/>
+                        <outlet property="qrImageview" destination="vcu-wx-hh8" id="gF1-40-ZVD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfu-ku-3E0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907.63358778625945" y="-2.1126760563380285"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="1024" height="1024"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="defoult_category_image" width="405" height="430"/>
         <namedColor name="slBlack">
