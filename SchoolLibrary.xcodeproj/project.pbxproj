@@ -17,6 +17,7 @@
 		198B6138294E043F0083532A /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 198B6137294E043F0083532A /* JGProgressHUD */; };
 		198B613A294E04A00083532A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B6139294E04A00083532A /* UIViewController.swift */; };
 		198B613E294E0C320083532A /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B613D294E0C320083532A /* Alerts.swift */; };
+		198B6142294E1EAC0083532A /* CreateBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B6141294E1EAC0083532A /* CreateBookViewController.swift */; };
 		19ABC77629448DF000BAC39F /* UITextFieald.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC77529448DF000BAC39F /* UITextFieald.swift */; };
 		19ABC778294496F600BAC39F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC777294496F600BAC39F /* CategoryCollectionViewCell.swift */; };
 		19ABC77C2944D1CD00BAC39F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC77B2944D1CD00BAC39F /* Book.swift */; };
@@ -79,6 +80,7 @@
 		198B6134294E01AD0083532A /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		198B6139294E04A00083532A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		198B613D294E0C320083532A /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		198B6141294E1EAC0083532A /* CreateBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookViewController.swift; sourceTree = "<group>"; };
 		19ABC77529448DF000BAC39F /* UITextFieald.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieald.swift; sourceTree = "<group>"; };
 		19ABC777294496F600BAC39F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		19ABC77B2944D1CD00BAC39F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -232,6 +234,14 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		198B613F294E1E530083532A /* CreateBookViewController */ = {
+			isa = PBXGroup;
+			children = (
+				198B6141294E1EAC0083532A /* CreateBookViewController.swift */,
+			);
+			path = CreateBookViewController;
+			sourceTree = "<group>";
+		};
 		19ABC7792944D18400BAC39F /* FakeDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +371,7 @@
 		19B0FAE12938F0FF00729905 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				198B613F294E1E530083532A /* CreateBookViewController */,
 				198B6132294E01630083532A /* QRScanner */,
 				19ABC7822944DC2F00BAC39F /* Cells */,
 				1983931D2938FDED00040C6C /* SettingsControllers */,
@@ -604,6 +615,7 @@
 				19D723A8293BF3D300F2E542 /* BookDetailsViewController.swift in Sources */,
 				19B0FAE82938F1E700729905 /* InitialViewController.swift in Sources */,
 				19C76DF7293BB9FA0000B698 /* LoginViewController.swift in Sources */,
+				198B6142294E1EAC0083532A /* CreateBookViewController.swift in Sources */,
 				19ABC778294496F600BAC39F /* CategoryCollectionViewCell.swift in Sources */,
 				198B613A294E04A00083532A /* UIViewController.swift in Sources */,
 				198393292939000C00040C6C /* SettingsViewController.swift in Sources */,

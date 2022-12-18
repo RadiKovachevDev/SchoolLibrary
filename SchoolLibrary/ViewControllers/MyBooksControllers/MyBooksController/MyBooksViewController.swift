@@ -53,6 +53,12 @@ class MyBooksViewController: UIViewController {
         }
     }
     
+    @IBAction func addBookButtonTapped(_ sender: UIBarButtonItem) {
+        if let createBookViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "CreateBookViewController") as? CreateBookViewController {
+            self.navigationController?.pushViewController(createBookViewController, animated: true)
+        }
+    }
+    
     func openQRScanner(){
         switch AVCaptureDevice.authorizationStatus(for: .video) {
                     

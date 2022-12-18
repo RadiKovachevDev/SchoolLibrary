@@ -18,6 +18,21 @@ enum Category: String {
     case music = "Music"
     case novels = "Novels"
     case fantasy = "Fantasy"
+    
+    static func allCategories() -> [Category] {
+        return [
+            .all,
+            .mathematics,
+            .biology,
+            .physics,
+            .english,
+            .french,
+            .programing,
+            .music,
+            .novels,
+            .fantasy
+        ]
+    }
 }
 
 enum MyBooksScreenType {
