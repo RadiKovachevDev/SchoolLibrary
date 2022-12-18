@@ -174,19 +174,4 @@ final class FakeDB {
             User(uid: "idrsk", email: "ralitzarouseva@abv.bg", firstName: "Ralitza", lastName: "Kovacheva", phoneNumber: "0893925556")
         ]
     }
-    
-    static var categories: [Category] {
-        return [
-            .all,
-            .fantasy,
-            .novels,
-            .music,
-            .programing,
-            .french,
-            .english,
-            .physics,
-            .biology,
-            .mathematics
-        ]
-    }
 }

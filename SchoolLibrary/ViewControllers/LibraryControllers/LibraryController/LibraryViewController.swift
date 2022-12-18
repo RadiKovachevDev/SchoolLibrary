@@ -18,7 +18,7 @@ class LibraryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.categories = FakeDB.categories
+        self.categories = Category.allCategories()
         self.books = FakeDB.books
         filteredBooksByCategory()
     }
