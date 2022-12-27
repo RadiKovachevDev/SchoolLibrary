@@ -18,7 +18,7 @@ class DeleteAccountTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    @IBAction func deleteAccountButtonTapped(_ sender: UIButton) {
+    @IBAction func deleteAccountButtonTapped(_ sender: UIButton) {        
     }
     
 }

@@ -122,4 +122,27 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            switch indexPath.row {
+            case 1:
+                logOut()
+            default:
+                break
+            }
+        default:
+            break
+        }
+    }
+    
+    func logOut() {
+        UserData.userID = nil
+        if let loginViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController,
+           let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            sceneDelegate.setRootViewController(loginViewController)
+            
+        }
+    }
 }

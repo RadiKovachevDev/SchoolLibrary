@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 typealias Event = () -> Void
 typealias StringEvent = (String) -> Void
@@ -17,7 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupFirebase()
         return true
+    }
+    
+    func setupFirebase() {
+        FirebaseApp.configure()
     }
 
     // MARK: UISceneSession Lifecycle
