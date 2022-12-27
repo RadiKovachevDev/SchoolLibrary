@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDZ-O9-1HE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,7 +55,7 @@
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>
@@ -90,7 +89,7 @@
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>
@@ -125,31 +124,11 @@
                         <outlet property="emailTextField" destination="HIj-ag-rxi" id="4LZ-aV-fas"/>
                         <outlet property="passwordTextField" destination="09k-bI-sFL" id="BQv-aT-tLF"/>
                         <outlet property="phoneNumberTextField" destination="HL3-Ld-dzz" id="tad-aQ-K7V"/>
-                        <segue destination="f0l-AH-TZk" kind="presentation" identifier="registerToAppSegue" id="UyW-7i-mk6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wco-Hh-ELx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1073" y="277"/>
-        </scene>
-        <!--Initial View Controller-->
-        <scene sceneID="0lG-Gy-7v1">
-            <objects>
-                <viewController storyboardIdentifier="InitialViewController" id="IDZ-O9-1HE" customClass="InitialViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hOt-4z-q6U">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="H8s-MS-XFA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <segue destination="cni-jN-3dK" kind="presentation" identifier="toLoginSegue" modalPresentationStyle="fullScreen" id="CWl-zs-Qvc"/>
-                        <segue destination="f0l-AH-TZk" kind="show" identifier="toAppSegue" id="8MF-hK-kkb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KjB-EJ-MQm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3613" y="-448"/>
+            <point key="canvasLocation" x="-1089" y="-452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kdD-Xk-R1G">
@@ -165,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pr-Mf-Gly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2845" y="277"/>
+            <point key="canvasLocation" x="-2807" y="-452"/>
         </scene>
         <!--Login-->
         <scene sceneID="WHN-Jt-IDA">
@@ -238,7 +217,7 @@
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>
@@ -273,17 +252,16 @@
                         <outlet property="loginButton" destination="AYB-vG-EhG" id="m2c-WD-e1U"/>
                         <outlet property="passwordTextField" destination="z3a-6r-85n" id="cDs-5E-wo8"/>
                         <outlet property="registerButton" destination="ZdU-hb-dYN" id="hV8-U3-4ba"/>
-                        <segue destination="f0l-AH-TZk" kind="presentation" identifier="loginToAppSegue" id="wSj-ep-Pcr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADC-8V-nMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1943" y="277"/>
+            <point key="canvasLocation" x="-1950" y="-452"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="v4b-Oq-Gxb">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="f0l-AH-TZk" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" modalPresentationStyle="fullScreen" id="f0l-AH-TZk" customClass="MainTabBarViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="HLh-ry-yfI"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hRc-Ud-GPu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -331,9 +309,6 @@
             <point key="canvasLocation" x="369" y="-238"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="wSj-ep-Pcr"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="1024" height="1024"/>
         <namedColor name="slBlack">
@@ -354,8 +329,5 @@
         <namedColor name="slWhite">
             <color red="0.96470588235294119" green="0.97254901960784312" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

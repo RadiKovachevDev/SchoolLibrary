@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
 
@@ -29,6 +31,22 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "registerToAppSegue", sender: nil)
+        guard let email = self.emailTextField.text,
+              let password = self.passwordTextField.text else {
+            self.showError(error: "Incorect email or password", delay: 3.0, onDismiss: nil)
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password, completion: { authResult , error in
+            if error == nil {
+                UserData.userID = authResult?.user.uid
+                if let mainTabBarViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController,
+                   let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                    sceneDelegate.setRootViewController(mainTabBarViewController)
+                }
+            } else {
+                self.showError(error: error?.localizedDescription)
+            }
+        })
     }
 }
