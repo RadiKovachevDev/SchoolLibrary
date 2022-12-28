@@ -165,13 +165,13 @@ final class FakeDB {
     
     static var users: [User] {
         return [
-            User(uid: "idrnk", email: "radi.kovachevnew@gamil.com", firstName: "Radi", lastName: "Kovachev", phoneNumber: "0896005797"),
+            User(uid: "idrnk", email: "radi.kovachevnew@gamil.com", password: "", firstName: "Radi", lastName: "Kovachev", phoneNumber: "0896005797"),
             
-            User(uid: "idnk", email: "nikol.kovacheva@abv.bg", firstName: "Nikol", lastName: "Kovacheva", phoneNumber: "0895759373"),
+            User(uid: "idnk", email: "nikol.kovacheva@abv.bg", password: "", firstName: "Nikol", lastName: "Kovacheva", phoneNumber: "0895759373"),
             
-            User(uid: "idkng", email: "goodprice@abv.bg", firstName: "Nikolay", lastName: "Kovachev", phoneNumber: "0893925555"),
+            User(uid: "idkng", email: "goodprice@abv.bg", password: "", firstName: "Nikolay", lastName: "Kovachev", phoneNumber: "0893925555"),
             
-            User(uid: "idrsk", email: "ralitzarouseva@abv.bg", firstName: "Ralitza", lastName: "Kovacheva", phoneNumber: "0893925556")
+            User(uid: "idrsk", email: "ralitzarouseva@abv.bg", password: "", firstName: "Ralitza", lastName: "Kovacheva", phoneNumber: "0893925556")
         ]
     }
 }

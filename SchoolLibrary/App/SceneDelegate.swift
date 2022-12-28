@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         self.currentScene = scene
-        if UserData.userID == nil {
+        if UserData.user?.uid == nil {
             if let loginViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                 setRootViewController(loginViewController)
             }

@@ -8,34 +8,28 @@
 import Foundation
 
 final class UserData {
-    
-    static var email: String? {
+    static var user: User? {
         get {
-            return UserDefaults.standard.string(forKey: "email")
+            if let data = UserDefaults.standard.data(forKey: "user") {
+                do {
+                    let decoder = JSONDecoder()
+                    let user = try decoder.decode(User.self, from: data)
+                    return user
+                } catch {
+                    print("Unable to Decode Note (\(error))")
+                }
+            }
+            return nil
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: "email")
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    static var password: String? {
-        get {
-            return UserDefaults.standard.string(forKey: "password")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "password")
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    static var userID: String? {
-        get {
-            return UserDefaults.standard.string(forKey: "userID")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "userID")
-            UserDefaults.standard.synchronize()
+            do {
+                let encoder = JSONEncoder()
+                let data = try encoder.encode(newValue)
+                UserDefaults.standard.set(data, forKey: "user")
+                UserDefaults.standard.synchronize()
+            } catch {
+                print("Unable to Encode Note (\(error))")
+            }
         }
     }
 }
