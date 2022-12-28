@@ -14,6 +14,7 @@
 		198161EE295B0EEE00C8A706 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 198161ED295B0EEE00C8A706 /* FirebaseStorage */; };
 		198161F0295B159600C8A706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198161EF295B159500C8A706 /* GoogleService-Info.plist */; };
 		198161F5295B29CD00C8A706 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198161F4295B29CD00C8A706 /* MainTabBarViewController.swift */; };
+		1982CBA7295CDF9200BE0E60 /* initialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1982CBA6295CDF9200BE0E60 /* initialViewController.swift */; };
 		198393202938FE6100040C6C /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983931F2938FE6100040C6C /* LibraryViewController.swift */; };
 		198393262938FF5700040C6C /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198393252938FF5700040C6C /* MyBooksViewController.swift */; };
 		198393292939000C00040C6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198393282939000C00040C6C /* SettingsViewController.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		198161EF295B159500C8A706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		198161F4295B29CD00C8A706 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		1982CBA6295CDF9200BE0E60 /* initialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialViewController.swift; sourceTree = "<group>"; };
 		1983931F2938FE6100040C6C /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		198393252938FF5700040C6C /* MyBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		198393282939000C00040C6C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				19C76DF6293BB9FA0000B698 /* LoginViewController.swift */,
 				19C76DF8293BBA100000B698 /* RegisterViewController.swift */,
+				1982CBA6295CDF9200BE0E60 /* initialViewController.swift */,
 			);
 			path = LoginRegister;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				198393262938FF5700040C6C /* MyBooksViewController.swift in Sources */,
 				19C76DF5293BB16A0000B698 /* UserData.swift in Sources */,
 				19B0FAB029325EC900729905 /* AppDelegate.swift in Sources */,
+				1982CBA7295CDF9200BE0E60 /* initialViewController.swift in Sources */,
 				19B0FAB229325EC900729905 /* SceneDelegate.swift in Sources */,
 				198B6131294DFD490083532A /* CIImage.swift in Sources */,
 				198B613E294E0C320083532A /* Alerts.swift in Sources */,

@@ -245,11 +245,23 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJl-hR-H7L">
                                                 <rect key="frame" x="16" y="780" width="361" height="48"/>
+                                                <color key="backgroundColor" name="slOrangeLight"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="NX7-9F-P6R"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Create book">
+                                                    <color key="titleColor" name="slBlack"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="createBookButtonTapped:" destination="mw9-9I-edz" eventType="touchUpInside" id="lrC-zK-Pda"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRP-5x-7vW">
                                                 <rect key="frame" x="16" y="636" width="361" height="16"/>
@@ -296,6 +308,9 @@
                                                         <real key="value" value="16"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="showPicker:" destination="mw9-9I-edz" eventType="editingDidBegin" id="xsO-1D-EXj"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evD-Ut-Qwb">
                                                 <rect key="frame" x="16" y="710" width="361" height="18"/>
@@ -435,6 +450,21 @@
                             <constraint firstItem="zvz-LG-ZNW" firstAttribute="top" secondItem="NBT-BF-SyS" secondAttribute="top" id="sV9-Sk-c1V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bookAuthorLabel" destination="WeR-I9-e4i" id="fkY-I5-vCG"/>
+                        <outlet property="bookAuthorTextField" destination="P5j-3l-f2e" id="gz7-mg-PJQ"/>
+                        <outlet property="bookNameLabel" destination="eoN-nk-s8A" id="Q4t-V6-YBw"/>
+                        <outlet property="bookNameTextField" destination="S9E-JD-LzN" id="dWv-Rk-1fr"/>
+                        <outlet property="categoryLabel" destination="evD-Ut-Qwb" id="L3V-EN-Kf6"/>
+                        <outlet property="categoryTextField" destination="RwK-pF-T2d" id="hTm-f7-W9x"/>
+                        <outlet property="createBookButton" destination="hJl-hR-H7L" id="3ut-Tu-lLp"/>
+                        <outlet property="longDiscriptionLabel" destination="Uap-Kc-1EZ" id="w7l-7u-YcG"/>
+                        <outlet property="longDiscriptionTextView" destination="lBc-RG-6bl" id="KfI-nG-1Vt"/>
+                        <outlet property="publisherLabel" destination="lRP-5x-7vW" id="8Jn-rk-WoF"/>
+                        <outlet property="publisherTextField" destination="EjK-NP-EaM" id="dQO-nC-XeP"/>
+                        <outlet property="shortDiscriptionLabel" destination="Vk7-u6-viS" id="WS5-GA-Cho"/>
+                        <outlet property="shortDiscriptionTextView" destination="hb7-rS-mdY" id="uCb-AO-WWg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pb8-CA-uY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -539,6 +569,9 @@
         </namedColor>
         <namedColor name="slOrangeBase">
             <color red="0.80000000000000004" green="0.5607843137254902" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="slOrangeLight">
+            <color red="0.89803921568627454" green="0.72156862745098038" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="slWhite">
             <color red="0.96470588235294119" green="0.97254901960784312" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

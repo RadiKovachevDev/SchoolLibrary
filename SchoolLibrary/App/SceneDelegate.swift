@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         self.currentScene = scene
         if UserData.user?.uid == nil {
-            if let loginViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-                setRootViewController(loginViewController)
+            if let initialViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "InitialViewController") as? InitialViewController {
+                setRootViewController(initialViewController)
             }
         } else {
             if let mainTabBarViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController {
