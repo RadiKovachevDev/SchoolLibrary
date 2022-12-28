@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09k-bI-sFL">
-                                <rect key="frame" x="16" y="191" width="361" height="48"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-BC-tO6">
+                                <rect key="frame" x="16" y="343" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="54M-24-qOX"/>
+                                    <constraint firstAttribute="height" constant="48" id="J4q-F8-X1y"/>
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -32,26 +32,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-BC-tO6">
-                                <rect key="frame" x="16" y="247" width="361" height="48"/>
-                                <color key="backgroundColor" name="slKindaWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Ahu-0K-05J"/>
-                                </constraints>
-                                <color key="textColor" name="slKindaBlack"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HL3-Ld-dzz">
-                                <rect key="frame" x="16" y="303" width="361" height="48"/>
+                                <rect key="frame" x="16" y="399" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="ul6-IQ-xea"/>
+                                    <constraint firstAttribute="height" constant="48" id="c8U-lE-ywy"/>
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -82,10 +67,10 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIj-ag-rxi">
-                                <rect key="frame" x="16" y="135" width="361" height="48"/>
+                                <rect key="frame" x="16" y="119" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="7te-H4-ID5"/>
+                                    <constraint firstAttribute="height" constant="48" id="KFi-04-p8e"/>
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -96,25 +81,76 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xN-AO-CzH">
+                                <rect key="frame" x="16" y="175" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="aZU-9V-OeB"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaBlack"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daM-Qp-hjf">
+                                <rect key="frame" x="16" y="231" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="eBx-pN-hgZ"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaBlack"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09k-bI-sFL">
+                                <rect key="frame" x="16" y="287" width="361" height="48"/>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ZMM-FD-0Xo"/>
+                                </constraints>
+                                <color key="textColor" name="slKindaBlack"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PoG-bk-9wc"/>
                         <color key="backgroundColor" name="slWhite"/>
                         <constraints>
-                            <constraint firstItem="09k-bI-sFL" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="60a-FR-Rs2"/>
-                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="9aq-BC-tO6" secondAttribute="trailing" constant="16" id="Abv-L3-s24"/>
-                            <constraint firstItem="09k-bI-sFL" firstAttribute="top" secondItem="HIj-ag-rxi" secondAttribute="bottom" constant="8" id="HyP-9U-jCB"/>
+                            <constraint firstItem="HIj-ag-rxi" firstAttribute="top" secondItem="PoG-bk-9wc" secondAttribute="top" constant="16" id="3zJ-GQ-31P"/>
+                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="9aq-BC-tO6" secondAttribute="trailing" constant="16" id="5Q9-gy-t6d"/>
+                            <constraint firstItem="HIj-ag-rxi" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="7vv-xv-f5P"/>
+                            <constraint firstItem="daM-Qp-hjf" firstAttribute="top" secondItem="2xN-AO-CzH" secondAttribute="bottom" constant="8" id="AK1-ZD-eaJ"/>
+                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="HL3-Ld-dzz" secondAttribute="trailing" constant="16" id="BVr-46-BDz"/>
+                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="daM-Qp-hjf" secondAttribute="trailing" constant="16" id="Bee-v1-cKM"/>
+                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="09k-bI-sFL" secondAttribute="trailing" constant="16" id="Bou-z1-7Zp"/>
                             <constraint firstItem="8vW-zf-pYr" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="Jvy-We-iTH"/>
-                            <constraint firstItem="HL3-Ld-dzz" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="K6O-hK-4lP"/>
+                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="2xN-AO-CzH" secondAttribute="trailing" constant="16" id="Lde-an-iqs"/>
+                            <constraint firstItem="2xN-AO-CzH" firstAttribute="top" secondItem="HIj-ag-rxi" secondAttribute="bottom" constant="8" id="ODU-IQ-C6d"/>
                             <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="8vW-zf-pYr" secondAttribute="trailing" constant="16" id="Ofd-8J-6T0"/>
-                            <constraint firstItem="9aq-BC-tO6" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="QHO-Zw-VDP"/>
-                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="HL3-Ld-dzz" secondAttribute="trailing" constant="16" id="XDg-97-45e"/>
-                            <constraint firstItem="HIj-ag-rxi" firstAttribute="top" secondItem="PoG-bk-9wc" secondAttribute="top" constant="32" id="a4K-Hh-kHI"/>
-                            <constraint firstItem="HIj-ag-rxi" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="emP-ZY-Y8W"/>
-                            <constraint firstItem="9aq-BC-tO6" firstAttribute="top" secondItem="09k-bI-sFL" secondAttribute="bottom" constant="8" id="fTw-tn-lrK"/>
+                            <constraint firstItem="9aq-BC-tO6" firstAttribute="top" secondItem="09k-bI-sFL" secondAttribute="bottom" constant="8" id="bfV-ko-0F5"/>
+                            <constraint firstItem="daM-Qp-hjf" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="c2T-UM-uGL"/>
+                            <constraint firstItem="9aq-BC-tO6" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="dpX-0m-smP"/>
+                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="HIj-ag-rxi" secondAttribute="trailing" constant="16" id="fDG-u2-n4V"/>
+                            <constraint firstItem="2xN-AO-CzH" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="gl4-ly-ywY"/>
                             <constraint firstItem="PoG-bk-9wc" firstAttribute="bottom" secondItem="8vW-zf-pYr" secondAttribute="bottom" constant="56" id="kBm-0v-9Av"/>
-                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="HIj-ag-rxi" secondAttribute="trailing" constant="16" id="mdY-td-ywm"/>
-                            <constraint firstItem="HL3-Ld-dzz" firstAttribute="top" secondItem="9aq-BC-tO6" secondAttribute="bottom" constant="8" id="tyL-q6-qFm"/>
-                            <constraint firstItem="PoG-bk-9wc" firstAttribute="trailing" secondItem="09k-bI-sFL" secondAttribute="trailing" constant="16" id="xvH-gs-TeF"/>
+                            <constraint firstItem="HL3-Ld-dzz" firstAttribute="top" secondItem="9aq-BC-tO6" secondAttribute="bottom" constant="8" id="lJs-VU-xad"/>
+                            <constraint firstItem="09k-bI-sFL" firstAttribute="top" secondItem="daM-Qp-hjf" secondAttribute="bottom" constant="8" id="m0N-6M-1oe"/>
+                            <constraint firstItem="HL3-Ld-dzz" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="xuV-1T-pe1"/>
+                            <constraint firstItem="09k-bI-sFL" firstAttribute="leading" secondItem="PoG-bk-9wc" secondAttribute="leading" constant="16" id="zBu-9P-TkS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create new account" id="041-Tx-Der"/>
@@ -122,13 +158,15 @@
                         <outlet property="confirmPasswordTextField" destination="9aq-BC-tO6" id="Jl4-YO-xX6"/>
                         <outlet property="createAccountButton" destination="8vW-zf-pYr" id="3Yb-tm-kgZ"/>
                         <outlet property="emailTextField" destination="HIj-ag-rxi" id="4LZ-aV-fas"/>
+                        <outlet property="firstNameTextField" destination="2xN-AO-CzH" id="9gU-Xa-h6d"/>
+                        <outlet property="lastNameTextField" destination="daM-Qp-hjf" id="Us0-kf-cYH"/>
                         <outlet property="passwordTextField" destination="09k-bI-sFL" id="BQv-aT-tLF"/>
                         <outlet property="phoneNumberTextField" destination="HL3-Ld-dzz" id="tad-aQ-K7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wco-Hh-ELx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1089" y="-452"/>
+            <point key="canvasLocation" x="-1089.3129770992366" y="-452.11267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kdD-Xk-R1G">
@@ -217,7 +255,7 @@
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>
