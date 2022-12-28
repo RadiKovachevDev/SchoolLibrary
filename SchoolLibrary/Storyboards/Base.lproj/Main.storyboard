@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-BC-tO6">
-                                <rect key="frame" x="16" y="343" width="361" height="48"/>
+                                <rect key="frame" x="16" y="299" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="J4q-F8-X1y"/>
@@ -33,7 +33,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HL3-Ld-dzz">
-                                <rect key="frame" x="16" y="399" width="361" height="48"/>
+                                <rect key="frame" x="16" y="355" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="c8U-lE-ywy"/>
@@ -53,10 +53,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Dew-3H-wdi"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create account">
-                                    <color key="baseForegroundColor" name="slBlack"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create account">
+                                    <color key="titleColor" name="slBlack"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>
@@ -67,14 +68,14 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIj-ag-rxi">
-                                <rect key="frame" x="16" y="119" width="361" height="48"/>
+                                <rect key="frame" x="16" y="75" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="KFi-04-p8e"/>
                                 </constraints>
                                 <color key="textColor" name="slKindaBlack"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>
@@ -82,7 +83,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xN-AO-CzH">
-                                <rect key="frame" x="16" y="175" width="361" height="48"/>
+                                <rect key="frame" x="16" y="131" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="aZU-9V-OeB"/>
@@ -97,7 +98,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daM-Qp-hjf">
-                                <rect key="frame" x="16" y="231" width="361" height="48"/>
+                                <rect key="frame" x="16" y="187" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="eBx-pN-hgZ"/>
@@ -112,7 +113,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09k-bI-sFL">
-                                <rect key="frame" x="16" y="287" width="361" height="48"/>
+                                <rect key="frame" x="16" y="243" width="361" height="48"/>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ZMM-FD-0Xo"/>
@@ -168,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="-1089.3129770992366" y="-452.11267605633805"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="kdD-Xk-R1G">
             <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="cni-jN-3dK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InitialViewController" modalPresentationStyle="fullScreen" id="cni-jN-3dK" customClass="InitialViewController" customModule="SchoolLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b38-Bf-xRo">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -218,7 +219,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="WYP-xL-kP2" eventType="touchUpInside" id="CRE-pf-amX"/>
-                                    <segue destination="W8H-9O-sSP" kind="show" id="8UR-BI-zzc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYB-vG-EhG">
@@ -227,10 +227,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="rJu-GR-3px"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <color key="baseForegroundColor" name="slBlack"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" name="slBlack"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="16"/>

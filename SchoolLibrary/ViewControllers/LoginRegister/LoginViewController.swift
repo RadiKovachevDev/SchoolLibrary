@@ -30,7 +30,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "toRegisterSegue", sender: nil)
+        if let registerViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController {
+            self.navigationController?.pushViewController(registerViewController, animated: true)
+        }
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
