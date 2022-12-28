@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.user = FakeDB.users.first(where: {$0.uid == "idrnk"})
+        self.user = UserData.user
     }
 }
 
