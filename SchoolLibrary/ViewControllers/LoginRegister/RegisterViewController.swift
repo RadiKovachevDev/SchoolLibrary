@@ -19,7 +19,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     
-    var db: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,6 @@ class RegisterViewController: UIViewController {
     }
     
     func setupScreen() {
-        self.db = Database.database().reference()
         self.view.addDismissKeyboardGestureRecognizer()
         self.emailTextField.setLeftPaddingPoints(16.0)
         self.passwordTextField.setLeftPaddingPoints(16.0)
@@ -104,19 +102,13 @@ class RegisterViewController: UIViewController {
                     phoneNumber: phoneNumber)
                 UserData.user = user
                 
-                self.db.child("Users").child("\(UserData.user?.uid ?? "errorUID")").setValue([
-                    "userDetails" : [
-                        "uid": authResult.user.uid,
-                        "firstName" : firstName,
-                        "lastName" : lastName,
-                        "email" : email,
-                        "phoneNumber" : phoneNumber
-                    ]
-                ])
-                if let mainTabBarViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController,
-                   let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-                    sceneDelegate.setRootViewController(mainTabBarViewController)
-                }
+                
+                FirebaseDbManager.create(user: user, completion: {
+                    if let mainTabBarViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController,
+                       let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                        sceneDelegate.setRootViewController(mainTabBarViewController)
+                    }
+                })
             } else {
                 self.showError(error: error?.localizedDescription)
             }

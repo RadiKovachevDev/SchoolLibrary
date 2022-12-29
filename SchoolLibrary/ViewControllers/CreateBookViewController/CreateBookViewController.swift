@@ -24,8 +24,6 @@ class CreateBookViewController: UIViewController {
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var createBookButton: UIButton!
     
-    var db: DatabaseReference!
-    
     var categoryPicker = UIPickerView()
     var categories: [Category] = []
     var selectedCategory: Category?
@@ -33,7 +31,6 @@ class CreateBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.db = Database.database().reference()
         self.categories = Category.allCategories()
         self.categories.removeFirst()
         self.view.addDismissKeyboardGestureRecognizer()
@@ -116,23 +113,10 @@ class CreateBookViewController: UIViewController {
 
         let id = "\(user.uid)\(Int(Date().timeIntervalSince1970))"
 
-        self.db.child("Books").child("\(id)").setValue([
-            "bookDetails" : [
-                "id": id,
-                "bookName" : bookName,
-                "bookAuthor" : bookAuthor,
-                "shortDiscription" : shortDiscription,
-                "longDiscription" : longDiscription,
-                "publisher": publisher,
-                "image" : "defoult_category_image",
-                "category": category,
-                "providedByUserID": user.uid,
-                "takenOfUserID": "",
-                "isAvalible": true,
-                "bookReturnData": ""
-            ]
-        ])
-        self.navigationController?.popViewController(animated: true)
+        let book = Book(id: id, name: bookName, author: bookAuthor, shortDiscription: shortDiscription, longDiscription: longDiscription, publisher: publisher, image: "defoult_category_image", category: category, providedByUserID: UserData.user?.uid ?? "errorUID", takenOfUserID: "", isAvalible: true, bookReturnData: "")
+        FirebaseDbManager.create(book: book, completion: {
+            self.navigationController?.popViewController(animated: true)
+        })  
     }
 
     func setupCategoryPicker() {
