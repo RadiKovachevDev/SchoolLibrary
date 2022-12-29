@@ -23,12 +23,13 @@ class MyBooksViewController: UIViewController {
     }
     
     func setupScreen() {
+        FirebaseDbManager.fetchBooks()
         self.actionButton.setTitle("Scan book QR", for: .normal)
         switch screenType {
         case .taken:
-            myBooks = FakeDB.books.filter({$0.takenOfUserID == "idkng"})
+            myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == UserData.user?.uid})
         case .provided:
-            myBooks = FakeDB.books.filter({$0.providedByUserID == "idkng"})
+            myBooks = FirebaseDbManager.books.filter({$0.providedByUserID == UserData.user?.uid})
         }
         self.tableView.reloadData()
     }
@@ -132,9 +133,12 @@ extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
                 bookDetailsViewController.screenType = .fromProvided
             }
             bookDetailsViewController.book = myBooks[indexPath.row]
-            self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+            FirebaseDbManager.fetchUserBy(userID: self.myBooks[indexPath.row].providedByUserID, completion: {user in
+                if let providedUser = user {
+                    bookDetailsViewController.providedUser = providedUser
+                    self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+                }
+            })
         }
     }
-    
-    
 }
