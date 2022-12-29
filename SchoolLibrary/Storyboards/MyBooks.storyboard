@@ -218,10 +218,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYf-rO-TVc">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="844"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="694"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long discription" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uap-Kc-1EZ">
-                                                <rect key="frame" x="16" y="310" width="361" height="16"/>
+                                                <rect key="frame" x="16" y="250" width="361" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="wRF-0P-wGI"/>
                                                 </constraints>
@@ -244,7 +244,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJl-hR-H7L">
-                                                <rect key="frame" x="16" y="780" width="361" height="48"/>
+                                                <rect key="frame" x="16" y="630" width="361" height="48"/>
                                                 <color key="backgroundColor" name="slOrangeLight"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="NX7-9F-P6R"/>
@@ -264,7 +264,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRP-5x-7vW">
-                                                <rect key="frame" x="16" y="636" width="361" height="16"/>
+                                                <rect key="frame" x="16" y="456" width="361" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="5BG-kD-gNV"/>
                                                 </constraints>
@@ -273,7 +273,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EjK-NP-EaM">
-                                                <rect key="frame" x="16" y="654" width="361" height="48"/>
+                                                <rect key="frame" x="16" y="474" width="361" height="48"/>
                                                 <color key="backgroundColor" name="slKindaWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="X6C-G8-0g1"/>
@@ -296,7 +296,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RwK-pF-T2d">
-                                                <rect key="frame" x="16" y="730" width="361" height="48"/>
+                                                <rect key="frame" x="16" y="550" width="361" height="48"/>
                                                 <color key="backgroundColor" name="slKindaWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="UFG-JI-BMI"/>
@@ -313,7 +313,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evD-Ut-Qwb">
-                                                <rect key="frame" x="16" y="710" width="361" height="18"/>
+                                                <rect key="frame" x="16" y="530" width="361" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="Ulr-Cc-CM2"/>
                                                 </constraints>
@@ -354,10 +354,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hb7-rS-mdY">
-                                                <rect key="frame" x="16" y="182" width="361" height="120"/>
+                                                <rect key="frame" x="16" y="182" width="361" height="60"/>
                                                 <color key="backgroundColor" name="slKindaWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="Q8e-OL-Sfz"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Q8e-OL-Sfz"/>
                                                 </constraints>
                                                 <color key="textColor" name="slKindaBlack"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -369,10 +369,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lBc-RG-6bl">
-                                                <rect key="frame" x="16" y="328" width="361" height="300"/>
+                                                <rect key="frame" x="16" y="268" width="361" height="180"/>
                                                 <color key="backgroundColor" name="slKindaWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="TNY-zS-wYB"/>
+                                                    <constraint firstAttribute="height" constant="180" id="TNY-zS-wYB"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -426,7 +426,7 @@
                                             <constraint firstAttribute="trailing" secondItem="lRP-5x-7vW" secondAttribute="trailing" constant="16" id="sgb-l7-icI"/>
                                             <constraint firstItem="evD-Ut-Qwb" firstAttribute="top" secondItem="EjK-NP-EaM" secondAttribute="bottom" constant="8" id="snh-j4-k2r"/>
                                             <constraint firstAttribute="trailing" secondItem="RwK-pF-T2d" secondAttribute="trailing" constant="16" id="w6m-z6-ILJ"/>
-                                            <constraint firstItem="hJl-hR-H7L" firstAttribute="top" secondItem="RwK-pF-T2d" secondAttribute="bottom" constant="2" id="yoP-ty-UHf"/>
+                                            <constraint firstItem="hJl-hR-H7L" firstAttribute="top" secondItem="RwK-pF-T2d" secondAttribute="bottom" constant="32" id="yoP-ty-UHf"/>
                                             <constraint firstAttribute="trailing" secondItem="hb7-rS-mdY" secondAttribute="trailing" constant="16" id="zgy-4Z-XKU"/>
                                         </constraints>
                                     </view>

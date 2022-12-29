@@ -18,9 +18,14 @@ class LibraryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseDbManager.fetchBooks()
         self.categories = Category.allCategories()
-        self.books = FakeDB.books
         filteredBooksByCategory()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.books = FirebaseDbManager.books
     }
     
     func filteredBooksByCategory() {
@@ -74,7 +79,12 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
         if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
             bookDetailsViewController.screenType = .standartScreen
             bookDetailsViewController.book = self.filteredBooks[indexPath.row]
-            self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+            FirebaseDbManager.fetchUserBy(userID: self.filteredBooks[indexPath.row].providedByUserID, completion: {user in
+                if let providedUser = user {
+                    bookDetailsViewController.providedUser = providedUser
+                    self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+                }
+            })
         }
     }
 }

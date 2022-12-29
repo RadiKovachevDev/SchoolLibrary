@@ -82,7 +82,7 @@ class CreateBookViewController: UIViewController {
             return
         }
 
-        if shortDiscription.count < 100 && shortDiscription.count > 200 {
+        if shortDiscription.count < 50 && shortDiscription.count > 100 {
             self.showError(error: "Short discription needs to be between 100 and 200", delay: 3.0, onDismiss: nil)
             return
         }
@@ -116,9 +116,13 @@ class CreateBookViewController: UIViewController {
         let book = Book(id: id, name: bookName, author: bookAuthor, shortDiscription: shortDiscription, longDiscription: longDiscription, publisher: publisher, image: "defoult_category_image", category: category, providedByUserID: UserData.user?.uid ?? "errorUID", takenOfUserID: "", isAvalible: true, bookReturnData: "")
         FirebaseDbManager.create(book: book, completion: {
             self.navigationController?.popViewController(animated: true)
-        })  
+        })
+        
+        
     }
 
+    
+    
     func setupCategoryPicker() {
         categoryPicker.delegate = self
         categoryPicker.backgroundColor = UIColor(named: "slKindaWhite")
