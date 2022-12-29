@@ -48,6 +48,7 @@
 		19B0FAEE2938F43D00729905 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0FAED2938F43D00729905 /* UIStoryboard.swift */; };
 		19B0FAF02938F70D00729905 /* Library.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FAEF2938F70D00729905 /* Library.storyboard */; };
 		19B0FAF22938F7D900729905 /* MyBooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B0FAF12938F7D900729905 /* MyBooks.storyboard */; };
+		19BBB9D7295DF532006064F4 /* FirebaseDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BBB9D6295DF532006064F4 /* FirebaseDbManager.swift */; };
 		19C76DF5293BB16A0000B698 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C76DF4293BB16A0000B698 /* UserData.swift */; };
 		19C76DF7293BB9FA0000B698 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C76DF6293BB9FA0000B698 /* LoginViewController.swift */; };
 		19C76DF9293BBA100000B698 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C76DF8293BBA100000B698 /* RegisterViewController.swift */; };
@@ -117,6 +118,7 @@
 		19B0FAED2938F43D00729905 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		19B0FAEF2938F70D00729905 /* Library.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Library.storyboard; sourceTree = "<group>"; };
 		19B0FAF12938F7D900729905 /* MyBooks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyBooks.storyboard; sourceTree = "<group>"; };
+		19BBB9D6295DF532006064F4 /* FirebaseDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDbManager.swift; sourceTree = "<group>"; };
 		19C76DF4293BB16A0000B698 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		19C76DF6293BB9FA0000B698 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		19C76DF8293BBA100000B698 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				198B612B294DE6DA0083532A /* QRGenerator.swift */,
+				19BBB9D6295DF532006064F4 /* FirebaseDbManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				19D723AA293BF4CE00F2E542 /* BookDetailsImageTableViewCell.swift in Sources */,
 				198161F5295B29CD00C8A706 /* MainTabBarViewController.swift in Sources */,
 				198B612F294DEA200083532A /* QRViewController.swift in Sources */,
+				19BBB9D7295DF532006064F4 /* FirebaseDbManager.swift in Sources */,
 				19ABC78A294628EE00BAC39F /* SettingsInfoTableViewCell.swift in Sources */,
 				19ABC78E2946358100BAC39F /* SettingAppTableViewCell.swift in Sources */,
 				19ABC77F2944D5A300BAC39F /* Enums.swift in Sources */,

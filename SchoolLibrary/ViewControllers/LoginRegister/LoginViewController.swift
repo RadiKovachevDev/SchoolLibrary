@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
-    var db: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,6 @@ class LoginViewController: UIViewController {
     }
     
     func setupScreen() {
-        self.db = Database.database().reference()
         self.view.addDismissKeyboardGestureRecognizer()
         self.emailTextField.setLeftPaddingPoints(16.0)
         self.passwordTextField.setLeftPaddingPoints(16.0)
@@ -64,25 +62,15 @@ class LoginViewController: UIViewController {
                     firstName: "",
                     lastName: "",
                     phoneNumber: "")
+                UserData.user = user
                 self.showProgressHUD()
-                self.db.child("Users").child("\(user.uid ?? "errorUID")").observe(.childAdded, with: { snapshot in
+                FirebaseDbManager.login(user: user, completion: {
                     self.dismissProgressHUD()
-                    if let dict = snapshot.value as? [String:Any],
-                       let firstName = dict["firstName"] as? String,
-                       let lastName = dict["lastName"] as? String,
-                       let phoneNumber = dict["phoneNumber"] as? String {
-                        user.firstName = firstName
-                        user.lastName = lastName
-                        user.phoneNumber = phoneNumber
-                    }
-                    
-                    UserData.user = user
                     if let mainTabBarViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController,
                        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                         sceneDelegate.setRootViewController(mainTabBarViewController)
                     }
-                })
-                
+                }) 
             } else {
                 if let error = error {
                     self.showError(error: error.localizedDescription, delay: 3.0, onDismiss: nil)
