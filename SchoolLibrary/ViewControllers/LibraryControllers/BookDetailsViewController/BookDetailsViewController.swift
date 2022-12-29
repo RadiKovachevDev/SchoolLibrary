@@ -10,6 +10,7 @@ import UIKit
 class BookDetailsViewController: UIViewController {
 
     var book: Book?
+    var providedUser: User?
     var screenType: BookScreenType = .standartScreen
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let currentBook = self.book,
-              let providedUser = FakeDB.users.first(where: {$0.uid == currentBook.providedByUserID}) else {
+              let providedUser = self.providedUser else {
             return UITableViewCell()
         }
         
