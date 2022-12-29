@@ -139,9 +139,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func logOut() {
         UserData.user = nil
-        if let loginViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController,
+        if let initialViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "InitialViewController") as? InitialViewController,
            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-            sceneDelegate.setRootViewController(loginViewController)
+            sceneDelegate.setRootViewController(initialViewController)
         }
     }
 }

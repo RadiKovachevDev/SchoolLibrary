@@ -101,8 +101,13 @@ final class FirebaseDbManager {
                           let bookReturnData = bookDetails["bookReturnData"] as? String else {
                         continue
                     }
+                    
+                    
                     let currentBook = Book(id: id, name: bookName, author: bookAuthor, shortDiscription: shortDiscription, longDiscription: longDiscription, publisher: publisher, image: "defoult_category_image", category: category, providedByUserID: providedByUserID, takenOfUserID: takenOfUserID, isAvalible: isAvalible, bookReturnData: bookReturnData)
-                    self.books.append(currentBook)
+                    
+                    if !self.books.contains(where: {$0.id == currentBook.id}) {
+                        self.books.append(currentBook)
+                    }
                 }
             }
         });
