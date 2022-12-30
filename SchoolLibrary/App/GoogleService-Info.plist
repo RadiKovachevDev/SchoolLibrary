@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>405193538334-a8po4kpsmokgqg5koe60bvnbs6oqo6v8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.405193538334-a8po4kpsmokgqg5koe60bvnbs6oqo6v8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDGNImx9ZK9eF1kJOGLaX_bjvcA-7qNtcw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>405193538334</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kovachev.SchoolLibrary</string>
+	<key>PROJECT_ID</key>
+	<string>school-library-3e4ce</string>
+	<key>STORAGE_BUCKET</key>
+	<string>school-library-3e4ce.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:405193538334:ios:e628875a0b629c58bda70f</string>
+	<key>DATABASE_URL</key>
+	<string>https://school-library-3e4ce-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>

@@ -12,7 +12,6 @@
 		198161EA295B0EEE00C8A706 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 198161E9295B0EEE00C8A706 /* FirebaseCrashlytics */; };
 		198161EC295B0EEE00C8A706 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 198161EB295B0EEE00C8A706 /* FirebaseDatabase */; };
 		198161EE295B0EEE00C8A706 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 198161ED295B0EEE00C8A706 /* FirebaseStorage */; };
-		198161F0295B159600C8A706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198161EF295B159500C8A706 /* GoogleService-Info.plist */; };
 		198161F5295B29CD00C8A706 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198161F4295B29CD00C8A706 /* MainTabBarViewController.swift */; };
 		1982CBA7295CDF9200BE0E60 /* initialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1982CBA6295CDF9200BE0E60 /* initialViewController.swift */; };
 		198393202938FE6100040C6C /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983931F2938FE6100040C6C /* LibraryViewController.swift */; };
@@ -60,6 +59,7 @@
 		19D723AE293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D723AD293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift */; };
 		19D723B02940D61500F2E542 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D723AF2940D61500F2E542 /* Colors.xcassets */; };
 		19DE753E295F58CE00503DB9 /* NoBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DE753D295F58CE00503DB9 /* NoBooksTableViewCell.swift */; };
+		19DE7544295F70FD00503DB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19DE7543295F70FD00503DB9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		198161EF295B159500C8A706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		198161F4295B29CD00C8A706 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1982CBA6295CDF9200BE0E60 /* initialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialViewController.swift; sourceTree = "<group>"; };
 		1983931F2938FE6100040C6C /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		19D723AD293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsProvidedByTableViewCell.swift; sourceTree = "<group>"; };
 		19D723AF2940D61500F2E542 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		19DE753D295F58CE00503DB9 /* NoBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBooksTableViewCell.swift; sourceTree = "<group>"; };
+		19DE7543295F70FD00503DB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,7 +440,7 @@
 		19B0FAE52938F14700729905 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				198161EF295B159500C8A706 /* GoogleService-Info.plist */,
+				19DE7543295F70FD00503DB9 /* GoogleService-Info.plist */,
 				19B0FABD29325ECC00729905 /* Info.plist */,
 				19B0FAB829325ECC00729905 /* Assets.xcassets */,
 				19D723AF2940D61500F2E542 /* Colors.xcassets */,
@@ -586,7 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B0FAEC2938F30F00729905 /* Settings.storyboard in Resources */,
-				198161F0295B159600C8A706 /* GoogleService-Info.plist in Resources */,
+				19DE7544295F70FD00503DB9 /* GoogleService-Info.plist in Resources */,
 				19B0FABC29325ECC00729905 /* LaunchScreen.storyboard in Resources */,
 				19B0FAB929325ECC00729905 /* Assets.xcassets in Resources */,
 				19B0FAF22938F7D900729905 /* MyBooks.storyboard in Resources */,
