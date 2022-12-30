@@ -196,6 +196,69 @@
                                             <outlet property="smallDescriptionLabel" destination="YH7-hF-BXu" id="uKt-N3-Pye"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoBooksTableViewCell" rowHeight="217" id="YRL-J1-0oo" customClass="NoBooksTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="232.66667175292969" width="393" height="217"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YRL-J1-0oo" id="fVk-dJ-VIp">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="217"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eah-x0-N9S">
+                                                    <rect key="frame" x="16" y="16" width="361" height="185"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ufw-oM-z5K">
+                                                            <rect key="frame" x="120" y="16" width="121" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="UXm-jT-siN"/>
+                                                                <constraint firstAttribute="height" constant="80" id="n7k-1V-5Fm"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-Qm-vZ7">
+                                                            <rect key="frame" x="16" y="112" width="329" height="21.666666666666657"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <color key="textColor" name="slBlack"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discription" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-Nx-enh">
+                                                            <rect key="frame" x="16" y="149.66666666666666" width="329" height="19.333333333333343"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <color key="textColor" name="slGrey"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="slKindaWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="ufw-oM-z5K" secondAttribute="trailing" constant="120" id="3nf-fd-KgB"/>
+                                                        <constraint firstItem="tbn-Qm-vZ7" firstAttribute="leading" secondItem="eah-x0-N9S" secondAttribute="leading" constant="16" id="8Dq-DI-Ktu"/>
+                                                        <constraint firstItem="ufw-oM-z5K" firstAttribute="leading" secondItem="eah-x0-N9S" secondAttribute="leading" constant="120" id="MpJ-46-EwC"/>
+                                                        <constraint firstItem="Rf3-Nx-enh" firstAttribute="leading" secondItem="eah-x0-N9S" secondAttribute="leading" constant="16" id="YzD-Kn-LX7"/>
+                                                        <constraint firstItem="ufw-oM-z5K" firstAttribute="top" secondItem="eah-x0-N9S" secondAttribute="top" constant="16" id="ZAP-Ht-ivh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Rf3-Nx-enh" secondAttribute="bottom" constant="16" id="fR8-4z-A3X"/>
+                                                        <constraint firstItem="Rf3-Nx-enh" firstAttribute="top" secondItem="tbn-Qm-vZ7" secondAttribute="bottom" constant="16" id="glv-iH-Wvy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tbn-Qm-vZ7" secondAttribute="trailing" constant="16" id="hXi-kW-KLZ"/>
+                                                        <constraint firstItem="tbn-Qm-vZ7" firstAttribute="top" secondItem="ufw-oM-z5K" secondAttribute="bottom" constant="16" id="mlm-OD-Ame"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Rf3-Nx-enh" secondAttribute="trailing" constant="16" id="p1a-ZU-sMf"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="eah-x0-N9S" secondAttribute="trailing" constant="16" id="Jl6-Qg-Jxb"/>
+                                                <constraint firstAttribute="bottom" secondItem="eah-x0-N9S" secondAttribute="bottom" constant="16" id="NL3-oD-0lP"/>
+                                                <constraint firstItem="eah-x0-N9S" firstAttribute="top" secondItem="fVk-dJ-VIp" secondAttribute="top" constant="16" id="U3y-Ec-e8i"/>
+                                                <constraint firstItem="eah-x0-N9S" firstAttribute="leading" secondItem="fVk-dJ-VIp" secondAttribute="leading" constant="16" id="WRC-iF-4Ex"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="slWhite"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="Rf3-Nx-enh" id="mFN-aX-LOV"/>
+                                            <outlet property="titleLabel" destination="tbn-Qm-vZ7" id="orr-gH-kRh"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="GfV-2A-ZjN"/>
@@ -429,8 +492,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="1024" height="1024"/>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
         <image name="defoult_category_image" width="405" height="430"/>
+        <namedColor name="slBlack">
+            <color red="0.054901960784313725" green="0.062745098039215685" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="slGreenBase">
             <color red="0.0" green="0.65490196078431373" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

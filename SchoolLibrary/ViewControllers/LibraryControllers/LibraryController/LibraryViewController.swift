@@ -60,31 +60,59 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
 }
 extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.filteredBooks.count
+        if filteredBooks.count == 0 {
+            return 1
+        } else {
+            return filteredBooks.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let bookCell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell {
-            let currentBook = self.filteredBooks[indexPath.row]
-            bookCell.authorLabel.text = currentBook.author
-            bookCell.bookNameLabel.text = currentBook.name
-            bookCell.publisherLabel.text = currentBook.publisher
-            bookCell.smallDescriptionLabel.text = currentBook.shortDiscription
-            return bookCell
+        if filteredBooks.count == 0 {
+            if let noBooksCell = tableView.dequeueReusableCell(withIdentifier: "NoBooksTableViewCell", for: indexPath) as? NoBooksTableViewCell {
+                
+                switch currentCategory {
+                case .all:
+                    noBooksCell.titleLabel.text = "There are no books in library"
+                    noBooksCell.descriptionLabel.text = "You can be the first one to add a book"
+                default:
+                    noBooksCell.titleLabel.text = "There are no books in \(currentCategory.rawValue)"
+                    noBooksCell.descriptionLabel.text = "You can be the first one to add a book in \(currentCategory.rawValue) category"
+                    break;
+                }
+                
+                
+                return noBooksCell
+            }
+        } else {
+            if let bookCell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell {
+                let currentBook = self.filteredBooks[indexPath.row]
+                bookCell.authorLabel.text = currentBook.author
+                bookCell.bookNameLabel.text = currentBook.name
+                bookCell.publisherLabel.text = currentBook.publisher
+                bookCell.smallDescriptionLabel.text = currentBook.shortDiscription
+                return bookCell
+            }
+            
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
-            bookDetailsViewController.screenType = .standartScreen
-            bookDetailsViewController.book = self.filteredBooks[indexPath.row]
-            FirebaseDbManager.fetchUserBy(userID: self.filteredBooks[indexPath.row].providedByUserID, completion: {user in
-                if let providedUser = user {
-                    bookDetailsViewController.providedUser = providedUser
-                    self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
-                }
-            })
+        if filteredBooks.count == 0 {
+            
+        } else {
+            if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
+                bookDetailsViewController.screenType = .standartScreen
+                bookDetailsViewController.book = self.filteredBooks[indexPath.row]
+                FirebaseDbManager.fetchUserBy(userID: self.filteredBooks[indexPath.row].providedByUserID, completion: {user in
+                    if let providedUser = user {
+                        bookDetailsViewController.providedUser = providedUser
+                        self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+                    }
+                })
+            }
+            
         }
     }
 }
