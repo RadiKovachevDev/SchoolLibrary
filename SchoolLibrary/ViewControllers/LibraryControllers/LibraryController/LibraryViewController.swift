@@ -18,24 +18,21 @@ class LibraryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseDbManager.fetchBooks()
         self.categories = Category.allCategories()
-        filteredBooksByCategory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.books = FirebaseDbManager.books
+        FirebaseDbManager.fetchBooks(completion: {
+            self.books = FirebaseDbManager.books
+            self.filteredBooksByCategory()
+            self.tableView.reloadData()
+        })
     }
     
     func filteredBooksByCategory() {
         self.filteredBooks =  self.currentCategory == .all ? self.books : self.books.filter({Category(rawValue: $0.category) == self.currentCategory})
     }
-    
-    func reloadTableView() {
-        self.tableView.reloadData()
-    }
-    
 }
 
 extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataSource {

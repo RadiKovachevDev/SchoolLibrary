@@ -22,8 +22,15 @@ class MyBooksViewController: UIViewController {
         setupScreen()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        FirebaseDbManager.fetchBooks(completion: {
+            self.setupScreen()
+            self.tableView.reloadData()
+        })
+    }
+    
     func setupScreen() {
-        FirebaseDbManager.fetchBooks()
         self.actionButton.setTitle("Scan book QR", for: .normal)
         switch screenType {
         case .taken:
