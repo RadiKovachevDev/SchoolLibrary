@@ -110,35 +110,59 @@ class MyBooksViewController: UIViewController {
 
 extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        myBooks.count
+        if myBooks.count == 0 {
+            return 1
+        } else {
+            return myBooks.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let bookCell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell {
-            let currentBook = myBooks[indexPath.row]
-            bookCell.bookNameLabel.text = currentBook.name
-            bookCell.smallDescriptionLabel.text = currentBook.shortDiscription
-            bookCell.publisherLabel.text = currentBook.publisher
-            bookCell.authorLabel.text = currentBook.author
-            return bookCell
+        if myBooks.count == 0 {
+            if let noBooksCell = tableView.dequeueReusableCell(withIdentifier: "NoBooksTableViewCell", for: indexPath) as? NoBooksTableViewCell {
+                switch screenType {
+                case .taken:
+                    noBooksCell.titleLabel.text = "No taken book"
+                    noBooksCell.descriptionLabel.text = "Може да разгледате свободните книги и да се свържете със собственика за да ви бъде предоставена"
+                case .provided:
+                    noBooksCell.titleLabel.text = "No provided book"
+                    noBooksCell.descriptionLabel.text = "Може да разгледате свободните книги и да се свържете със собственика за да ви бъде предоставена"
+                }
+                
+                return noBooksCell
+            }
+        } else {
+            if let bookCell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell {
+                let currentBook = myBooks[indexPath.row]
+                bookCell.bookNameLabel.text = currentBook.name
+                bookCell.smallDescriptionLabel.text = currentBook.shortDiscription
+                bookCell.publisherLabel.text = currentBook.publisher
+                bookCell.authorLabel.text = currentBook.author
+                return bookCell
+            }
         }
         return UITableViewCell()
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
-            switch screenType {
-            case .taken:
-                bookDetailsViewController.screenType = .fromTaken
-            case .provided:
-                bookDetailsViewController.screenType = .fromProvided
-            }
-            bookDetailsViewController.book = myBooks[indexPath.row]
-            FirebaseDbManager.fetchUserBy(userID: self.myBooks[indexPath.row].providedByUserID, completion: {user in
-                if let providedUser = user {
-                    bookDetailsViewController.providedUser = providedUser
-                    self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+        if myBooks.count == 0 {
+            
+        } else {
+            if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
+                switch screenType {
+                case .taken:
+                    bookDetailsViewController.screenType = .fromTaken
+                case .provided:
+                    bookDetailsViewController.screenType = .fromProvided
                 }
-            })
+                bookDetailsViewController.book = myBooks[indexPath.row]
+                FirebaseDbManager.fetchUserBy(userID: self.myBooks[indexPath.row].providedByUserID, completion: {user in
+                    if let providedUser = user {
+                        bookDetailsViewController.providedUser = providedUser
+                        self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+                    }
+                })
+            }
         }
     }
 }

@@ -59,6 +59,7 @@
 		19D723AC293BF68C00F2E542 /* BookDetailsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D723AB293BF68C00F2E542 /* BookDetailsDescriptionTableViewCell.swift */; };
 		19D723AE293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D723AD293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift */; };
 		19D723B02940D61500F2E542 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D723AF2940D61500F2E542 /* Colors.xcassets */; };
+		19DE753E295F58CE00503DB9 /* NoBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DE753D295F58CE00503DB9 /* NoBooksTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		19D723AB293BF68C00F2E542 /* BookDetailsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		19D723AD293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsProvidedByTableViewCell.swift; sourceTree = "<group>"; };
 		19D723AF2940D61500F2E542 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		19DE753D295F58CE00503DB9 /* NoBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBooksTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				198393252938FF5700040C6C /* MyBooksViewController.swift */,
+				19DE753D295F58CE00503DB9 /* NoBooksTableViewCell.swift */,
 			);
 			path = MyBooksController;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				198B6131294DFD490083532A /* CIImage.swift in Sources */,
 				198B613E294E0C320083532A /* Alerts.swift in Sources */,
 				19D723AC293BF68C00F2E542 /* BookDetailsDescriptionTableViewCell.swift in Sources */,
+				19DE753E295F58CE00503DB9 /* NoBooksTableViewCell.swift in Sources */,
 				19D723AE293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift in Sources */,
 				198B6135294E01AD0083532A /* QRScannerViewController.swift in Sources */,
 				19ABC7852944DC8C00BAC39F /* BookTableViewCell.swift in Sources */,
