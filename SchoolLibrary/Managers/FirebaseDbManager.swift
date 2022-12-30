@@ -78,7 +78,7 @@ final class FirebaseDbManager {
         completion()
     }
     
-    static func fetchBooks() {
+    static func fetchBooks(completion: @escaping () -> Void) {
         self.db.child("Books").getData(completion:  { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -108,8 +108,9 @@ final class FirebaseDbManager {
                     if !self.books.contains(where: {$0.id == currentBook.id}) {
                         self.books.append(currentBook)
                     }
+                    completion()
                 }
             }
-        });
+        })
     }
 }
