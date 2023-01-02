@@ -33,7 +33,7 @@ class Alerts {
             let alertAction = UIAlertAction(title: title, style: style) { (_) in
                 completion(index)
             }
-//            alertAction.setValue(UIColor(named: "xDustyWhite"), forKey: "titleTextColor")
+            alertAction.setValue(UIColor(named: "slBlack"), forKey: "titleTextColor")
             alertViewController.addAction(alertAction)
         }
 
@@ -64,7 +64,7 @@ class Alerts {
             let alertAction = UIAlertAction(title: title, style: style) { (_) in
                 completion(index)
             }
-//            alertAction.setValue(UIColor(named: "xDustyWhite"), forKey: "titleTextColor")
+            alertAction.setValue(UIColor(named: "slBlack"), forKey: "titleTextColor")
             alertViewController.addAction(alertAction)
         }
         if UIDevice.current.userInterfaceIdiom != .phone {
