@@ -29,7 +29,6 @@
 		19ABC778294496F600BAC39F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC777294496F600BAC39F /* CategoryCollectionViewCell.swift */; };
 		19ABC77C2944D1CD00BAC39F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC77B2944D1CD00BAC39F /* Book.swift */; };
 		19ABC77F2944D5A300BAC39F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC77E2944D5A300BAC39F /* Enums.swift */; };
-		19ABC7812944D72F00BAC39F /* FakeDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC7802944D72F00BAC39F /* FakeDB.swift */; };
 		19ABC7852944DC8C00BAC39F /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC7842944DC8C00BAC39F /* BookTableViewCell.swift */; };
 		19ABC7882944E84C00BAC39F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC7872944E84C00BAC39F /* User.swift */; };
 		19ABC78A294628EE00BAC39F /* SettingsInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABC789294628EE00BAC39F /* SettingsInfoTableViewCell.swift */; };
@@ -96,7 +95,6 @@
 		19ABC777294496F600BAC39F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		19ABC77B2944D1CD00BAC39F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		19ABC77E2944D5A300BAC39F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		19ABC7802944D72F00BAC39F /* FakeDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDB.swift; sourceTree = "<group>"; };
 		19ABC7842944DC8C00BAC39F /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		19ABC7872944E84C00BAC39F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		19ABC789294628EE00BAC39F /* SettingsInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -270,14 +268,6 @@
 			path = CreateBookViewController;
 			sourceTree = "<group>";
 		};
-		19ABC7792944D18400BAC39F /* FakeDB */ = {
-			isa = PBXGroup;
-			children = (
-				19ABC7802944D72F00BAC39F /* FakeDB.swift */,
-			);
-			path = FakeDB;
-			sourceTree = "<group>";
-		};
 		19ABC77A2944D1A100BAC39F /* Book */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,7 +409,6 @@
 				19ABC7862944E82200BAC39F /* User */,
 				19ABC77D2944D58F00BAC39F /* Enums */,
 				19ABC77A2944D1A100BAC39F /* Book */,
-				19ABC7792944D18400BAC39F /* FakeDB */,
 				19C76DF3293BB1440000B698 /* UserData */,
 			);
 			path = Models;
@@ -644,7 +633,6 @@
 				19D723AE293BF9AA00F2E542 /* BookDetailsProvidedByTableViewCell.swift in Sources */,
 				198B6135294E01AD0083532A /* QRScannerViewController.swift in Sources */,
 				19ABC7852944DC8C00BAC39F /* BookTableViewCell.swift in Sources */,
-				19ABC7812944D72F00BAC39F /* FakeDB.swift in Sources */,
 				19D723A8293BF3D300F2E542 /* BookDetailsViewController.swift in Sources */,
 				19C76DF7293BB9FA0000B698 /* LoginViewController.swift in Sources */,
 				198B6142294E1EAC0083532A /* CreateBookViewController.swift in Sources */,
