@@ -16,9 +16,11 @@ class MyBooksViewController: UIViewController {
     
     var screenType: MyBooksScreenType = .taken
     var myBooks: [Book] = []
+    var myRightBarButtonItem = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.myRightBarButtonItem = self.navigationItem.rightBarButtonItem ?? UIBarButtonItem()
         setupScreen()
     }
     
@@ -35,8 +37,10 @@ class MyBooksViewController: UIViewController {
         switch screenType {
         case .taken:
             myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == UserData.user?.uid})
+            self.navigationItem.rightBarButtonItem = nil
         case .provided:
             myBooks = FirebaseDbManager.books.filter({$0.providedByUserID == UserData.user?.uid})
+            self.navigationItem.rightBarButtonItem = self.myRightBarButtonItem
         }
         self.tableView.reloadData()
     }
