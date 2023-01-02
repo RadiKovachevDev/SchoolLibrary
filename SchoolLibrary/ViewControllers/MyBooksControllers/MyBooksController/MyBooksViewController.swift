@@ -26,20 +26,20 @@ class MyBooksViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FirebaseDbManager.fetchBooks(completion: {
+        FirebaseDbManager.fetchBooks {
             self.setupScreen()
-            self.tableView.reloadData()
-        })
+        }
     }
     
     func setupScreen() {
+        guard let user = UserData.user else { return }
         self.actionButton.setTitle("Scan book QR", for: .normal)
         switch screenType {
         case .taken:
-            myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == UserData.user?.uid})
+            myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == user.uid})
             self.navigationItem.rightBarButtonItem = nil
         case .provided:
-            myBooks = FirebaseDbManager.books.filter({$0.providedByUserID == UserData.user?.uid})
+            myBooks = FirebaseDbManager.books.filter({$0.providedByUserID == user.uid})
             self.navigationItem.rightBarButtonItem = self.myRightBarButtonItem
         }
         self.tableView.reloadData()
@@ -57,12 +57,7 @@ class MyBooksViewController: UIViewController {
     }
     
     @IBAction func actionButtonTaped(_ sender: UIButton) {
-        switch screenType {
-        case .taken:
             openQRScanner()
-        case .provided:
-            openQRScanner()
-        }
     }
     
     @IBAction func addBookButtonTapped(_ sender: UIBarButtonItem) {
@@ -73,49 +68,107 @@ class MyBooksViewController: UIViewController {
     
     func openQRScanner(){
         switch AVCaptureDevice.authorizationStatus(for: .video) {
-                    
-                case .notDetermined:
-                    AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
-                        DispatchQueue.main.async {
-                            if response {
-                                if let qRScannerViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRScannerViewController") as? QRScannerViewController{
-                                    qRScannerViewController.returnQRCode = { [weak self] qrCode in
-                                        self?.showMessage(message: qrCode, delay: 3.0, onDismiss: nil)
-                                    }
-                                    self.present(qRScannerViewController, animated: true)
-                                }
-                                
-                            } else {
-                                var actions: [(String, UIAlertAction.Style)] = []
-                                actions.append(("Ok", .cancel))
-                                Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → SchoolLibrary app → Camera toggle", actions: actions, completion: {index in
-                                    switch index {
-                                    default:
-                                        break
-                                    }
-                                })
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                if response {
+                    if let qRScannerViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRScannerViewController") as? QRScannerViewController{
+                        qRScannerViewController.returnQRCode = { [weak self] qrCode in
+                            DispatchQueue.main.async {
+                                self?.handleQR(result: qrCode)
                             }
                         }
+                        self.present(qRScannerViewController, animated: true)
                     }
-                case .restricted, .denied:
+                    
+                } else {
                     var actions: [(String, UIAlertAction.Style)] = []
                     actions.append(("Ok", .cancel))
-                    Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → ChangeX app → Camera toggle", actions: actions, completion: {index in
+                    Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → SchoolLibrary app → Camera toggle", actions: actions, completion: {index in
                         switch index {
                         default:
                             break
                         }
                     })
-                case .authorized:
-                    if let qRScannerViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRScannerViewController") as? QRScannerViewController{
-                        qRScannerViewController.returnQRCode = { [weak self] qrCode in
-                            self?.showMessage(message: qrCode, delay: 3.0, onDismiss: nil)
-                        }
-                        self.present(qRScannerViewController, animated: true)
-                    }
-                @unknown default:
-                    print("default")
                 }
+            }
+        case .restricted, .denied:
+            var actions: [(String, UIAlertAction.Style)] = []
+            actions.append(("Ok", .cancel))
+            Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → ChangeX app → Camera toggle", actions: actions, completion: {index in
+                switch index {
+                default:
+                    break
+                }
+            })
+        case .authorized:
+            if let qRScannerViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRScannerViewController") as? QRScannerViewController{
+                qRScannerViewController.returnQRCode = { [weak self] qrCode in
+                    DispatchQueue.main.async {
+                        self?.handleQR(result: qrCode)
+                    }
+                }
+                self.present(qRScannerViewController, animated: true)
+            }
+        @unknown default:
+            print("default")
+        }
+    }
+
+    func handleQR(result: String) {
+        if result.isEmpty {
+            showError(error: "error", delay: 3.0, onDismiss: nil)
+        } else {
+            guard let book = FirebaseDbManager.books.first(where: {$0.id == result}),
+                  let user = UserData.user else {
+                showError(error: "no book", delay: 3.0, onDismiss: nil)
+                return
+            }
+            
+            var modifyBook = book
+            
+            var actions: [(String, UIAlertAction.Style)] = []
+            
+            switch screenType {
+            case .taken:
+                actions.append(("Yes, i recived the book", .default))
+                actions.append(("Cancel", .cancel))
+                Alerts.showActionsheet(viewController: self, title: "Taken book", message: "I took \(book.name) and i need to return it on 2/02/2023", actions: actions, completion: {index in
+                    switch index {
+                    case 0:
+                        modifyBook.takenOfUserID = user.uid
+                        modifyBook.bookReturnData = "2/02/2023"
+                        FirebaseDbManager.create(book: modifyBook, completion: {
+                            FirebaseDbManager.fetchBooks {
+                                self.showMessage(message: "Done",delay: 3.0, onDismiss: {
+                                    self.setupScreen()
+                                })
+                            }
+                        })
+                    default:
+                        break
+                    }
+                })
+            case .provided:
+                actions.append(("My book was returned", .default))
+                actions.append(("Cancel", .cancel))
+                Alerts.showActionsheet(viewController: self, title: "Done", message: "I have received my book back", actions: actions, completion: {index in
+                    switch index {
+                    case 0:
+                        modifyBook.takenOfUserID = ""
+                        modifyBook.bookReturnData = ""
+                        FirebaseDbManager.create(book: modifyBook, completion: {
+                            FirebaseDbManager.fetchBooks {
+                                self.showMessage(message: "Done", delay: 3.0, onDismiss: {
+                                    self.setupScreen()
+                                })
+                            }
+                        })
+                    default:
+                        break
+                    }
+                })
+            }
+        }
     }
 }
 
@@ -157,22 +210,33 @@ extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if myBooks.count == 0 {
-            
+
         } else {
             if let bookDetailsViewController = UIStoryboard.library.instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController {
+                bookDetailsViewController.book = myBooks[indexPath.row]
                 switch screenType {
                 case .taken:
                     bookDetailsViewController.screenType = .fromTaken
+                    FirebaseDbManager.fetchUserBy(userID: self.myBooks[indexPath.row].providedByUserID, completion: {user in
+                        if let providedUser = user {
+                            bookDetailsViewController.bookInUser = providedUser
+                            self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+                        }
+                    })
                 case .provided:
                     bookDetailsViewController.screenType = .fromProvided
-                }
-                bookDetailsViewController.book = myBooks[indexPath.row]
-                FirebaseDbManager.fetchUserBy(userID: self.myBooks[indexPath.row].providedByUserID, completion: {user in
-                    if let providedUser = user {
-                        bookDetailsViewController.providedUser = providedUser
+                    if self.myBooks[indexPath.row].takenOfUserID == ""{
+                        bookDetailsViewController.bookInUser = UserData.user
                         self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+                    } else {
+                        FirebaseDbManager.fetchUserBy(userID: self.myBooks[indexPath.row].takenOfUserID, completion: {user in
+                            if let takenUser = user {
+                                bookDetailsViewController.bookInUser = takenUser
+                                self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
+                            }
+                        })
                     }
-                })
+                }
             }
         }
     }

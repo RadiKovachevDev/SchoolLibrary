@@ -59,6 +59,7 @@
 		19D723B02940D61500F2E542 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D723AF2940D61500F2E542 /* Colors.xcassets */; };
 		19DE753E295F58CE00503DB9 /* NoBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DE753D295F58CE00503DB9 /* NoBooksTableViewCell.swift */; };
 		19DE7544295F70FD00503DB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19DE7543295F70FD00503DB9 /* GoogleService-Info.plist */; };
+		19DE7546296304D400503DB9 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DE7545296304D400503DB9 /* Encodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		19D723AF2940D61500F2E542 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		19DE753D295F58CE00503DB9 /* NoBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBooksTableViewCell.swift; sourceTree = "<group>"; };
 		19DE7543295F70FD00503DB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		19DE7545296304D400503DB9 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +424,7 @@
 				19ABC77529448DF000BAC39F /* UITextFieald.swift */,
 				198B6130294DFD490083532A /* CIImage.swift */,
 				198B6139294E04A00083532A /* UIViewController.swift */,
+				19DE7545296304D400503DB9 /* Encodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				19C76DF5293BB16A0000B698 /* UserData.swift in Sources */,
 				19B0FAB029325EC900729905 /* AppDelegate.swift in Sources */,
 				1982CBA7295CDF9200BE0E60 /* initialViewController.swift in Sources */,
+				19DE7546296304D400503DB9 /* Encodable.swift in Sources */,
 				19B0FAB229325EC900729905 /* SceneDelegate.swift in Sources */,
 				198B6131294DFD490083532A /* CIImage.swift in Sources */,
 				198B613E294E0C320083532A /* Alerts.swift in Sources */,

@@ -16,13 +16,7 @@ final class FirebaseDbManager {
     static var books = [Book]()
     static func create(user: User, completion: () -> Void)  {
         self.db.child("Users").child("\(user.uid )").setValue([
-            "userDetails" : [
-                "uid": user.uid,
-                "firstName" : user.firstName,
-                "lastName" : user.lastName,
-                "email" : user.email,
-                "phoneNumber" : user.phoneNumber
-            ]
+            "userDetails" : user.toDictionnary
         ])
         completion()
     }
@@ -49,31 +43,15 @@ final class FirebaseDbManager {
                let firstName = dict["firstName"] as? String,
                let lastName = dict["lastName"] as? String,
                let phoneNumber = dict["phoneNumber"] as? String {
-                
-                
                let user = User(uid: uid, email: email, password: "", firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
                 completion(user)
             }
-            completion(nil)
         })
     }
     
     static func create(book: Book, completion: @escaping () -> Void) {
         self.db.child("Books").child("\(book.id)").setValue([
-            "bookDetails" : [
-                "id": book.id,
-                "bookName" : book.name,
-                "bookAuthor" : book.author,
-                "shortDiscription" : book.shortDiscription,
-                "longDiscription" : book.longDiscription,
-                "publisher": book.publisher,
-                "image" : "defoult_category_image",
-                "category": book.category,
-                "providedByUserID": book.providedByUserID,
-                "takenOfUserID": "",
-                "isAvalible": true,
-                "bookReturnData": ""
-            ]
+            "bookDetails" : book.toDictionnary
         ])
         completion()
     }
@@ -89,8 +67,8 @@ final class FirebaseDbManager {
                     guard let bookValue = book.value as? [String:Any],
                           let bookDetails = bookValue["bookDetails"] as? [String:Any],
                           let id = bookDetails["id"] as? String,
-                          let bookName = bookDetails["bookName"] as? String,
-                          let bookAuthor = bookDetails["bookAuthor"] as? String,
+                          let bookName = bookDetails["name"] as? String,
+                          let bookAuthor = bookDetails["author"] as? String,
                           let shortDiscription = bookDetails["shortDiscription"] as? String,
                           let longDiscription = bookDetails["longDiscription"] as? String,
                           let publisher = bookDetails["publisher"] as? String,
@@ -102,11 +80,17 @@ final class FirebaseDbManager {
                         continue
                     }
                     
-                    
                     let currentBook = Book(id: id, name: bookName, author: bookAuthor, shortDiscription: shortDiscription, longDiscription: longDiscription, publisher: publisher, image: "defoult_category_image", category: category, providedByUserID: providedByUserID, takenOfUserID: takenOfUserID, isAvalible: isAvalible, bookReturnData: bookReturnData)
                     
                     if !self.books.contains(where: {$0.id == currentBook.id}) {
                         self.books.append(currentBook)
+                    } else {
+                        if let book = self.books.first(where: {$0.id == currentBook.id}) {
+                            if currentBook.takenOfUserID != book.takenOfUserID {
+                                self.books.removeAll(where: {$0.id == book.id})
+                                self.books.append(currentBook)
+                            }
+                        }
                     }
                     completion()
                 }

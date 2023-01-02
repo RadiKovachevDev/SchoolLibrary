@@ -31,7 +31,7 @@ class LibraryViewController: UIViewController {
     }
     
     func filteredBooksByCategory() {
-        self.filteredBooks =  self.currentCategory == .all ? self.books : self.books.filter({Category(rawValue: $0.category) == self.currentCategory})
+        self.filteredBooks =  self.currentCategory == .all ? self.books.filter({$0.takenOfUserID == ""}) : self.books.filter({Category(rawValue: $0.category) == self.currentCategory && $0.takenOfUserID == ""})
     }
 }
 
@@ -104,7 +104,7 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
                 bookDetailsViewController.book = self.filteredBooks[indexPath.row]
                 FirebaseDbManager.fetchUserBy(userID: self.filteredBooks[indexPath.row].providedByUserID, completion: {user in
                     if let providedUser = user {
-                        bookDetailsViewController.providedUser = providedUser
+                        bookDetailsViewController.bookInUser = providedUser
                         self.navigationController?.pushViewController(bookDetailsViewController, animated: true)
                     }
                 })

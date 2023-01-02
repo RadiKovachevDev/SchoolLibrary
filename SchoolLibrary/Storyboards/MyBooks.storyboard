@@ -164,7 +164,7 @@
                                             <outlet property="smallDescriptionLabel" destination="Dla-Op-aNx" id="Ebm-ws-1Af"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoBooksTableViewCell" rowHeight="217" id="r9X-np-a2f" customClass="NoBooksTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoBooksTableViewCell" rowHeight="217" id="r9X-np-a2f" customClass="NoBooksTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="232.66667175292969" width="393" height="217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r9X-np-a2f" id="AeJ-RW-mhj">
