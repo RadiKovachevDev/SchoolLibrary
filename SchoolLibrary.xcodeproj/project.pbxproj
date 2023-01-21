@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1978EA4A297C282000995753 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1978EA49297C282000995753 /* Int.swift */; };
 		198161E6295B0EEE00C8A706 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 198161E5295B0EEE00C8A706 /* FirebaseAnalytics */; };
 		198161E8295B0EEE00C8A706 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 198161E7295B0EEE00C8A706 /* FirebaseAuth */; };
 		198161EA295B0EEE00C8A706 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 198161E9295B0EEE00C8A706 /* FirebaseCrashlytics */; };
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1978EA49297C282000995753 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		198161F4295B29CD00C8A706 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1982CBA6295CDF9200BE0E60 /* initialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialViewController.swift; sourceTree = "<group>"; };
 		1983931F2938FE6100040C6C /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				198B6130294DFD490083532A /* CIImage.swift */,
 				198B6139294E04A00083532A /* UIViewController.swift */,
 				19DE7545296304D400503DB9 /* Encodable.swift */,
+				1978EA49297C282000995753 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				19C76DF5293BB16A0000B698 /* UserData.swift in Sources */,
 				19B0FAB029325EC900729905 /* AppDelegate.swift in Sources */,
 				1982CBA7295CDF9200BE0E60 /* initialViewController.swift in Sources */,
+				1978EA4A297C282000995753 /* Int.swift in Sources */,
 				19DE7546296304D400503DB9 /* Encodable.swift in Sources */,
 				19B0FAB229325EC900729905 /* SceneDelegate.swift in Sources */,
 				198B6131294DFD490083532A /* CIImage.swift in Sources */,

@@ -160,6 +160,7 @@
                                             <outlet property="authorLabel" destination="CcR-ge-97o" id="mqD-BC-G5Q"/>
                                             <outlet property="bookImageView" destination="eka-Kn-rhb" id="kOn-DT-PzX"/>
                                             <outlet property="bookNameLabel" destination="TEr-PM-0BE" id="Jd1-zQ-0jQ"/>
+                                            <outlet property="cellView" destination="TCe-Lw-1Ka" id="FbY-M9-qyD"/>
                                             <outlet property="publisherLabel" destination="OZl-PP-occ" id="vVn-1f-Ppo"/>
                                             <outlet property="smallDescriptionLabel" destination="Dla-Op-aNx" id="Ebm-ws-1Af"/>
                                         </connections>

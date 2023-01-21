@@ -130,13 +130,15 @@ class MyBooksViewController: UIViewController {
             
             switch screenType {
             case .taken:
+                let timestamp = Date().timeIntervalSince1970
+                let timestampReturn = Int(timestamp) + 2592000
                 actions.append(("Yes, i recived the book", .default))
                 actions.append(("Cancel", .cancel))
-                Alerts.showActionsheet(viewController: self, title: "Taken book", message: "I took \(book.name) and i need to return it on 2/02/2023", actions: actions, completion: {index in
+                Alerts.showActionsheet(viewController: self, title: "Taken book", message: "I took \(book.name) and i need to return it on \(timestampReturn.timestampToDate())", actions: actions, completion: {index in
                     switch index {
                     case 0:
                         modifyBook.takenOfUserID = user.uid
-                        modifyBook.bookReturnData = "2/02/2023"
+                        modifyBook.bookReturnData = "\(timestampReturn)"
                         FirebaseDbManager.create(book: modifyBook, completion: {
                             FirebaseDbManager.fetchBooks {
                                 self.showMessage(message: "Done",delay: 3.0, onDismiss: {
@@ -202,7 +204,18 @@ extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
                 bookCell.smallDescriptionLabel.text = currentBook.shortDiscription
                 bookCell.publisherLabel.text = currentBook.publisher
                 bookCell.authorLabel.text = currentBook.author
+                
+                let timestamp = Int(Date().timeIntervalSince1970)
+                if timestamp < Int(currentBook.bookReturnData) ?? 0 {
+                    bookCell.cellView.backgroundColor = UIColor(named: "slReturnedBackground")
+                    
+                } else if screenType == .provided && currentBook.takenOfUserID != "" {
+                    bookCell.cellView.backgroundColor = UIColor(named: "slTakenBookBackground")
+                } else {
+                    bookCell.cellView.backgroundColor = UIColor(named: "slKindaWhite")
+                }
                 return bookCell
+                
             }
         }
         return UITableViewCell()
