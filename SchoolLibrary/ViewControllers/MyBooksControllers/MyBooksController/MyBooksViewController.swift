@@ -124,6 +124,11 @@ class MyBooksViewController: UIViewController {
                 return
             }
             
+            if screenType == .taken && book.providedByUserID == user.uid {
+                showError(error: "Unauthorized operation", delay: 3.0, onDismiss: nil)
+                return
+            }
+            
             var modifyBook = book
             
             var actions: [(String, UIAlertAction.Style)] = []
