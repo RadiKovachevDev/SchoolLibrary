@@ -14,6 +14,7 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var smallDescriptionLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet weak var cellView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
