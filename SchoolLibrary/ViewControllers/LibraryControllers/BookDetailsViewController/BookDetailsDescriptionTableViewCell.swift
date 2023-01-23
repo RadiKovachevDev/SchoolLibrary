@@ -9,7 +9,12 @@ import UIKit
 
 class BookDetailsDescriptionTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var bookNameLabel: UILabel!
+    @IBOutlet weak var longDiscriptionLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet weak var publisherNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

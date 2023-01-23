@@ -19,7 +19,7 @@ class BookDetailsViewController: UIViewController {
 
 extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,9 +31,20 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
             if let imageCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsImageTableViewCell", for: indexPath) as? BookDetailsImageTableViewCell {
+                imageCell.categoryNameLabel.text = currentBook.category
                 return imageCell
             }
-        case 5:
+        case 1:
+            if let descriptionCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsDescriptionTableViewCell", for: indexPath) as? BookDetailsDescriptionTableViewCell {
+                
+                descriptionCell.bookNameLabel.text = currentBook.name
+                descriptionCell.longDiscriptionLabel.text = currentBook.longDiscription
+                descriptionCell.authorNameLabel.text = currentBook.author
+                descriptionCell.publisherNameLabel.text = currentBook.publisher
+               
+                return descriptionCell
+            }
+        case 2:
             if let bookDetailsCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsProvidedByTableViewCell", for: indexPath) as? BookDetailsProvidedByTableViewCell {
                 bookDetailsCell.providedByLabel.text = "Provided by"
                 bookDetailsCell.userNameLabel.text = "\(bookInUser.firstName) \(bookInUser.lastName)"
@@ -89,22 +100,7 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                 return bookDetailsCell
             }
         default:
-            if let descriptionCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsDescriptionTableViewCell", for: indexPath) as? BookDetailsDescriptionTableViewCell {
-                switch indexPath.row {
-                case 1:
-                    descriptionCell.descriptionLabel.text = currentBook.name
-                case 2:
-                    descriptionCell.descriptionLabel.text = currentBook.longDiscription
-                case 3:
-                    descriptionCell.descriptionLabel.text = currentBook.author
-                case 4:
-                    descriptionCell.descriptionLabel.text = currentBook.publisher
-                default:
-                    break
-                }
-                
-                return descriptionCell
-            }
+            return UITableViewCell()
          }
         return UITableViewCell()
     }

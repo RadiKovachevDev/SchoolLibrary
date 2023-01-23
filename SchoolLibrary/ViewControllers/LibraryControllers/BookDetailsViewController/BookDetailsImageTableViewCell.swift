@@ -10,6 +10,7 @@ import UIKit
 class BookDetailsImageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bookImageView: UIImageView!
+    @IBOutlet weak var categoryNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

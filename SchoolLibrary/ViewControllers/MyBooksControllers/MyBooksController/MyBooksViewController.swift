@@ -211,9 +211,8 @@ extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
                 bookCell.authorLabel.text = currentBook.author
                 
                 let timestamp = Int(Date().timeIntervalSince1970)
-                if timestamp < Int(currentBook.bookReturnData) ?? 0 {
+                if timestamp > Int(currentBook.bookReturnData) ?? 0 && currentBook.takenOfUserID != "" {
                     bookCell.cellView.backgroundColor = UIColor(named: "slReturnedBackground")
-                    
                 } else if screenType == .provided && currentBook.takenOfUserID != "" {
                     bookCell.cellView.backgroundColor = UIColor(named: "slTakenBookBackground")
                 } else {

@@ -31,7 +31,7 @@ class LibraryViewController: UIViewController {
     }
     
     func filteredBooksByCategory() {
-        self.filteredBooks =  self.currentCategory == .all ? self.books.filter({$0.takenOfUserID == ""}) : self.books.filter({Category(rawValue: $0.category) == self.currentCategory && $0.takenOfUserID == ""})
+        self.filteredBooks =  self.currentCategory == .all ? self.books.filter({$0.takenOfUserID == "" && $0.providedByUserID != UserData.user?.uid}) : self.books.filter({Category(rawValue: $0.category) == self.currentCategory && $0.takenOfUserID == "" && $0.providedByUserID != UserData.user?.uid})
     }
 }
 
