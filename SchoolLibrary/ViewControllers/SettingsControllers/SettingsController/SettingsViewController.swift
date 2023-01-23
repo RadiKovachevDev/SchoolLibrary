@@ -132,6 +132,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 break
             }
+        case 2:
+            switch indexPath.row {
+            case 3:
+                contactUse()
+            default:
+                break
+            }
         default:
             break
         }
@@ -142,6 +149,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if let initialViewController = UIStoryboard.main.instantiateViewController(withIdentifier: "InitialViewController") as? InitialViewController,
            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
             sceneDelegate.setRootViewController(initialViewController)
+        }
+    }
+    
+    func contactUse() {
+        if let url = URL(string:  "mailto:radi.kovachev.dev@gmail.com") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }
