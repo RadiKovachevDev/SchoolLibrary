@@ -18,11 +18,13 @@ class LibraryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateTabBarTitles()
         self.categories = Category.allCategories()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.title = "library_title".localized
         FirebaseDbManager.fetchBooks(completion: {
             self.books = FirebaseDbManager.books
             self.filteredBooksByCategory()
@@ -42,7 +44,7 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let categoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell {
-            categoryCollectionViewCell.categoryName.text = self.categories[indexPath.row].rawValue
+            categoryCollectionViewCell.categoryName.text = self.categories[indexPath.row].rawValue.localized
             return categoryCollectionViewCell
             
         }
@@ -70,11 +72,11 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 switch currentCategory {
                 case .all:
-                    noBooksCell.titleLabel.text = "There are no books in library"
+                    noBooksCell.titleLabel.text = "no_books_in_library_title".localized
                     noBooksCell.descriptionLabel.text = "You can be the first one to add a book"
                 default:
-                    noBooksCell.titleLabel.text = "There are no books in \(currentCategory.rawValue)"
-                    noBooksCell.descriptionLabel.text = "You can be the first one to add a book in \(currentCategory.rawValue) category"
+                    noBooksCell.titleLabel.text = "no_books_in_category".localized + "\(currentCategory.rawValue.localized)"
+                    noBooksCell.descriptionLabel.text = "you_can_be_the_first_one_to_add_a_book".localized + "category_title".localized
                     break;
                 }
                 

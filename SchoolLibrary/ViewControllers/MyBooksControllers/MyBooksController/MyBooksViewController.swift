@@ -20,7 +20,10 @@ class MyBooksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateTabBarTitles()
         self.myRightBarButtonItem = self.navigationItem.rightBarButtonItem ?? UIBarButtonItem()
+        self.myRightBarButtonItem.title = "add_book".localized
+        self.navigationItem.rightBarButtonItem = self.myRightBarButtonItem
         setupScreen()
     }
     
@@ -33,7 +36,10 @@ class MyBooksViewController: UIViewController {
     
     func setupScreen() {
         guard let user = UserData.user else { return }
-        self.actionButton.setTitle("Scan book QR", for: .normal)
+        self.actionButton.setTitle("scan_book_qr_button".localized, for: .normal)
+        myBooksSegment.setTitle("taken_segment_title".localized, forSegmentAt: 0)
+        myBooksSegment.setTitle("provided_segment_title".localized, forSegmentAt: 1)
+        self.title = "mybooks_title".localized
         switch screenType {
         case .taken:
             myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == user.uid})
@@ -82,8 +88,8 @@ class MyBooksViewController: UIViewController {
                     
                 } else {
                     var actions: [(String, UIAlertAction.Style)] = []
-                    actions.append(("Ok", .cancel))
-                    Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → SchoolLibrary app → Camera toggle", actions: actions, completion: {index in
+                    actions.append(("ok_global_title".localized, .cancel))
+                    Alerts.showAlert(viewController: self, title: "camera_permission_title".localized, message: "camera_permission_discription".localized, actions: actions, completion: {index in
                         switch index {
                         default:
                             break
@@ -93,8 +99,8 @@ class MyBooksViewController: UIViewController {
             }
         case .restricted, .denied:
             var actions: [(String, UIAlertAction.Style)] = []
-            actions.append(("Ok", .cancel))
-            Alerts.showAlert(viewController: self, title: "Camera permission", message: "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → ChangeX app → Camera toggle", actions: actions, completion: {index in
+            actions.append(("ok_global_title".localized, .cancel))
+            Alerts.showAlert(viewController: self, title: "camera_permission_title".localized, message: "camera_permission_discription".localized, actions: actions, completion: {index in
                 switch index {
                 default:
                     break
@@ -116,16 +122,16 @@ class MyBooksViewController: UIViewController {
 
     func handleQR(result: String) {
         if result.isEmpty {
-            showError(error: "error", delay: 3.0, onDismiss: nil)
+            showError(error: "error_global_title".localized, delay: 3.0, onDismiss: nil)
         } else {
             guard let book = FirebaseDbManager.books.first(where: {$0.id == result}),
                   let user = UserData.user else {
-                showError(error: "no book", delay: 3.0, onDismiss: nil)
+                showError(error: "there_isnt_a_book_with_that_qr_code".localized, delay: 3.0, onDismiss: nil)
                 return
             }
             
             if screenType == .taken && book.providedByUserID == user.uid {
-                showError(error: "Unauthorized operation", delay: 3.0, onDismiss: nil)
+                showError(error: "unauthorized_operation".localized, delay: 3.0, onDismiss: nil)
                 return
             }
             
@@ -137,16 +143,16 @@ class MyBooksViewController: UIViewController {
             case .taken:
                 let timestamp = Date().timeIntervalSince1970
                 let timestampReturn = Int(timestamp) + 2592000
-                actions.append(("Yes, i recived the book", .default))
-                actions.append(("Cancel", .cancel))
-                Alerts.showActionsheet(viewController: self, title: "Taken book", message: "I took \(book.name) and i need to return it on \(timestampReturn.timestampToDate())", actions: actions, completion: {index in
+                actions.append(("i_recieved_the_book_title".localized, .default))
+                actions.append(("cancel_global_title".localized, .cancel))
+                Alerts.showActionsheet(viewController: self, title: "taken_book".localized, message: "i_took_title".localized + " \(book.name)" + " return_date_title".localized + " \(timestampReturn.timestampToDate())", actions: actions, completion: {index in
                     switch index {
                     case 0:
                         modifyBook.takenOfUserID = user.uid
                         modifyBook.bookReturnData = "\(timestampReturn)"
                         FirebaseDbManager.create(book: modifyBook, completion: {
                             FirebaseDbManager.fetchBooks {
-                                self.showMessage(message: "Done",delay: 3.0, onDismiss: {
+                                self.showMessage(message: "done_global_title".localized,delay: 3.0, onDismiss: {
                                     self.setupScreen()
                                 })
                             }
@@ -156,16 +162,16 @@ class MyBooksViewController: UIViewController {
                     }
                 })
             case .provided:
-                actions.append(("My book was returned", .default))
-                actions.append(("Cancel", .cancel))
-                Alerts.showActionsheet(viewController: self, title: "Done", message: "I have received my book back", actions: actions, completion: {index in
+                actions.append(("my_book_was_returned".localized, .default))
+                actions.append(("cancel_global_title".localized, .cancel))
+                Alerts.showActionsheet(viewController: self, title: "done_global_title".localized, message: "i_have_received_my_book_back".localized, actions: actions, completion: {index in
                     switch index {
                     case 0:
                         modifyBook.takenOfUserID = ""
                         modifyBook.bookReturnData = ""
                         FirebaseDbManager.create(book: modifyBook, completion: {
                             FirebaseDbManager.fetchBooks {
-                                self.showMessage(message: "Done", delay: 3.0, onDismiss: {
+                                self.showMessage(message: "done_global_title".localized, delay: 3.0, onDismiss: {
                                     self.setupScreen()
                                 })
                             }
@@ -193,11 +199,11 @@ extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
             if let noBooksCell = tableView.dequeueReusableCell(withIdentifier: "NoBooksTableViewCell", for: indexPath) as? NoBooksTableViewCell {
                 switch screenType {
                 case .taken:
-                    noBooksCell.titleLabel.text = "No taken book"
-                    noBooksCell.descriptionLabel.text = "Може да разгледате свободните книги и да се свържете със собственика за да ви бъде предоставена"
+                    noBooksCell.titleLabel.text = "no_taken_books_title".localized
+                    noBooksCell.descriptionLabel.text = "no_taken_books_discription".localized
                 case .provided:
-                    noBooksCell.titleLabel.text = "No provided book"
-                    noBooksCell.descriptionLabel.text = "Може да разгледате свободните книги и да се свържете със собственика за да ви бъде предоставена"
+                    noBooksCell.titleLabel.text = "no_provided_books_title".localized
+                    noBooksCell.descriptionLabel.text = "no_provided_books_discription".localized
                 }
                 
                 return noBooksCell

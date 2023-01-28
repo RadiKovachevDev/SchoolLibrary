@@ -45,3 +45,8 @@ enum BookScreenType {
     case fromProvided
     case fromTaken
 }
+
+enum DefaultLanguage: String {
+    case BG = "bg"
+    case EN = "en"
+}

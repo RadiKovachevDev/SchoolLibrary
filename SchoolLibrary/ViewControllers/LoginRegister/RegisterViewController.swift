@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "crete_new_account_title_register_screen".localized
         setupScreen()
     }
     
@@ -42,52 +43,57 @@ class RegisterViewController: UIViewController {
               let phoneNumber = self.phoneNumberTextField.text,
               let password = self.passwordTextField.text,
               let confirmPassword = self.confirmPasswordTextField.text else {
-            self.showError(error: "Incorect input data", delay: 3.0, onDismiss: nil)
+            self.showError(error: "incorrect_input_global".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if email.isEmpty {
-            self.showError(error: "Enter your email", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_email_login".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if firstName.isEmpty {
-            self.showError(error: "Enter your first name", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_first_name".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if lastName.isEmpty {
-            self.showError(error: "Enter your last name", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_last_name".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if phoneNumber.isEmpty {
-            self.showError(error: "Enter your phone number", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_phone_number".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if password.isEmpty {
-            self.showError(error: "Enter your password", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_password".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if confirmPassword.isEmpty {
-            self.showError(error: "Confirm your password", delay: 3.0, onDismiss: nil)
+            self.showError(error: "confirm_your_password".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if password.count < 8 {
-            self.showError(error: "Password needs to longer than seven symbols" , delay: 3.0, onDismiss: nil)
+            self.showError(error: "password_needs_to_be_longer_than_seven_symbols".localized , delay: 3.0, onDismiss: nil)
             return
         }
         
         if confirmPassword != password {
-            self.showError(error: "Your confirm password doesn't match the password" , delay: 3.0, onDismiss: nil)
+            self.showError(error: "your_confirm_password_doesn't_match_the_password".localized , delay: 3.0, onDismiss: nil)
             return
         }
         
         if phoneNumber.count < 10 {
-            self.showError(error: "Number must too have ten numbers" , delay: 3.0, onDismiss: nil)
+            self.showError(error: "phone_number_must_have_ten_numbers".localized , delay: 3.0, onDismiss: nil)
+            return
+        }
+        
+        if phoneNumber.count > 10 {
+            self.showError(error: "phone_number_must_have_ten_numbers".localized , delay: 3.0, onDismiss: nil)
             return
         }
         

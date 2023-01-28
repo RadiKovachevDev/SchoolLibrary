@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  SchoolLibrary
+
+  Created by Radi on 27.01.23.
+  
+*/
+
+
+//Global
+"ok_gloval_title" = "Ok";
+"error_global_title" = "Error";
+"cancel_global_title" = "Cancel";
+"done_global_title" = "Done";
+"taken_book" = "Taken book";
+"call_title" = "Call";
+"send_mail_title" = "Send Mail";
+"incorrect_input_global" = "Incorrect input";
+// Categories
+"All" = "All";
+"Mathematics" = "Mathematics";
+"Biology" = "Biology";
+"Physics" = "Physics";
+"English" = "English";
+"French" = "French";
+"Programming" = "Programming";
+"Music" = "Music";
+"Novels" = "Novels";
+"Fantasy" = "Fantasy";
+
+//Library screens
+"library_title" = "Library";
+"no_books_in_library_title" = "There are no books in library";
+"no_books_in_category" = "There are no books in ";
+"you_can_be_the_first_one_to_add_a_book" = "You can be the first one to add a book in this ";
+"category_title" = " category";
+
+//My Books
+"mybooks_title" = "My books";
+"scan_book_qr_button" = "Scan book QR";
+"camera_permission_title" = "Camera permission";
+"camera_permission_discription" = "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → SchoolLibrary app → Camera toggle";
+"there_isnt_a_book_with_that_qr_code" = "There isn't a book with that QR code";
+"unauthorized_operation" = "Unauthorized operation";
+"i_recieved_the_book_title" = "Yes, i recived the book";
+"i_took_title" = "I took";
+"return_date_title" = "and i need to return it on";
+"my_book_was_returned" = "My book was returned";
+"i_have_received_my_book_back" = "I have received my book back";
+"no_taken_books_title" = "There isn't any taken books";
+"no_taken_books_discription" = "You can browse the available books and contact the owner to have it made available to you";
+"no_provided_books_title" = "You don't have any books to provide";
+"no_provided_books_discription" = "You can create a book to provide from the Add book button";
+"add_book" = "Add book";
+"provided_by_label" = "Provided by";
+"taken_segment_title" = "Taken";
+"provided_segment_title" = "Provided";
+
+//Book Details screen
+"provided_by_label" = "Provided by";
+"author_label" = "Author";
+"publisher_label" = "Publisher";
+"provided_book_qr" = "Provide book with QR";
+"taken_by" = "Taken by";
+"return_book_qr" = "Return book with QR";
+"qr_code_exchange_provided" = "Please scan the QR code to exchange the book";
+"qr_code_exchange_taken" = "Please scan the QR code to return the book";
+"version_title" = "Version";
+"terms_&_condition_title" = "Terms & condition";
+"privacy_policy_title" = "Privacy policy";
+"contact_us_title" = "Contact us";
+
+//setting
+"version_title" = "Version";
+"terms_&_condition_title" = "Terms & condition";
+"privacy_policy_title" = "Privacy policy";
+"contact_us_title" = "Contact us";
+"default_language_title" = "Default languege";
+"logout_title" = "Logout";
+"name_title" = "Name";
+"email_title" = "Email";
+"phone_number_title" = "Phone number";
+"user_info_section" = "User info";
+"app_settings_section" = "App settings";
+"about_section" = "About";
+"delete_account_section" = "Delete account";
+"delete_account_title" = "Delete account";
+"settings_screen_title" = "Settings";
+"languages_title" = "Languages";
+"select_default_language" = "Select default language";
+
+//Login & Registor
+"login_title" = "Login";
+"incorrect_email_or_password_login" = "Incorrect email or password";
+"enter_your_email_login" = "Enter your email";
+"enter_your_password_login" = "Enter your password";
+"create_account_button_title_login" = "Create new account";
+"login_button_title" = "Login";
+"crete_new_account_title_register_screen" = "Create new account";
+"enter_your_first_name" = "Enter your first name";
+"enter_your_last_name" = "Enter your last name";
+"enter_your_phone_number" = "Enter your phone number";
+"enter_your_password" = "Enter your password";
+"confirm_your_password" = "Confirm your password";
+"password_needs_to_be_longer_than_seven_symbols" = "Password needs to be longer than seven symbols";
+"your_confirm_password_doesn't_match_the_password" = "Your confirm password doesn't match the password";
+"phone_number_must_have_ten_numbers" = "Your phone number must have ten numbers";
+
+
+//Create book screen
+"enter_your_book_name" = "Enter the name of the book";
+"the_book_name_needs_to_be_between_3_and_100" = "The book name needs to be between 3 and 100 letters";
+"enter_the_author_of_the_book" = "Enter the author of the book";
+"the_author_name_needs_to_be_between_3_and_100" = "The author name needs to be between 3 and 100 letters";
+"enter_your_short_discription_of_the_book" = "Enter your short discription of the book";
+"short_discription_needs_to_be_between_50_and_100" = "Short description needs to be between 50 and 100 letters";
+"enter_your_long_discription_of_the_book" = "Enter your long discription of the book";
+"long_discription_needs_to_be_between_100_and_600" = "Long discription needs to be between 100 and 600 letters";
+"enter_the_publisher_of_the_book" = "Enter the publisher of the book";
+"the_publisher_name_needs_to_be_between_3_and_100" = "The publisher name need to be between 3 and 100";
+"choose_the_book_category" = "choose the book category";

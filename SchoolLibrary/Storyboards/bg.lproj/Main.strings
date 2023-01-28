@@ -1,0 +1,54 @@
+
+/* Class = "UINavigationItem"; title = "Create new account"; ObjectID = "041-Tx-Der"; */
+"041-Tx-Der.title" = "Create new account";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "09k-bI-sFL"; */
+"09k-bI-sFL.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "First name"; ObjectID = "2xN-AO-CzH"; */
+"2xN-AO-CzH.placeholder" = "First name";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "5Dx-4h-A3A"; */
+"5Dx-4h-A3A.title" = "Login";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "8BZ-wp-0Vv"; */
+"8BZ-wp-0Vv.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Create account"; ObjectID = "8vW-zf-pYr"; */
+"8vW-zf-pYr.normalTitle" = "Create account";
+
+/* Class = "UITextField"; placeholder = "Confirm password"; ObjectID = "9aq-BC-tO6"; */
+"9aq-BC-tO6.placeholder" = "Confirm password";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "AYB-vG-EhG"; */
+"AYB-vG-EhG.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Enter your email"; ObjectID = "HIj-ag-rxi"; */
+"HIj-ag-rxi.placeholder" = "Enter your email";
+
+/* Class = "UITextField"; placeholder = "Phone number"; ObjectID = "HL3-Ld-dzz"; */
+"HL3-Ld-dzz.placeholder" = "Phone number";
+
+/* Class = "UITextField"; placeholder = "Enter your email"; ObjectID = "NID-2z-3N6"; */
+"NID-2z-3N6.placeholder" = "Enter your email";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Pg6-Kx-OOS"; */
+"Pg6-Kx-OOS.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "Create new account"; ObjectID = "ZdU-hb-dYN"; */
+"ZdU-hb-dYN.configuration.title" = "Create new account";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZdU-hb-dYN"; */
+"ZdU-hb-dYN.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "bmD-J5-qSm"; */
+"bmD-J5-qSm.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Last name"; ObjectID = "daM-Qp-hjf"; */
+"daM-Qp-hjf.placeholder" = "Last name";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "tKb-05-1kZ"; */
+"tKb-05-1kZ.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "z3a-6r-85n"; */
+"z3a-6r-85n.placeholder" = "Password";

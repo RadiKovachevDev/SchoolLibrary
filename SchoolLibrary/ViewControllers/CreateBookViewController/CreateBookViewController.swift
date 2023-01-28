@@ -31,6 +31,8 @@ class CreateBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "create_book_title".localized
+        self.createBookButton.setTitle("create_book_title".localized, for: .normal)
         self.categories = Category.allCategories()
         self.categories.removeFirst()
         self.view.addDismissKeyboardGestureRecognizer()
@@ -53,57 +55,62 @@ class CreateBookViewController: UIViewController {
               let longDiscription = self.longDiscriptionTextView.text,
               let publisher = self.publisherTextField.text,
               let category = self.categoryTextField.text else {
-            self.showError(error: "Missing data", delay: 3.0, onDismiss: nil)
+            self.showError(error: "missing_data".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if bookName.isEmpty {
-            self.showError(error: "Enter the name of the book", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_book_name".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if bookName.count < 3 && bookName.count > 100 {
-            self.showError(error: "The book name needs to be between 3 and 100", delay: 3.0, onDismiss: nil)
+            self.showError(error: "the_book_name_needs_to_be_between_3_and_100".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if bookAuthor.isEmpty {
-            self.showError(error: "Enter the author of the book", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_the_author_of_the_book".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if bookAuthor.count < 3 && bookAuthor.count > 100 {
-            self.showError(error: "The authors name needs to be between 3 and 100", delay: 3.0, onDismiss: nil)
+            self.showError(error: "the_author_name_needs_to_be_between_3_and_100".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if shortDiscription.isEmpty {
-            self.showError(error: "Enter your short discription of the book", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_short_discription_of_the_book".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if shortDiscription.count < 50 && shortDiscription.count > 100 {
-            self.showError(error: "Short discription needs to be between 100 and 200", delay: 3.0, onDismiss: nil)
+            self.showError(error: "short_discription_needs_to_be_between_50_and_100".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
+        if longDiscription.isEmpty {
+            self.showError(error: "enter_your_long_discription_of_the_book".localized, delay: 3.0, onDismiss: nil)
+            return
+        }
+        
         if longDiscription.count < 100 && longDiscription.count > 600{
-            self.showError(error: "Long discription needs to be between 100 and 600", delay: 3.0, onDismiss: nil)
+            self.showError(error: "long_discription_needs_to_be_between_100_and_600".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if publisher.isEmpty {
-            self.showError(error: "Enter the publisher of the book", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_the_publisher_of_the_book".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if publisher.count < 3 && publisher.count > 100 {
-            self.showError(error: "The publisher name needs to be between 3 and 100", delay: 3.0, onDismiss: nil)
+            self.showError(error: "the_publisher_name_needs_to_be_between_3_and_100".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
         if category.isEmpty {
-            self.showError(error: "Enter the category of the book", delay: 3.0, onDismiss: nil)
+            self.showError(error: "choose_the_book_category".localized, delay: 3.0, onDismiss: nil)
             return
         }
 
@@ -135,7 +142,7 @@ class CreateBookViewController: UIViewController {
         toolBar.barStyle = .default
         toolBar.barTintColor = UIColor(named: "slKindaWhite")
         toolBar.tintColor = UIColor(named: "slKindaBlack")
-        let done = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))
+        let done = UIBarButtonItem.init(title: "done_global_title".localized, style: .done, target: self, action: #selector(onDoneButtonTapped))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolBar.setItems([flexibleSpace, done], animated: false)
         categoryPicker.hideKeyboard()
