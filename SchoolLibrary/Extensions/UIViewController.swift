@@ -54,4 +54,13 @@ extension UIViewController {
             onDismiss?()
         }
     }
+    
+    func updateTabBarTitles() {
+            guard let tabBarTitle = self.tabBarController?.tabBar.items else {
+                return
+            }
+        tabBarTitle[0].title = "library_title".localized
+        tabBarTitle[1].title = "mybooks_title".localized
+        tabBarTitle[2].title = "settings_screen_title".localized 
+        }
 }

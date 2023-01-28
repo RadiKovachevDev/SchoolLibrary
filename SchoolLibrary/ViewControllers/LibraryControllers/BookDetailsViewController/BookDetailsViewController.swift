@@ -31,12 +31,17 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
             if let imageCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsImageTableViewCell", for: indexPath) as? BookDetailsImageTableViewCell {
-                imageCell.categoryNameLabel.text = currentBook.category
+                if let category = Category(rawValue: currentBook.category) {
+                    imageCell.categoryNameLabel.text = category.rawValue.localized
+                }
+                
                 return imageCell
             }
         case 1:
             if let descriptionCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsDescriptionTableViewCell", for: indexPath) as? BookDetailsDescriptionTableViewCell {
                 
+                descriptionCell.authorLabel.text = "author_label".localized
+                descriptionCell.publisherLabel.text = "publisher_label".localized
                 descriptionCell.bookNameLabel.text = currentBook.name
                 descriptionCell.longDiscriptionLabel.text = currentBook.longDiscription
                 descriptionCell.authorNameLabel.text = currentBook.author
@@ -46,10 +51,10 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             }
         case 2:
             if let bookDetailsCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsProvidedByTableViewCell", for: indexPath) as? BookDetailsProvidedByTableViewCell {
-                bookDetailsCell.providedByLabel.text = "Provided by"
+                bookDetailsCell.providedByLabel.text = "provided_by_label".localized
                 bookDetailsCell.userNameLabel.text = "\(bookInUser.firstName) \(bookInUser.lastName)"
-                bookDetailsCell.primaryButton.setTitle("Call", for: .normal)
-                bookDetailsCell.secondaryButton.setTitle("Send mail", for: .normal)
+                bookDetailsCell.primaryButton.setTitle("call_title".localized, for: .normal)
+                bookDetailsCell.secondaryButton.setTitle("send_mail_title".localized, for: .normal)
                 bookDetailsCell.phoneNumber = bookInUser.phoneNumber
                 bookDetailsCell.mail = bookInUser.email
                 bookDetailsCell.generateQRCode.isHidden = true
@@ -57,9 +62,9 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                 case .standartScreen:
                     bookDetailsCell.generateQRCode.isHidden = true
                 case .fromProvided:
-                    bookDetailsCell.generateQRCode.setTitle("QR provided book", for: .normal)
+                    bookDetailsCell.generateQRCode.setTitle("provided_book_qr".localized, for: .normal)
                     bookDetailsCell.generateQRCode.isHidden = false
-                    bookDetailsCell.providedByLabel.text = "Taken by"
+                    bookDetailsCell.providedByLabel.text = "taken_by".localized
                     if book?.takenOfUserID == "" {
                         bookDetailsCell.providedByLabel.isHidden = true
                         bookDetailsCell.userNameLabel.isHidden = true
@@ -72,7 +77,7 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                         bookDetailsCell.generateQRCode.isHidden = true
                     }
                 case .fromTaken:
-                    bookDetailsCell.generateQRCode.setTitle("QR return book", for: .normal)
+                    bookDetailsCell.generateQRCode.setTitle("return_book_qr".localized, for: .normal)
                     bookDetailsCell.generateQRCode.isHidden = false
                 }
                 
@@ -81,14 +86,14 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
                     case .fromProvided:
                         if let qrUIImage = QRGenerator.generateQRCode(from: currentBook.id),
                            let qrViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController {
-                            qrViewController.operationDescription = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                            qrViewController.operationDescription = "qr_code_exchange_provided".localized
                             qrViewController.generatedQRUIImage = qrUIImage
                             self?.present(qrViewController, animated: true, completion: nil)
                         }
                     case .fromTaken:
                         if let qrUIImage = QRGenerator.generateQRCode(from: currentBook.id),
                            let qrViewController = UIStoryboard.myBooks.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController {
-                            qrViewController.operationDescription = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                            qrViewController.operationDescription = "qr_code_exchange_taken".localized
                             qrViewController.generatedQRUIImage = qrUIImage
                             self?.present(qrViewController, animated: true, completion: nil)
                         }

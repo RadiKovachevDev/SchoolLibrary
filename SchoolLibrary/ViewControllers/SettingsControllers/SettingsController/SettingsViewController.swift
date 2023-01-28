@@ -10,13 +10,14 @@ import UIKit
 class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var sections = ["User info", "App settings", "About", "Delete account"]
+    var sections = ["user_info_section".localized, "app_settings_section".localized, "about_section".localized, "delete_account_section".localized]
     
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateTabBarTitles()
+        self.title = "settings_screen_title".localized
         self.user = UserData.user
     }
 }
@@ -65,13 +66,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                let currentUser = self.user {
                 switch indexPath.row {
                 case 0:
-                    settingsInfoTableViewCell.titleLabel.text = "Name"
+                    settingsInfoTableViewCell.titleLabel.text = "name_title".localized
                     settingsInfoTableViewCell.valueLabel.text = "\(currentUser.firstName) \(currentUser.lastName)"
                 case 1:
-                    settingsInfoTableViewCell.titleLabel.text = "Email"
+                    settingsInfoTableViewCell.titleLabel.text = "email_title".localized
                     settingsInfoTableViewCell.valueLabel.text = "\(currentUser.email)"
                 case 2:
-                    settingsInfoTableViewCell.titleLabel.text = "Phone number"
+                    settingsInfoTableViewCell.titleLabel.text = "phone_number_title".localized
                     settingsInfoTableViewCell.valueLabel.text = "\(currentUser.phoneNumber)"
                 default:
                     settingsInfoTableViewCell.valueLabel.text = ""
@@ -84,10 +85,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 settingAppTableViewCell.valueLabel.isHidden = false
                 switch indexPath.row {
                 case 0:
-                    settingAppTableViewCell.titleLabel.text = "Default languege"
-                    settingAppTableViewCell.valueLabel.text = "BG"
+                    settingAppTableViewCell.titleLabel.text = "default_language_title".localized
+                    settingAppTableViewCell.valueLabel.text = UserData.selectedLanguage?.uppercased()
                 default:
-                    settingAppTableViewCell.titleLabel.text = "Logout"
+                    settingAppTableViewCell.titleLabel.text = "logout_title".localized
                     settingAppTableViewCell.valueLabel.isHidden = true
                 }
                 return settingAppTableViewCell
@@ -98,16 +99,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 settingAppTableViewCell.valueLabel.isHidden = false
                 switch indexPath.row {
                 case 0:
-                    settingAppTableViewCell.titleLabel.text = "Version"
+                    settingAppTableViewCell.titleLabel.text = "version_title".localized
                     settingAppTableViewCell.valueLabel.text = "1.0.0(1)"
                 case 1:
-                    settingAppTableViewCell.titleLabel.text = "Terms of service"
+                    settingAppTableViewCell.titleLabel.text = "terms_&_condition_title".localized
                     settingAppTableViewCell.valueLabel.isHidden = true
                 case 2:
-                    settingAppTableViewCell.titleLabel.text = "Privacy policy"
+                    settingAppTableViewCell.titleLabel.text = "privacy_policy_title".localized
                     settingAppTableViewCell.valueLabel.isHidden = true
                 case 3:
-                    settingAppTableViewCell.titleLabel.text = "Contact us"
+                    settingAppTableViewCell.titleLabel.text = "contact_us_title".localized
                     settingAppTableViewCell.valueLabel.isHidden = true
                 default:
                     settingAppTableViewCell.titleLabel.text = ""
@@ -117,6 +118,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         default:
             if let deleteAccountTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DeleteAccountTableViewCell", for: indexPath) as? DeleteAccountTableViewCell {
+                deleteAccountTableViewCell.deleteAccountButton.setTitle("delete_account_title".localized, for: .normal)
                 return deleteAccountTableViewCell
             }
         }
@@ -127,6 +129,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 1:
             switch indexPath.row {
+            case 0:
+                setupDefaultLanguage()
             case 1:
                 logOut()
             default:
@@ -157,4 +161,25 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-}
+    
+    func setupDefaultLanguage() {
+            var actions: [(String, UIAlertAction.Style)] = []
+            actions.append(("\(DefaultLanguage.BG.rawValue.uppercased())", .default))
+            actions.append(("\(DefaultLanguage.EN.rawValue.uppercased())", .default))
+        actions.append(("cancel_global_title".localized, .cancel))
+
+        Alerts.showActionsheet(viewController: self, title: "languages_title".localized, message: "select_default_language".localized, actions: actions) { (index) in
+            switch index {
+            case 0:
+                UserData.selectedLanguage = DefaultLanguage.BG.rawValue
+            case 1:
+                UserData.selectedLanguage = DefaultLanguage.EN.rawValue
+            default:
+                return
+            }
+            self.tableView.reloadData()
+            self.sections = ["user_info_section".localized, "app_settings_section".localized, "about_section".localized, "delete_account_section".localized]
+            self.title = "settings_screen_title".localized
+            self.updateTabBarTitles()
+        }
+    }}

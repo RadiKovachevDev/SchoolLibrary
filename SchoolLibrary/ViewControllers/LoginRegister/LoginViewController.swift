@@ -25,6 +25,9 @@ class LoginViewController: UIViewController {
         self.view.addDismissKeyboardGestureRecognizer()
         self.emailTextField.setLeftPaddingPoints(16.0)
         self.passwordTextField.setLeftPaddingPoints(16.0)
+        self.title = "login_title".localized
+        self.registerButton.setTitle("create_account_button_title_login".localized, for: .normal)
+        self.loginButton.setTitle("login_button_title".localized, for: .normal)
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
@@ -36,17 +39,17 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         guard let email = self.emailTextField.text,
               let password = self.passwordTextField.text else {
-            self.showError(error: "Incorect email or password", delay: 3.0, onDismiss: nil)
+            self.showError(error: "incorrect_email_or_password_login".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if email.isEmpty {
-            self.showError(error: "Enter your email", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_email_login".localized, delay: 3.0, onDismiss: nil)
             return
         }
         
         if password.isEmpty {
-            self.showError(error: "Enter your password", delay: 3.0, onDismiss: nil)
+            self.showError(error: "enter_your_password_login".localized, delay: 3.0, onDismiss: nil)
             return
         }
         

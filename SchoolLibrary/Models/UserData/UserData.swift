@@ -32,4 +32,13 @@ final class UserData {
             }
         }
     }
+    static var selectedLanguage: String? {
+            get {
+                return UserDefaults.standard.string(forKey: "selectedLanguage")
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: "selectedLanguage")
+                UserDefaults.standard.synchronize()
+            }
+        }
 }

@@ -1,0 +1,120 @@
+/* 
+  Localizable.strings
+  SchoolLibrary
+
+  Created by Radi on 27.01.23.
+  
+*/
+
+//Global
+"ok_global_title" = "Добре";
+"error_global_title" = "Грешка";
+"cancel_global_title" = "Отказ";
+"done_global_title" = "Готово";
+"taken_book" = "Взета книга";
+"call_title" = "Обадете се";
+"send_mail_title" = "Изпратете имейл";
+"incorrect_input_global" = "Неправилно въвеждане";
+// Categories
+"All" = "Всички";
+"Mathematics" = "Математика";
+"Biology" = "Биология";
+"Physics" = "Физика";
+"English" = "Английски";
+"French" = "Френски";
+"Programming" = "Програмиране";
+"Music" = "Музика";
+"Novels" = "Романи";
+"Fantasy" = "Фантастика";
+
+//Library screens
+"library_title" = "Библиотека";
+"no_books_in_library_title" = "Няма книги в библиотеката";
+"no_books_in_category" = "Няма книги във ";
+"you_can_be_the_first_one_to_add_a_book" = "Можеш да си първият който да добави книга в тази ";
+"category_title" = " категория";
+
+
+//My Books screen
+"mybooks_title" = "Моите книги";
+"scan_book_qr_button" = "Сканиране на книга с QR";
+"camera_permission_title" = "Разрешение за камерата";
+"camera_permission_discription" = "Приложението няма разрешение да използва камерата. Ако искате да промените състоянието на разрешението, отидете на iPhone Setting → SchoolLibrary app → Camera switch";
+"there_isnt_a_book_with_that_qr_code" = "Няма книга с този QR код";
+"unauthorized_operation" = "Неразрешена операция";
+"i_recieved_the_book_title" = "Да, получих книгата";
+"i_took_title" = "Аз взех";
+"return_date_title" = "и трябва да я върна на";
+"my_book_was_returned" = "Книгата ми беше върната";
+"i_have_received_my_book_back" = "Получих книгата си обратно";
+"no_taken_books_title" = "Няма взети книги";
+"no_taken_books_discription" = "Може да разгледате свободните книги и да се свържете със собственика за да ви бъде предоставена";
+"no_provided_books_title" = "Нямате книги за предоставяне";
+"no_provided_books_discription" = "Може да създадете книга за предоставяне от бутона Add book";
+"add_book" = "Добави книга";
+
+
+//Book Details Screen
+"provided_by_label" = "Предоставена от";
+"author_label" = "Автор";
+"publisher_label" = "Издател";
+"provided_book_qr" = "Предоставяне на книга с QR";
+"taken_by" = "Взета от";
+"return_book_qr" = "Връщане на книга с QR";
+"qr_code_exchange_provided" = "Моля сканирайте QR кода за да размените книгитa";
+"qr_code_exchange_taken" = "Моля сканирайте QR кода за да върнете книгата";
+
+
+//Setting
+"version_title" = "Версия";
+"terms_&_condition_title" = "Правила и условия";
+"privacy_policy_title" = "Политика за поверителност";
+"contact_us_title" = "Свържете се с нас";
+"default_language_title" = "Език по подразбиране";
+"logout_title" = "Излез от профила си";
+"name_title" = "Име";
+"email_title" = "Имейл";
+"phone_number_title" = "Телефонен номер";
+"user_info_section" = "Информация за потребителя";
+"app_settings_section" = "Настройки на приложението";
+"about_section" = "За SchoolLibrary";
+"delete_account_section" = "Изтриване на акаунт";
+"delete_account_title" = "Изтриване на акаунт";
+"settings_screen_title" = "Настройки";
+"languages_title" = "Езици";
+"taken_segment_title" = "Взети";
+"provided_segment_title" = "Предоставени";
+"select_default_language" = "Изберете език по подразбиране";
+ 
+//Login & Register
+"login_title" = "Вход";
+"incorrect_email_or_password_login" = "Неправилен имейл или парола";
+"enter_your_email_login" = "Въведете имейла си";
+"enter_your_password_login" = "Въведете паролата си";
+"create_account_button_title_login" = "Създай нов акаунт";
+"login_button_title" = "Влез";
+"crete_new_account_title_register_screen" = "Създаване на нов акаунт";
+"enter_your_first_name" = "Въведете вашето име";
+"enter_your_last_name" = "Въведете вашето фамилно име";
+"enter_your_phone_number" = "Въведете вашият телефонен номер";
+"enter_your_password" = "Въведете вашата парола";
+"confirm_your_password" = "Потвърдете вашата парола";
+"password_needs_to_be_longer_than_seven_symbols" = "Паролата трябва да е поне седем символа";
+"your_confirm_password_doesn't_match_the_password" = "Вашата парола за потвърждение не съвпада с паролата";
+"phone_number_must_have_ten_numbers" = "Вашият телефонен номер трябва да има десет цифри";
+"create_book_title" = "Създай книга";
+"missing_data" = "Липсва информация";
+
+
+//Create book screen
+"enter_your_book_name" = "Въведете името на книгата";
+"the_book_name_needs_to_be_between_3_and_100" = "Името на книгата трябва да е между 3 и 100 букви";
+"enter_the_author_of_the_book" = "Въведете автора на книгата";
+"the_author_name_needs_to_be_between_3_and_100" = "Името на автора трябва да е между 3 и 100 букви";
+"enter_your_short_discription_of_the_book" = "Въведете вашето кратко описание на книгата";
+"short_discription_needs_to_be_between_50_and_100" = "Краткото описание трябва да е между 50 и 100 букви";
+"enter_your_long_discription_of_the_book" = "Въведете вашето дълго описание на книгата";
+"long_discription_needs_to_be_between_100_and_600" = "Дългото описание трябва да бъде между 100 и 600 букви";
+"enter_the_publisher_of_the_book" = "Въведете издателството на книгата";
+"the_publisher_name_needs_to_be_between_3_and_100" = "Името на издателя трябва да е между 3 и 100";
+"choose_the_book_category" = "изберете категорията на книгата";
