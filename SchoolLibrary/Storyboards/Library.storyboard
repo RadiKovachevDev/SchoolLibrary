@@ -121,7 +121,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpm-Ar-jH2">
                                                     <rect key="frame" x="16" y="0.0" width="361" height="163.66666666666666"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defoult_category_image" translatesAutoresizingMaskIntoConstraints="NO" id="CaB-uQ-hWh">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="CaB-uQ-hWh">
                                                             <rect key="frame" x="16" y="16" width="96" height="96"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="96" id="AHg-v5-zes"/>
@@ -163,13 +163,22 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOE-y6-YAv">
+                                                            <rect key="frame" x="16" y="100" width="96" height="14.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                            <color key="textColor" name="slOrangeBase"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" name="slKindaWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="xOE-y6-YAv" firstAttribute="top" secondItem="CaB-uQ-hWh" secondAttribute="bottom" constant="-12" id="7He-0c-wYf"/>
                                                         <constraint firstAttribute="trailing" secondItem="XIz-NW-jiI" secondAttribute="trailing" constant="16" id="ASj-a6-bHv"/>
+                                                        <constraint firstItem="XIz-NW-jiI" firstAttribute="leading" secondItem="xOE-y6-YAv" secondAttribute="trailing" constant="8" id="Jqi-ik-ivc"/>
                                                         <constraint firstItem="CaB-uQ-hWh" firstAttribute="top" secondItem="gpm-Ar-jH2" secondAttribute="top" constant="16" id="Jtb-i2-shW"/>
                                                         <constraint firstItem="CaB-uQ-hWh" firstAttribute="leading" secondItem="gpm-Ar-jH2" secondAttribute="leading" constant="16" id="OhT-vZ-lMy"/>
                                                         <constraint firstItem="XIz-NW-jiI" firstAttribute="leading" secondItem="CaB-uQ-hWh" secondAttribute="trailing" constant="8" id="TAd-In-rEG"/>
+                                                        <constraint firstItem="xOE-y6-YAv" firstAttribute="leading" secondItem="gpm-Ar-jH2" secondAttribute="leading" constant="16" id="Xtc-B4-kkH"/>
                                                         <constraint firstAttribute="bottom" secondItem="XIz-NW-jiI" secondAttribute="bottom" constant="16" id="ieA-bI-s9b"/>
                                                         <constraint firstItem="XIz-NW-jiI" firstAttribute="top" secondItem="gpm-Ar-jH2" secondAttribute="top" constant="16" id="lp2-9s-tjh"/>
                                                     </constraints>
@@ -192,6 +201,7 @@
                                             <outlet property="authorLabel" destination="JW9-fj-OxX" id="ZqU-9k-gh7"/>
                                             <outlet property="bookImageView" destination="CaB-uQ-hWh" id="O7A-0t-qJc"/>
                                             <outlet property="bookNameLabel" destination="xCw-Oc-VPR" id="gp6-MC-umR"/>
+                                            <outlet property="categoryLabel" destination="xOE-y6-YAv" id="wE9-ga-xnl"/>
                                             <outlet property="publisherLabel" destination="gbC-5z-aW9" id="fxg-1i-jQJ"/>
                                             <outlet property="smallDescriptionLabel" destination="YH7-hF-BXu" id="uKt-N3-Pye"/>
                                         </connections>
@@ -578,7 +588,6 @@
     <resources>
         <image name="Logo" width="1024" height="1024"/>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
-        <image name="defoult_category_image" width="405" height="430"/>
         <namedColor name="slBlack">
             <color red="0.054901960784313725" green="0.062745098039215685" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -89,7 +89,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-Lw-1Ka">
                                                     <rect key="frame" x="16" y="0.0" width="361" height="163.66666666666666"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defoult_category_image" translatesAutoresizingMaskIntoConstraints="NO" id="eka-Kn-rhb">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="eka-Kn-rhb">
                                                             <rect key="frame" x="16" y="16" width="96" height="96"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="96" id="8ed-Je-z5o"/>
@@ -131,12 +131,21 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzS-Vc-kd5">
+                                                            <rect key="frame" x="16" y="100" width="96" height="14.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                            <color key="textColor" name="slOrangeBase"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" name="slKindaWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="eka-Kn-rhb" firstAttribute="top" secondItem="TCe-Lw-1Ka" secondAttribute="top" constant="16" id="5ai-RM-xsQ"/>
                                                         <constraint firstAttribute="bottom" secondItem="0wn-yK-3Xp" secondAttribute="bottom" constant="16" id="Dr0-A0-tR0"/>
+                                                        <constraint firstItem="YzS-Vc-kd5" firstAttribute="top" secondItem="eka-Kn-rhb" secondAttribute="bottom" constant="-12" id="Ncw-hc-8cG"/>
+                                                        <constraint firstItem="YzS-Vc-kd5" firstAttribute="leading" secondItem="TCe-Lw-1Ka" secondAttribute="leading" constant="16" id="Vm2-9R-FgZ"/>
                                                         <constraint firstItem="0wn-yK-3Xp" firstAttribute="top" secondItem="TCe-Lw-1Ka" secondAttribute="top" constant="16" id="Wla-JY-hNj"/>
+                                                        <constraint firstItem="0wn-yK-3Xp" firstAttribute="leading" secondItem="YzS-Vc-kd5" secondAttribute="trailing" constant="8" id="lhA-Qk-eO2"/>
                                                         <constraint firstItem="eka-Kn-rhb" firstAttribute="leading" secondItem="TCe-Lw-1Ka" secondAttribute="leading" constant="16" id="nAU-DN-wao"/>
                                                         <constraint firstAttribute="trailing" secondItem="0wn-yK-3Xp" secondAttribute="trailing" constant="16" id="tvn-VF-gB8"/>
                                                         <constraint firstItem="0wn-yK-3Xp" firstAttribute="leading" secondItem="eka-Kn-rhb" secondAttribute="trailing" constant="8" id="wUm-Wh-iIq"/>
@@ -160,6 +169,7 @@
                                             <outlet property="authorLabel" destination="CcR-ge-97o" id="mqD-BC-G5Q"/>
                                             <outlet property="bookImageView" destination="eka-Kn-rhb" id="kOn-DT-PzX"/>
                                             <outlet property="bookNameLabel" destination="TEr-PM-0BE" id="Jd1-zQ-0jQ"/>
+                                            <outlet property="categoryLabel" destination="YzS-Vc-kd5" id="WUB-F4-dpl"/>
                                             <outlet property="cellView" destination="TCe-Lw-1Ka" id="FbY-M9-qyD"/>
                                             <outlet property="publisherLabel" destination="OZl-PP-occ" id="vVn-1f-Ppo"/>
                                             <outlet property="smallDescriptionLabel" destination="Dla-Op-aNx" id="Ebm-ws-1Af"/>
@@ -625,7 +635,6 @@
     <resources>
         <image name="Logo" width="1024" height="1024"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
-        <image name="defoult_category_image" width="405" height="430"/>
         <namedColor name="slBlack">
             <color red="0.054901960784313725" green="0.062745098039215685" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
