@@ -90,6 +90,7 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
                 bookCell.bookNameLabel.text = currentBook.name
                 bookCell.publisherLabel.text = currentBook.publisher
                 bookCell.smallDescriptionLabel.text = currentBook.shortDiscription
+                bookCell.categoryLabel.text = currentBook.category.localized
                 return bookCell
             }
             

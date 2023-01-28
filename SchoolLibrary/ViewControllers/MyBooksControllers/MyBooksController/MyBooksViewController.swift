@@ -215,6 +215,7 @@ extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
                 bookCell.smallDescriptionLabel.text = currentBook.shortDiscription
                 bookCell.publisherLabel.text = currentBook.publisher
                 bookCell.authorLabel.text = currentBook.author
+                bookCell.categoryLabel.text = currentBook.category.localized
                 
                 let timestamp = Int(Date().timeIntervalSince1970)
                 if timestamp > Int(currentBook.bookReturnData) ?? 0 && currentBook.takenOfUserID != "" {
