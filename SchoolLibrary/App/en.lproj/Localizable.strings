@@ -16,6 +16,7 @@
 "call_title" = "Call";
 "send_mail_title" = "Send Mail";
 "incorrect_input_global" = "Incorrect input";
+"in_progres" = "Under development";
 // Categories
 "All" = "All";
 "Mathematics" = "Mathematics";

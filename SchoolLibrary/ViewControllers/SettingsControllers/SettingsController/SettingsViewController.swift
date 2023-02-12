@@ -148,6 +148,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             switch indexPath.row {
+            case 1:
+                self.showMessage(message: "in_progres".localized, delay: 3.0, onDismiss: nil)
+            case 2:
+                self.showMessage(message: "in_progres".localized, delay: 3.0, onDismiss: nil)
             case 3:
                 contactUse()
             default:

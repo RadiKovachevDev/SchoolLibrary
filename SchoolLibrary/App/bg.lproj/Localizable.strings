@@ -15,6 +15,7 @@
 "call_title" = "Обадете се";
 "send_mail_title" = "Изпратете имейл";
 "incorrect_input_global" = "Неправилно въвеждане";
+"in_progres" = "В процес на разработка";
 // Categories
 "All" = "Всички";
 "Mathematics" = "Математика";
