@@ -119,3 +119,4 @@
 "enter_the_publisher_of_the_book" = "Enter the publisher of the book";
 "the_publisher_name_needs_to_be_between_3_and_100" = "The publisher name need to be between 3 and 100";
 "choose_the_book_category" = "choose the book category";
+"create_book_title" = "Create book";

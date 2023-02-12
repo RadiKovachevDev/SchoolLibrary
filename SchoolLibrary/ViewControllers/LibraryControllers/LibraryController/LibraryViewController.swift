@@ -25,6 +25,7 @@ class LibraryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "library_title".localized
+        self.collectionView.reloadData()
         FirebaseDbManager.fetchBooks(completion: {
             self.books = FirebaseDbManager.books
             self.filteredBooksByCategory()

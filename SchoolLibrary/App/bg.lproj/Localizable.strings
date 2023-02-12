@@ -118,3 +118,4 @@
 "enter_the_publisher_of_the_book" = "Въведете издателството на книгата";
 "the_publisher_name_needs_to_be_between_3_and_100" = "Името на издателя трябва да е между 3 и 100";
 "choose_the_book_category" = "изберете категорията на книгата";
+"create_book_title" = "Създай книга";
