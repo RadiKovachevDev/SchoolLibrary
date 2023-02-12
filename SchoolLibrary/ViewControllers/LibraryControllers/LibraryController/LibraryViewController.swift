@@ -25,10 +25,12 @@ class LibraryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "library_title".localized
+        self.collectionView.reloadData()
         FirebaseDbManager.fetchBooks(completion: {
             self.books = FirebaseDbManager.books
             self.filteredBooksByCategory()
             self.tableView.reloadData()
+            self.collectionView.reloadData()
         })
     }
     
@@ -37,7 +39,7 @@ class LibraryViewController: UIViewController {
     }
 }
 
-extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.categories.count
     }
@@ -45,16 +47,29 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let categoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell {
             categoryCollectionViewCell.categoryName.text = self.categories[indexPath.row].rawValue.localized
+            categoryCollectionViewCell.booksCount.text = "books_count_label".localized + checkBooksCountIn(category: categories[indexPath.row].rawValue)
             return categoryCollectionViewCell
             
         }
         return UICollectionViewCell()
     }
     
+    func checkBooksCountIn(category: String) -> String {
+        if category == "All" {
+            return "\(self.books.filter({$0.takenOfUserID == "" && $0.providedByUserID != UserData.user?.uid}) .count)"
+        } else {
+            return "\(books.filter({$0.category == category && $0.takenOfUserID == "" && $0.providedByUserID != UserData.user?.uid}).count)"
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.currentCategory = categories[indexPath.row]
         self.filteredBooksByCategory()
         self.tableView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 172, height: 50)
     }
 }
 extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {

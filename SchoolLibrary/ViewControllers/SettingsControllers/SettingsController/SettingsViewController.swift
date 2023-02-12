@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import JGProgressHUD
+import Firebase
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -100,7 +102,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 switch indexPath.row {
                 case 0:
                     settingAppTableViewCell.titleLabel.text = "version_title".localized
-                    settingAppTableViewCell.valueLabel.text = "1.0.0(1)"
+                    settingAppTableViewCell.valueLabel.text = Bundle.main.releaseVersionNumberPretty
                 case 1:
                     settingAppTableViewCell.titleLabel.text = "terms_&_condition_title".localized
                     settingAppTableViewCell.valueLabel.isHidden = true
@@ -119,6 +121,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             if let deleteAccountTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DeleteAccountTableViewCell", for: indexPath) as? DeleteAccountTableViewCell {
                 deleteAccountTableViewCell.deleteAccountButton.setTitle("delete_account_title".localized, for: .normal)
+                deleteAccountTableViewCell.errorEvent = { [weak self] errorString in
+                    if errorString != "" {
+                        self?.showError(error: errorString, delay: 3.0, onDismiss: nil)
+                    } else {
+                        self?.deleteAccount()
+                    }
+                }
+                
                 return deleteAccountTableViewCell
             }
         }
@@ -138,6 +148,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             switch indexPath.row {
+            case 1:
+                self.showMessage(message: "in_progres".localized, delay: 3.0, onDismiss: nil)
+            case 2:
+                self.showMessage(message: "in_progres".localized, delay: 3.0, onDismiss: nil)
             case 3:
                 contactUse()
             default:
@@ -154,6 +168,28 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
             sceneDelegate.setRootViewController(initialViewController)
         }
+    }
+    
+    func deleteAccount() {
+        guard let user = UserData.user else { return }
+        for  myBook in FirebaseDbManager.books.filter({$0.providedByUserID == user.uid}) {
+            FirebaseDbManager.delete(book: myBook, completion: {
+            })
+        }
+        
+        FirebaseDbManager.delete(user: user, completion: {
+            let currentUser = Auth.auth().currentUser
+            
+            currentUser?.delete { error in
+                if let error = error {
+                    self.showError(error: error.localizedDescription,delay: 3.0, onDismiss: nil)
+                } else {
+                    self.showMessage(message: "account_delete".localized, delay: 3.0, onDismiss: {
+                        self.logOut()
+                    })
+                }
+            }
+        })
     }
     
     func contactUse() {

@@ -15,6 +15,7 @@
 "call_title" = "Обадете се";
 "send_mail_title" = "Изпратете имейл";
 "incorrect_input_global" = "Неправилно въвеждане";
+"in_progres" = "В процес на разработка";
 // Categories
 "All" = "Всички";
 "Mathematics" = "Математика";
@@ -33,6 +34,7 @@
 "no_books_in_category" = "Няма книги във ";
 "you_can_be_the_first_one_to_add_a_book" = "Можеш да си първият който да добави книга в тази ";
 "category_title" = " категория";
+"books_count_label" = "Книги: ";
 
 
 //My Books screen
@@ -85,6 +87,9 @@
 "taken_segment_title" = "Взети";
 "provided_segment_title" = "Предоставени";
 "select_default_language" = "Изберете език по подразбиране";
+"taken_book_delete_account_button_massage" = "Трябва да върнете книгите, които сте взели, след което можете да опитате отново";
+"provided_book_delete_account_button_massage" = "Трябва да вземете обратно книгите, които сте дали, след което можете да опитате отново";
+"account_delete" = "Вашият акаунт е изтрит";
  
 //Login & Register
 "login_title" = "Вход";
@@ -118,3 +123,4 @@
 "enter_the_publisher_of_the_book" = "Въведете издателството на книгата";
 "the_publisher_name_needs_to_be_between_3_and_100" = "Името на издателя трябва да е между 3 и 100";
 "choose_the_book_category" = "изберете категорията на книгата";
+"create_book_title" = "Създай книга";

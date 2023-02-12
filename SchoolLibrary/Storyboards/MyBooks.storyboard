@@ -62,21 +62,8 @@
                                     <action selector="actionButtonTaped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="j4b-Ma-cVU"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-yn-GC3">
-                                <rect key="frame" x="16" y="713" width="361" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="x6k-E2-Jyb"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Taken"/>
-                                    <segment title="Provided"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changeSegmentState:" destination="Y6W-OH-hqX" eventType="valueChanged" id="ctm-Ur-YRQ"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-W9-wyU">
-                                <rect key="frame" x="0.0" y="159" width="393" height="546"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="509"/>
                                 <color key="backgroundColor" name="slWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookTableViewCell" id="2r9-DU-H2y" customClass="BookTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
@@ -250,20 +237,55 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="g20-Gb-2Uy"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNb-ZO-tGm">
+                                <rect key="frame" x="0.0" y="676" width="393" height="176"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-yn-GC3">
+                                        <rect key="frame" x="16" y="32" width="361" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="x6k-E2-Jyb"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Taken"/>
+                                            <segment title="Provided"/>
+                                        </segments>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeSegmentState:" destination="Y6W-OH-hqX" eventType="valueChanged" id="ctm-Ur-YRQ"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hKm-yn-GC3" secondAttribute="trailing" constant="16" id="BZ0-sd-6NT"/>
+                                    <constraint firstAttribute="bottom" secondItem="hKm-yn-GC3" secondAttribute="bottom" constant="96" id="E6O-im-olR"/>
+                                    <constraint firstItem="hKm-yn-GC3" firstAttribute="top" secondItem="fNb-ZO-tGm" secondAttribute="top" constant="32" id="gtK-Ax-c7L"/>
+                                    <constraint firstItem="hKm-yn-GC3" firstAttribute="leading" secondItem="fNb-ZO-tGm" secondAttribute="leading" constant="16" id="mvE-v9-XSd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="slWhite"/>
                         <constraints>
-                            <constraint firstItem="hKm-yn-GC3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="7LR-6W-K7i"/>
+                            <constraint firstItem="fNb-ZO-tGm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4Il-rf-HoD"/>
                             <constraint firstItem="MxW-ld-35V" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7jR-pS-7pc"/>
+                            <constraint firstItem="fNb-ZO-tGm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8e2-ru-EsJ"/>
                             <constraint firstItem="MxW-ld-35V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="A3p-hL-gU3"/>
-                            <constraint firstItem="hKm-yn-GC3" firstAttribute="top" secondItem="cNe-W9-wyU" secondAttribute="bottom" constant="8" id="DIl-Um-eVv"/>
                             <constraint firstItem="cNe-W9-wyU" firstAttribute="top" secondItem="MxW-ld-35V" secondAttribute="bottom" constant="8" id="Inq-Vn-cGt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cNe-W9-wyU" secondAttribute="trailing" id="MX6-AB-v3o"/>
+                            <constraint firstItem="fNb-ZO-tGm" firstAttribute="top" secondItem="cNe-W9-wyU" secondAttribute="bottom" constant="8" id="Nb5-Ed-JiH"/>
+                            <constraint firstAttribute="bottom" secondItem="fNb-ZO-tGm" secondAttribute="bottom" id="TCA-LD-bcj"/>
                             <constraint firstItem="cNe-W9-wyU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Tnf-us-oYh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MxW-ld-35V" secondAttribute="trailing" constant="16" id="fZP-sg-KuF"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hKm-yn-GC3" secondAttribute="trailing" constant="16" id="mbu-No-N4h"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hKm-yn-GC3" secondAttribute="bottom" constant="8" id="mgW-jy-0nj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="MyBooks" image="book.closed" catalog="system" id="EMi-os-VVf"/>
