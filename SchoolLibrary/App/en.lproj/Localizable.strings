@@ -91,6 +91,7 @@
 "select_default_language" = "Select default language";
 "taken_book_delete_account_button_massage" = "You must return the books you took, then you can try again";
 "provided_book_delete_account_button_massage" = "You must take back the books you gave, then you can try again";
+"account_delete" = "Your account has been deleted";
 
 //Login & Registor
 "login_title" = "Login";

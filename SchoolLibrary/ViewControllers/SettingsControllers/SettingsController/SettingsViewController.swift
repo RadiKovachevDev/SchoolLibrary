@@ -7,6 +7,7 @@
 
 import UIKit
 import JGProgressHUD
+import Firebase
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -167,8 +168,24 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func deleteAccount() {
         guard let user = UserData.user else { return }
-        let myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == user.uid})
+        for  myBook in FirebaseDbManager.books.filter({$0.providedByUserID == user.uid}) {
+            FirebaseDbManager.delete(book: myBook, completion: {
+            })
+        }
         
+        FirebaseDbManager.delete(user: user, completion: {
+            let currentUser = Auth.auth().currentUser
+            
+            currentUser?.delete { error in
+                if let error = error {
+                    self.showError(error: error.localizedDescription,delay: 3.0, onDismiss: nil)
+                } else {
+                    self.showMessage(message: "account_delete".localized, delay: 3.0, onDismiss: {
+                        self.logOut()
+                    })
+                }
+            }
+        })
     }
     
     func contactUse() {
