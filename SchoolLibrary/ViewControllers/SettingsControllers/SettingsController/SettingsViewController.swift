@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -119,6 +120,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             if let deleteAccountTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DeleteAccountTableViewCell", for: indexPath) as? DeleteAccountTableViewCell {
                 deleteAccountTableViewCell.deleteAccountButton.setTitle("delete_account_title".localized, for: .normal)
+                deleteAccountTableViewCell.errorEvent = { [weak self] errorString in
+                    if errorString != "" {
+                        self?.showError(error: errorString, delay: 3.0, onDismiss: nil)
+                    } else {
+                        self?.deleteAccount()
+                    }
+                }
+                
                 return deleteAccountTableViewCell
             }
         }
@@ -154,6 +163,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
             sceneDelegate.setRootViewController(initialViewController)
         }
+    }
+    
+    func deleteAccount() {
+        guard let user = UserData.user else { return }
+        let myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == user.uid})
+        
     }
     
     func contactUse() {

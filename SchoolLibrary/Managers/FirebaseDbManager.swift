@@ -56,6 +56,11 @@ final class FirebaseDbManager {
         completion()
     }
     
+    static func delete(book: Book, completion: @escaping () -> Void) {
+        self.db.child("Books").child("\(book.id)").removeValue()
+        completion()
+    }
+    
     static func fetchBooks(completion: @escaping () -> Void) {
         self.db.child("Books").getData(completion:  { error, snapshot in
             guard error == nil else {

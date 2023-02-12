@@ -86,6 +86,8 @@
 "taken_segment_title" = "Взети";
 "provided_segment_title" = "Предоставени";
 "select_default_language" = "Изберете език по подразбиране";
+"taken_book_delete_account_button_massage" = "Трябва да върнете книгите, които сте взели, след което можете да опитате отново";
+"provided_book_delete_account_button_massage" = "Трябва да вземете обратно книгите, които сте дали, след което можете да опитате отново";
  
 //Login & Register
 "login_title" = "Вход";
