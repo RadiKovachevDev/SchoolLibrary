@@ -100,7 +100,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 switch indexPath.row {
                 case 0:
                     settingAppTableViewCell.titleLabel.text = "version_title".localized
-                    settingAppTableViewCell.valueLabel.text = "1.0.0(1)"
+                    settingAppTableViewCell.valueLabel.text = Bundle.main.releaseVersionNumberPretty
                 case 1:
                     settingAppTableViewCell.titleLabel.text = "terms_&_condition_title".localized
                     settingAppTableViewCell.valueLabel.isHidden = true
