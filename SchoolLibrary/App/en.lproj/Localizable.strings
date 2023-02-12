@@ -34,6 +34,7 @@
 "no_books_in_category" = "There are no books in ";
 "you_can_be_the_first_one_to_add_a_book" = "You can be the first one to add a book in this ";
 "category_title" = " category";
+"books_count_label" = "Books: ";
 
 //My Books
 "mybooks_title" = "My books";
