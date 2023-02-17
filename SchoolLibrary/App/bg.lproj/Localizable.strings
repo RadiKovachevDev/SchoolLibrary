@@ -52,7 +52,7 @@
 "no_taken_books_title" = "Няма взети книги";
 "no_taken_books_discription" = "Може да разгледате свободните книги и да се свържете със собственика за да ви бъде предоставена";
 "no_provided_books_title" = "Нямате книги за предоставяне";
-"no_provided_books_discription" = "Може да създадете книга за предоставяне от бутона Add book";
+"no_provided_books_discription" = "Може да създадете книга за предоставяне от бутона Добави книга";
 "add_book" = "Добави книга";
 
 
@@ -107,7 +107,6 @@
 "password_needs_to_be_longer_than_seven_symbols" = "Паролата трябва да е поне седем символа";
 "your_confirm_password_doesn't_match_the_password" = "Вашата парола за потвърждение не съвпада с паролата";
 "phone_number_must_have_ten_numbers" = "Вашият телефонен номер трябва да има десет цифри";
-"create_book_title" = "Създай книга";
 "missing_data" = "Липсва информация";
 
 
@@ -123,4 +122,10 @@
 "enter_the_publisher_of_the_book" = "Въведете издателството на книгата";
 "the_publisher_name_needs_to_be_between_3_and_100" = "Името на издателя трябва да е между 3 и 100";
 "choose_the_book_category" = "изберете категорията на книгата";
-"create_book_title" = "Създай книга";
+"create_book_title" = "Добави книга";
+"book_name_label_create_book" = "Име на книгата";
+"author_label_create_book" = "Автор на книгата";
+"short_description_label_create_book" = "Кратко описание";
+"long_descriptio_label_create_book" = "Дълго описание";
+"publisher_name_label_create_book" = "Издателство";
+"category_name_label_create_book" = "Категория";

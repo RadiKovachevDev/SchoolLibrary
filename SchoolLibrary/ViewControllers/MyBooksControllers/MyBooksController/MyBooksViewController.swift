@@ -22,7 +22,6 @@ class MyBooksViewController: UIViewController {
         super.viewDidLoad()
         updateTabBarTitles()
         self.myRightBarButtonItem = self.navigationItem.rightBarButtonItem ?? UIBarButtonItem()
-        self.myRightBarButtonItem.title = "add_book".localized
         self.navigationItem.rightBarButtonItem = self.myRightBarButtonItem
         setupScreen()
     }
@@ -30,6 +29,8 @@ class MyBooksViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         FirebaseDbManager.fetchBooks {
+            self.myRightBarButtonItem.title = "add_book".localized
+            self.tableView.reloadData()
             self.setupScreen()
         }
     }

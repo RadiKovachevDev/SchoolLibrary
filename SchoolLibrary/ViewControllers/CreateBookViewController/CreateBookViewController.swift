@@ -31,17 +31,32 @@ class CreateBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "create_book_title".localized
-        self.createBookButton.setTitle("create_book_title".localized, for: .normal)
         self.categories = Category.allCategories()
         self.categories.removeFirst()
         self.view.addDismissKeyboardGestureRecognizer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupScreen()
+    }
+    
+    func setupScreen() {
+        self.bookNameLabel.text = "book_name_label_create_book".localized
+        self.bookAuthorLabel.text = "author_label_create_book".localized
+        self.shortDiscriptionLabel.text = "short_description_label_create_book".localized
+        self.longDiscriptionLabel.text = "long_descriptio_label_create_book".localized
+        self.publisherLabel.text = "publisher_name_label_create_book".localized
+        self.categoryLabel.text = "category_name_label_create_book".localized
+        self.title = "create_book_title".localized
+        self.createBookButton.setTitle("create_book_title".localized, for: .normal)
         self.bookNameTextField.setLeftPaddingPoints(16.0)
         self.bookAuthorTextField.setLeftPaddingPoints(16.0)
         self.shortDiscriptionTextView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         self.longDiscriptionTextView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         self.publisherTextField.setLeftPaddingPoints(16.0)
         self.categoryTextField.setLeftPaddingPoints(16.0)
+
     }
     
     @IBAction func showPicker(_ sender: UITextField) {
