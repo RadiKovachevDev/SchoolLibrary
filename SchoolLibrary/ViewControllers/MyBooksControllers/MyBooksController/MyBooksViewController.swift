@@ -12,6 +12,7 @@ import JGProgressHUD
 class MyBooksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myBooksSegment: UISegmentedControl!
+    @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var actionButton: UIButton!
     
     var screenType: MyBooksScreenType = .taken
@@ -28,6 +29,9 @@ class MyBooksViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.segmentView.clipsToBounds = true
+        self.segmentView.layer.cornerRadius = 16
+        self.segmentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         FirebaseDbManager.fetchBooks {
             self.myRightBarButtonItem.title = "add_book".localized
             self.tableView.reloadData()

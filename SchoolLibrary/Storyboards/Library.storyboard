@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="18L-Ft-O4J">
-                                <rect key="frame" x="0.0" y="103" width="393" height="559"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="556"/>
                                 <color key="backgroundColor" name="slWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookTableViewCell" id="BWI-oY-nfJ" customClass="BookTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
@@ -210,7 +210,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IxT-7I-vGT">
-                                <rect key="frame" x="0.0" y="670" width="393" height="182"/>
+                                <rect key="frame" x="0.0" y="667" width="393" height="102"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZJb-kK-zRH">
                                         <rect key="frame" x="0.0" y="16" width="393" height="70"/>
@@ -289,6 +289,7 @@
                                                 <connections>
                                                     <outlet property="booksCount" destination="Cbv-3C-k4Q" id="T5Y-un-ykJ"/>
                                                     <outlet property="categoryName" destination="9oq-mT-y8L" id="V9h-1D-vXy"/>
+                                                    <outlet property="cellView" destination="l6X-1n-yYP" id="P2L-Jm-5HZ"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -300,28 +301,23 @@
                                 </subviews>
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="ZJb-kK-zRH" secondAttribute="bottom" constant="96" id="40q-xw-8sC"/>
                                     <constraint firstAttribute="trailing" secondItem="ZJb-kK-zRH" secondAttribute="trailing" id="Oyq-mu-RCL"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZJb-kK-zRH" secondAttribute="bottom" constant="16" id="kdO-2y-3C9"/>
                                     <constraint firstItem="ZJb-kK-zRH" firstAttribute="leading" secondItem="IxT-7I-vGT" secondAttribute="leading" id="otW-vz-OGZ"/>
                                     <constraint firstItem="ZJb-kK-zRH" firstAttribute="top" secondItem="IxT-7I-vGT" secondAttribute="top" constant="16" id="zLg-pA-rX4"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="slWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="IxT-7I-vGT" secondAttribute="bottom" id="6cd-bj-2y4"/>
                             <constraint firstItem="18L-Ft-O4J" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8w7-pa-3dz"/>
                             <constraint firstItem="18L-Ft-O4J" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Aed-GO-yy9"/>
                             <constraint firstItem="IxT-7I-vGT" firstAttribute="top" secondItem="18L-Ft-O4J" secondAttribute="bottom" constant="8" id="Eda-TX-r7o"/>
                             <constraint firstItem="IxT-7I-vGT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Gkb-0b-Po9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="18L-Ft-O4J" secondAttribute="trailing" id="Xak-nb-oh9"/>
                             <constraint firstItem="IxT-7I-vGT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="buf-ye-yW8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IxT-7I-vGT" secondAttribute="bottom" id="ygJ-Cn-VRt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Library" image="books.vertical" catalog="system" id="bW9-dn-kqj"/>
@@ -330,6 +326,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="categoryView" destination="IxT-7I-vGT" id="13W-vK-lr5"/>
                         <outlet property="collectionView" destination="ZJb-kK-zRH" id="Odm-4m-o4Q"/>
                         <outlet property="tableView" destination="18L-Ft-O4J" id="ASO-Ai-dE3"/>
                     </connections>

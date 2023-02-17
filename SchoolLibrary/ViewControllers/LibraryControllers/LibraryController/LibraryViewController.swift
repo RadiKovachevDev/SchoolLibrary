@@ -9,6 +9,7 @@ import UIKit
 
 class LibraryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var categories = [Category]()
@@ -25,6 +26,9 @@ class LibraryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "library_title".localized
+        self.categoryView.clipsToBounds = true
+        self.categoryView.layer.cornerRadius = 16
+        self.categoryView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         self.collectionView.reloadData()
         FirebaseDbManager.fetchBooks(completion: {
             self.books = FirebaseDbManager.books
@@ -48,6 +52,7 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
         if let categoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell {
             categoryCollectionViewCell.categoryName.text = self.categories[indexPath.row].rawValue.localized
             categoryCollectionViewCell.booksCount.text = "books_count_label".localized + checkBooksCountIn(category: categories[indexPath.row].rawValue)
+            categoryCollectionViewCell.cellView.backgroundColor = currentCategory == self.categories[indexPath.row] ? UIColor(named: "slOrangeLightest") : UIColor(named: "slWhite")
             return categoryCollectionViewCell
             
         }
@@ -66,6 +71,7 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
         self.currentCategory = categories[indexPath.row]
         self.filteredBooksByCategory()
         self.tableView.reloadData()
+        self.collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

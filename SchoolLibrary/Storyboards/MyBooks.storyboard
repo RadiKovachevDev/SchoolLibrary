@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-W9-wyU">
-                                <rect key="frame" x="0.0" y="159" width="393" height="509"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="498"/>
                                 <color key="backgroundColor" name="slWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookTableViewCell" id="2r9-DU-H2y" customClass="BookTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
@@ -238,10 +238,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNb-ZO-tGm">
-                                <rect key="frame" x="0.0" y="676" width="393" height="176"/>
+                                <rect key="frame" x="0.0" y="665" width="393" height="104"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-yn-GC3">
-                                        <rect key="frame" x="16" y="32" width="361" height="49"/>
+                                        <rect key="frame" x="16" y="28" width="361" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="x6k-E2-Jyb"/>
                                         </constraints>
@@ -262,15 +262,10 @@
                                 <color key="backgroundColor" name="slKindaWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hKm-yn-GC3" secondAttribute="trailing" constant="16" id="BZ0-sd-6NT"/>
-                                    <constraint firstAttribute="bottom" secondItem="hKm-yn-GC3" secondAttribute="bottom" constant="96" id="E6O-im-olR"/>
-                                    <constraint firstItem="hKm-yn-GC3" firstAttribute="top" secondItem="fNb-ZO-tGm" secondAttribute="top" constant="32" id="gtK-Ax-c7L"/>
+                                    <constraint firstAttribute="bottom" secondItem="hKm-yn-GC3" secondAttribute="bottom" constant="28" id="MhW-Kz-c2I"/>
+                                    <constraint firstItem="hKm-yn-GC3" firstAttribute="top" secondItem="fNb-ZO-tGm" secondAttribute="top" constant="28" id="gtK-Ax-c7L"/>
                                     <constraint firstItem="hKm-yn-GC3" firstAttribute="leading" secondItem="fNb-ZO-tGm" secondAttribute="leading" constant="16" id="mvE-v9-XSd"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -280,10 +275,10 @@
                             <constraint firstItem="MxW-ld-35V" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7jR-pS-7pc"/>
                             <constraint firstItem="fNb-ZO-tGm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8e2-ru-EsJ"/>
                             <constraint firstItem="MxW-ld-35V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="A3p-hL-gU3"/>
+                            <constraint firstItem="fNb-ZO-tGm" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="A9r-jl-oDc"/>
                             <constraint firstItem="cNe-W9-wyU" firstAttribute="top" secondItem="MxW-ld-35V" secondAttribute="bottom" constant="8" id="Inq-Vn-cGt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cNe-W9-wyU" secondAttribute="trailing" id="MX6-AB-v3o"/>
                             <constraint firstItem="fNb-ZO-tGm" firstAttribute="top" secondItem="cNe-W9-wyU" secondAttribute="bottom" constant="8" id="Nb5-Ed-JiH"/>
-                            <constraint firstAttribute="bottom" secondItem="fNb-ZO-tGm" secondAttribute="bottom" id="TCA-LD-bcj"/>
                             <constraint firstItem="cNe-W9-wyU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Tnf-us-oYh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MxW-ld-35V" secondAttribute="trailing" constant="16" id="fZP-sg-KuF"/>
                         </constraints>
@@ -301,6 +296,7 @@
                     <connections>
                         <outlet property="actionButton" destination="MxW-ld-35V" id="4Nr-wA-E4Z"/>
                         <outlet property="myBooksSegment" destination="hKm-yn-GC3" id="0Rd-Na-dyX"/>
+                        <outlet property="segmentView" destination="fNb-ZO-tGm" id="Ojz-H1-MAa"/>
                         <outlet property="tableView" destination="cNe-W9-wyU" id="eOw-f8-g6t"/>
                     </connections>
                 </viewController>

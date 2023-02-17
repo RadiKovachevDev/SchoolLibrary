@@ -166,13 +166,13 @@ extension UIView {
         layer.mask = mask
     }
 
-func addDismissKeyboardGestureRecognizer() {
+    func addDismissKeyboardGestureRecognizer() {
         let gestureRecognizer = UITapGestureRecognizer()
         gestureRecognizer.addTarget(self, action: #selector(hideKeyboard))
         self.addGestureRecognizer(gestureRecognizer)
     }
 
-@objc func hideKeyboard() {
+    @objc func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
