@@ -56,7 +56,6 @@ class CreateBookViewController: UIViewController {
         self.longDiscriptionTextView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         self.publisherTextField.setLeftPaddingPoints(16.0)
         self.categoryTextField.setLeftPaddingPoints(16.0)
-
     }
     
     @IBAction func showPicker(_ sender: UITextField) {
@@ -177,7 +176,7 @@ extension CreateBookViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.categories[row].rawValue
+        return self.categories[row].rawValue.localized
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
