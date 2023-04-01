@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class BookDetailsProvidedByTableViewCell: UITableViewCell {
     
@@ -40,7 +41,6 @@ class BookDetailsProvidedByTableViewCell: UITableViewCell {
         if let phoneNumber = self.phoneNumber,
            let url = URL(string: "tel://\(phoneNumber)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            
         }
     }
     

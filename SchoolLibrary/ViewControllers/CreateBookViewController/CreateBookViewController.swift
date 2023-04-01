@@ -56,6 +56,7 @@ class CreateBookViewController: UIViewController {
         self.longDiscriptionTextView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         self.publisherTextField.setLeftPaddingPoints(16.0)
         self.categoryTextField.setLeftPaddingPoints(16.0)
+        self.categoryTextField.text = self.selectedCategory?.rawValue.localized ?? ""
     }
     
     @IBAction func showPicker(_ sender: UITextField) {
@@ -152,7 +153,6 @@ class CreateBookViewController: UIViewController {
         categoryPicker.contentMode = .center
         categoryPicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 250, width: UIScreen.main.bounds.size.width, height: 250)
         self.view.addSubview(categoryPicker)
-        
         toolBar.barStyle = .default
         toolBar.barTintColor = UIColor(named: "slKindaWhite")
         toolBar.tintColor = UIColor(named: "slKindaBlack")
