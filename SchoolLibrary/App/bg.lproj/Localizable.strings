@@ -39,7 +39,8 @@
 
 //My Books screen
 "mybooks_title" = "Моите книги";
-"scan_book_qr_button" = "Сканиране на книга с QR";
+"scan_book_for_provided_qr_button" = "Сканирай QR за да върнеш книгата";
+"scan_book_for_taken_qr_button" = "Сканирай QR за да вземеш книгата";
 "camera_permission_title" = "Разрешение за камерата";
 "camera_permission_discription" = "Приложението няма разрешение да използва камерата. Ако искате да промените състоянието на разрешението, отидете на iPhone Setting → SchoolLibrary app → Camera switch";
 "there_isnt_a_book_with_that_qr_code" = "Няма книга с този QR код";

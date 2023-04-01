@@ -41,15 +41,16 @@ class MyBooksViewController: UIViewController {
     
     func setupScreen() {
         guard let user = UserData.user else { return }
-        self.actionButton.setTitle("scan_book_qr_button".localized, for: .normal)
         myBooksSegment.setTitle("taken_segment_title".localized, forSegmentAt: 0)
         myBooksSegment.setTitle("provided_segment_title".localized, forSegmentAt: 1)
         self.title = "mybooks_title".localized
         switch screenType {
         case .taken:
+            self.actionButton.setTitle("scan_book_for_taken_qr_button".localized, for: .normal)
             myBooks = FirebaseDbManager.books.filter({$0.takenOfUserID == user.uid})
             self.navigationItem.rightBarButtonItem = nil
         case .provided:
+            self.actionButton.setTitle("scan_book_for_provided_qr_button".localized, for: .normal)
             myBooks = FirebaseDbManager.books.filter({$0.providedByUserID == user.uid})
             self.navigationItem.rightBarButtonItem = self.myRightBarButtonItem
         }
@@ -135,7 +136,7 @@ class MyBooksViewController: UIViewController {
                 return
             }
             
-            if screenType == .taken && book.providedByUserID == user.uid {
+            if (screenType == .taken && book.providedByUserID == user.uid) || (screenType == .provided && book.providedByUserID != user.uid ) {
                 showError(error: "unauthorized_operation".localized, delay: 3.0, onDismiss: nil)
                 return
             }

@@ -39,7 +39,8 @@
 
 //My Books
 "mybooks_title" = "My books";
-"scan_book_qr_button" = "Scan book QR";
+"scan_book_for_provided_qr_button" = "Scan QR to get your book back";
+"scan_book_for_taken_qr_button" = "Scan the QR to get the book";
 "camera_permission_title" = "Camera permission";
 "camera_permission_discription" = "The application does not have permission to use the camera. If you want to change the state of the permission, go to iPhone Setting → SchoolLibrary app → Camera toggle";
 "there_isnt_a_book_with_that_qr_code" = "There isn't a book with that QR code";
@@ -77,7 +78,7 @@
 "terms_&_condition_title" = "Terms & condition";
 "privacy_policy_title" = "Privacy policy";
 "contact_us_title" = "Contact us";
-"default_language_title" = "Default languege";
+"default_language_title" = "Default language";
 "logout_title" = "Logout";
 "name_title" = "Name";
 "email_title" = "Email";
