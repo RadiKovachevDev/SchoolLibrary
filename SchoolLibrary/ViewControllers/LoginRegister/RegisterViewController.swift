@@ -40,12 +40,14 @@ class RegisterViewController: UIViewController {
         guard let email = self.emailTextField.text,
               let lastName = self.lastNameTextField.text,
               let firstName = self.firstNameTextField.text,
-              let phoneNumber = self.phoneNumberTextField.text,
+              let inputPhoneNumber = self.phoneNumberTextField.text,
               let password = self.passwordTextField.text,
               let confirmPassword = self.confirmPasswordTextField.text else {
             self.showError(error: "incorrect_input_global".localized, delay: 3.0, onDismiss: nil)
             return
         }
+        
+        let phoneNumber = inputPhoneNumber.replacingOccurrences(of: " ", with: "")
         
         if email.isEmpty {
             self.showError(error: "enter_your_email_login".localized, delay: 3.0, onDismiss: nil)
