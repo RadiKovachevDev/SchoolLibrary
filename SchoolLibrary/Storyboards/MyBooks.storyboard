@@ -316,7 +316,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYf-rO-TVc">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="694"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="978"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long discription" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uap-Kc-1EZ">
                                                 <rect key="frame" x="16" y="250" width="361" height="16"/>
@@ -514,7 +514,7 @@
                                             <constraint firstItem="lRP-5x-7vW" firstAttribute="top" secondItem="lBc-RG-6bl" secondAttribute="bottom" constant="8" id="dza-4Y-ktE"/>
                                             <constraint firstItem="lBc-RG-6bl" firstAttribute="leading" secondItem="VYf-rO-TVc" secondAttribute="leading" constant="16" id="fR4-1I-ayZ"/>
                                             <constraint firstAttribute="trailing" secondItem="Vk7-u6-viS" secondAttribute="trailing" constant="16" id="gpl-sj-heG"/>
-                                            <constraint firstAttribute="bottom" secondItem="hJl-hR-H7L" secondAttribute="bottom" constant="16" id="hCj-xO-lLf"/>
+                                            <constraint firstAttribute="bottom" secondItem="hJl-hR-H7L" secondAttribute="bottom" constant="300" id="hCj-xO-lLf"/>
                                             <constraint firstItem="Uap-Kc-1EZ" firstAttribute="leading" secondItem="VYf-rO-TVc" secondAttribute="leading" constant="16" id="kag-XD-fj6"/>
                                             <constraint firstAttribute="trailing" secondItem="S9E-JD-LzN" secondAttribute="trailing" constant="16" id="nf4-W3-nbn"/>
                                             <constraint firstItem="P5j-3l-f2e" firstAttribute="top" secondItem="WeR-I9-e4i" secondAttribute="bottom" constant="2" id="q6X-43-LoD"/>

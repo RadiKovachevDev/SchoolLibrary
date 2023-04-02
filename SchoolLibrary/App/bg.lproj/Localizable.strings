@@ -66,7 +66,15 @@
 "return_book_qr" = "Връщане на книга с QR";
 "qr_code_exchange_provided" = "Моля сканирайте QR кода за да размените книгитa";
 "qr_code_exchange_taken" = "Моля сканирайте QR кода за да върнете книгата";
-
+"stop_providing_the_book_title" = "Спрете предоставянето на книгата";
+"are_you_sure_you_want_to_stop_providing_the_book" = "Сигурни ли сте, че искате временно да спрете предоставянето на книгата";
+"delete_book_title" = "Изтрий книгата";
+"are_you_sure_you_want_to_delete_the_book" = "Сигурни ли сте, че искате да изтриете тази книга";
+"stop_providing" = "Спрете да предоставяте";
+"start_providing" = "Започнете да предоставяте";
+"click_to_delete_the_book" = "Натиснете, за да изтриете книгата";
+"start_providing_the_book" = "Започнете да предоставяте книгата";
+"are_you_sure_you_want_to_start_providing_the_book" = "Сигурни ли сте, че искате да започнете да предоставяте книгата";
 
 //Setting
 "version_title" = "Версия";

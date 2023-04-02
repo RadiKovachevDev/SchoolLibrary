@@ -344,7 +344,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="G84-Ym-2uK">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="563.33333333333337"/>
                                 <color key="backgroundColor" name="slWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookDetailsImageTableViewCell" id="TRO-mN-qpR" customClass="BookDetailsImageTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
@@ -477,135 +477,130 @@
                                             <outlet property="publisherNameLabel" destination="H3I-Sn-BG7" id="ydI-yg-DdR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookDetailsProvidedByTableViewCell" id="c9d-Fb-PAO" customClass="BookDetailsProvidedByTableViewCell" customModule="SchoolLibrary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="480" width="393" height="285"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c9d-Fb-PAO" id="MMZ-Dx-ta4">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="285"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provided by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guI-YG-Tmx">
-                                                    <rect key="frame" x="16" y="16" width="361" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="d9e-cr-VdK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radi Kovachev" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzK-Cb-9Ij">
-                                                    <rect key="frame" x="16" y="36" width="361" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Rdl-VC-abi"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="P2R-8N-8fJ">
-                                                    <rect key="frame" x="20" y="82" width="353" height="176"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw2-4a-41P" userLabel="Send Mail Button">
-                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="48"/>
-                                                            <color key="backgroundColor" name="slGreenBase"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="egq-7g-98f"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="Send mail">
-                                                                <color key="titleColor" name="slKindaWhite"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="16"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="sendMailButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="xJ9-Bi-X68"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-G4-f7Q" userLabel="Call Button">
-                                                            <rect key="frame" x="0.0" y="64" width="353" height="48"/>
-                                                            <color key="backgroundColor" systemColor="linkColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="aXP-7Q-1G0"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="Call">
-                                                                <color key="titleColor" name="slKindaWhite"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="16"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="CallButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="r0m-bt-HQG"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-cp-vet" userLabel="Generate QR Code Button">
-                                                            <rect key="frame" x="0.0" y="128" width="353" height="48"/>
-                                                            <color key="backgroundColor" name="slGreenBase"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="uDk-Q2-7ZD"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="Generate QR code">
-                                                                <color key="titleColor" name="slKindaWhite"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="16"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="generateQRCodeButtonTapped:" destination="c9d-Fb-PAO" eventType="touchUpInside" id="qRC-HM-iVV"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="tzK-Cb-9Ij" firstAttribute="top" secondItem="guI-YG-Tmx" secondAttribute="bottom" constant="4" id="55y-a5-on3"/>
-                                                <constraint firstItem="P2R-8N-8fJ" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leadingMargin" id="E1Y-wb-Xtr"/>
-                                                <constraint firstItem="tzK-Cb-9Ij" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leading" constant="16" id="Ii7-Mx-prK"/>
-                                                <constraint firstItem="guI-YG-Tmx" firstAttribute="top" secondItem="MMZ-Dx-ta4" secondAttribute="top" constant="16" id="Kn5-G4-Pfq"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="P2R-8N-8fJ" secondAttribute="bottom" constant="16" id="M55-SK-Svs"/>
-                                                <constraint firstItem="P2R-8N-8fJ" firstAttribute="top" secondItem="tzK-Cb-9Ij" secondAttribute="bottom" constant="16" id="Yp7-xv-Mga"/>
-                                                <constraint firstAttribute="trailing" secondItem="tzK-Cb-9Ij" secondAttribute="trailing" constant="16" id="nmt-pY-ehF"/>
-                                                <constraint firstItem="guI-YG-Tmx" firstAttribute="leading" secondItem="MMZ-Dx-ta4" secondAttribute="leading" constant="16" id="p1C-CR-NqV"/>
-                                                <constraint firstAttribute="trailing" secondItem="guI-YG-Tmx" secondAttribute="trailing" constant="16" id="qn3-Rs-ak3"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="P2R-8N-8fJ" secondAttribute="trailing" id="uVB-7G-IZP"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="slWhite"/>
-                                        <connections>
-                                            <outlet property="generateQRCode" destination="RDF-cp-vet" id="6Pi-xH-PRK"/>
-                                            <outlet property="primaryButton" destination="fw2-G4-f7Q" id="DcT-e0-euN"/>
-                                            <outlet property="providedByLabel" destination="guI-YG-Tmx" id="UhW-f5-mK1"/>
-                                            <outlet property="secondaryButton" destination="vw2-4a-41P" id="C2a-og-VFI"/>
-                                            <outlet property="userNameLabel" destination="tzK-Cb-9Ij" id="DwB-UM-HCJ"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="dwP-87-Bm8" id="FeB-Jg-qLL"/>
                                     <outlet property="delegate" destination="dwP-87-Bm8" id="ayA-jf-cri"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iac-gA-DYh">
+                                <rect key="frame" x="0.0" y="622.33333333333337" width="393" height="195.66666666666663"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-sG-LRB">
+                                        <rect key="frame" x="8" y="8" width="377" height="35.666666666666664"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provided by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guI-YG-Tmx">
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radi Kovachev" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzK-Cb-9Ij">
+                                                <rect key="frame" x="0.0" y="14.000000000000002" width="377" height="21.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="P2R-8N-8fJ">
+                                        <rect key="frame" x="8" y="51.666666666666629" width="377" height="136"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw2-4a-41P" userLabel="Send Mail Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="40"/>
+                                                <color key="backgroundColor" name="slGreenBase"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="egq-7g-98f"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Send mail">
+                                                    <color key="titleColor" name="slKindaWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="secondaryButtonTapped:" destination="dwP-87-Bm8" eventType="touchUpInside" id="Lgk-mi-gLh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-G4-f7Q" userLabel="Call Button">
+                                                <rect key="frame" x="0.0" y="48" width="377" height="40"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="aXP-7Q-1G0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Call">
+                                                    <color key="titleColor" name="slKindaWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="primaryButtonTapped:" destination="dwP-87-Bm8" eventType="touchUpInside" id="hJR-Xr-e6x"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-cp-vet" userLabel="Generate QR Code Button">
+                                                <rect key="frame" x="0.0" y="96" width="377" height="40"/>
+                                                <color key="backgroundColor" name="slGreenBase"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="uDk-Q2-7ZD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Generate QR code">
+                                                    <color key="titleColor" name="slKindaWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="generateQRCodeButtonTapped:" destination="dwP-87-Bm8" eventType="touchUpInside" id="aiH-21-3E8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="slKindaWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mcQ-sG-LRB" firstAttribute="leading" secondItem="iac-gA-DYh" secondAttribute="leading" constant="8" id="9EQ-Tj-ntG"/>
+                                    <constraint firstAttribute="bottom" secondItem="P2R-8N-8fJ" secondAttribute="bottom" constant="8" id="Fmp-tT-0Zt"/>
+                                    <constraint firstItem="P2R-8N-8fJ" firstAttribute="leading" secondItem="iac-gA-DYh" secondAttribute="leading" constant="8" id="ZlF-sx-ZEP"/>
+                                    <constraint firstItem="mcQ-sG-LRB" firstAttribute="top" secondItem="iac-gA-DYh" secondAttribute="top" constant="8" id="alZ-go-RXh"/>
+                                    <constraint firstAttribute="trailing" secondItem="mcQ-sG-LRB" secondAttribute="trailing" constant="8" id="bFr-7X-dV0"/>
+                                    <constraint firstItem="P2R-8N-8fJ" firstAttribute="top" secondItem="mcQ-sG-LRB" secondAttribute="bottom" constant="8" id="eP0-BL-gDd"/>
+                                    <constraint firstAttribute="trailing" secondItem="P2R-8N-8fJ" secondAttribute="trailing" constant="8" id="pob-zs-rmq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LcU-mQ-PYF"/>
                         <color key="backgroundColor" name="slWhite"/>
                         <constraints>
                             <constraint firstItem="G84-Ym-2uK" firstAttribute="top" secondItem="LcU-mQ-PYF" secondAttribute="top" id="1jf-Fr-l2Q"/>
                             <constraint firstItem="G84-Ym-2uK" firstAttribute="leading" secondItem="LcU-mQ-PYF" secondAttribute="leading" id="70e-Fi-0W9"/>
-                            <constraint firstItem="LcU-mQ-PYF" firstAttribute="bottom" secondItem="G84-Ym-2uK" secondAttribute="bottom" id="EcO-WI-kfi"/>
+                            <constraint firstItem="iac-gA-DYh" firstAttribute="top" secondItem="G84-Ym-2uK" secondAttribute="bottom" id="9AY-YG-6I8"/>
+                            <constraint firstItem="LcU-mQ-PYF" firstAttribute="bottom" secondItem="iac-gA-DYh" secondAttribute="bottom" id="9am-TN-d6I"/>
+                            <constraint firstItem="iac-gA-DYh" firstAttribute="leading" secondItem="LcU-mQ-PYF" secondAttribute="leading" id="Gt0-Ve-UMc"/>
+                            <constraint firstItem="LcU-mQ-PYF" firstAttribute="trailing" secondItem="iac-gA-DYh" secondAttribute="trailing" id="bVx-bq-ThB"/>
                             <constraint firstItem="LcU-mQ-PYF" firstAttribute="trailing" secondItem="G84-Ym-2uK" secondAttribute="trailing" id="w43-32-HDW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonsView" destination="iac-gA-DYh" id="s6B-lc-aNB"/>
+                        <outlet property="generateQRCode" destination="RDF-cp-vet" id="p8J-WA-TBB"/>
+                        <outlet property="primaryButton" destination="fw2-G4-f7Q" id="QFN-nH-DAa"/>
+                        <outlet property="providedByLabel" destination="tzK-Cb-9Ij" id="gvc-1u-Inx"/>
+                        <outlet property="providedByTitle" destination="guI-YG-Tmx" id="fMa-iK-3We"/>
+                        <outlet property="secondaryButton" destination="vw2-4a-41P" id="bY5-oS-RhH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v98-nj-t4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
