@@ -23,19 +23,19 @@ class MyBooksViewController: UIViewController {
         super.viewDidLoad()
         updateTabBarTitles()
         self.myRightBarButtonItem = self.navigationItem.rightBarButtonItem ?? UIBarButtonItem()
+        self.segmentView.clipsToBounds = true
+        self.segmentView.layer.cornerRadius = 16
+        self.segmentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         self.navigationItem.rightBarButtonItem = self.myRightBarButtonItem
         setupScreen()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.segmentView.clipsToBounds = true
-        self.segmentView.layer.cornerRadius = 16
-        self.segmentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         FirebaseDbManager.fetchBooks {
             self.myRightBarButtonItem.title = "add_book".localized
-            self.tableView.reloadData()
             self.setupScreen()
+            self.tableView.reloadData()
         }
     }
     
@@ -228,6 +228,8 @@ extension MyBooksViewController: UITableViewDelegate, UITableViewDataSource {
                     bookCell.cellView.backgroundColor = UIColor(named: "slReturnedBackground")
                 } else if screenType == .provided && currentBook.takenOfUserID != "" {
                     bookCell.cellView.backgroundColor = UIColor(named: "slTakenBookBackground")
+                } else if currentBook.isAvalible == false && currentBook.takenOfUserID == "" {
+                    bookCell.cellView.backgroundColor = UIColor(named: "slBlueLightest")
                 } else {
                     bookCell.cellView.backgroundColor = UIColor(named: "slKindaWhite")
                 }

@@ -72,6 +72,15 @@
 "terms_&_condition_title" = "Terms & condition";
 "privacy_policy_title" = "Privacy policy";
 "contact_us_title" = "Contact us";
+"stop_providing_the_book_title" = "Stop providing the book";
+"are_you_sure_you_want_to_stop_providing_the_book" = "Are you sure you want to temporarily stop providing the book";
+"delete_book_title" = "Delete book";
+"are_you_sure_you_want_to_delete_the_book" = "Are you sure you want to delete this book";
+"stop_providing" = "Stop providing";
+"start_providing" = "Start providing";
+"click_to_delete_the_book" = "Click to delete the book";
+"start_providing_the_book" = "Start providing the book";
+"are_you_sure_you_want_to_start_providing_the_book" = "Are you sure you want start providing the book";
 
 //setting
 "version_title" = "Version";

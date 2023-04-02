@@ -96,7 +96,8 @@ final class FirebaseDbManager {
                         self.books.append(currentBook)
                     } else {
                         if let book = self.books.first(where: {$0.id == currentBook.id}) {
-                            if currentBook.takenOfUserID != book.takenOfUserID {
+                            if currentBook.takenOfUserID != book.takenOfUserID
+                                || currentBook.isAvalible != book.isAvalible {
                                 self.books.removeAll(where: {$0.id == book.id})
                                 self.books.append(currentBook)
                             }

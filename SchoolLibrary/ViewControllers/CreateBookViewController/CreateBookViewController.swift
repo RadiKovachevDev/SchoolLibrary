@@ -142,8 +142,6 @@ class CreateBookViewController: UIViewController {
         
         
     }
-
-    
     
     func setupCategoryPicker() {
         categoryPicker.delegate = self
@@ -180,7 +178,7 @@ extension CreateBookViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.categoryTextField.text = self.categories[row].rawValue
+        self.categoryTextField.text = self.categories[row].rawValue.localized
         self.selectedCategory = self.categories[row]
         hidePicker()
     }
